@@ -7,7 +7,8 @@
     "build": "echo \"no build\"",
     "dev": "live-server --port=8080 --entry-file=index.html",
     "start": "serve -l $PORT",
-    "deploy": "railway up"
+    "deploy": "railway up",
+    "build:seo": "node scripts/build/sitemap.js"
   },
   "dependencies": {
     "serve": "^14.2.5"

@@ -1,22 +1,45 @@
+import cfg, { required } from "../../config.js";
+
+const policyRoute = cfg.routes?.find?.((route) => route.path.includes("politica-de-cookies"));
+
+const analyticsProvider = (() => {
+  const analytics = cfg.analytics || {};
+  if (analytics.plausibleDomain) {
+    return {
+      provider: "plausible",
+      plausibleDomain: analytics.plausibleDomain,
+      gaMeasurementId: null
+    };
+  }
+  if (analytics.ga4) {
+    return {
+      provider: "ga4",
+      plausibleDomain: null,
+      gaMeasurementId: analytics.ga4
+    };
+  }
+  return {
+    provider: null,
+    plausibleDomain: null,
+    gaMeasurementId: null
+  };
+})();
+
 // Configuración central del sistema de cookies
 export const COOKIE_CONFIG = {
-  appName: "Restaurant Web",
-  policyUrl: "/politica-de-cookies.html", // ajusta si cambias la URL
+  appName: required(cfg, "companyName"),
+  policyUrl: policyRoute?.path || "/politica-de-cookies.html",
   cookieName: "site_consent",
   cookieMaxAgeDays: 180, // ~6 meses
-  defaultLang: "es",
+  defaultLang: cfg.defaultLocale || "es",
   // Si el navegador envía Do Not Track (1), tratamos como rechazo por defecto.
   respectDNT: true,
 
   // Selecciona UN proveedor de analítica o deja ambos en null para no cargar nada.
-  analytics: {
-    provider: "plausible", // "plausible" | "ga4" | null
-    plausibleDomain: "tudominio.com", // Requerido si provider=plausible
-    gaMeasurementId: null // Ej: "G-XXXXXXX" si provider=ga4
-  },
+  analytics: analyticsProvider,
 
   marketing: {
-    facebookPixelId: null // Ej: "1234567890" para activar Facebook Pixel
+    facebookPixelId: cfg.marketing?.facebookPixelId || null
   },
 
   performance: {

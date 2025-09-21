@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="48" viewBox="0 0 180 48" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Jhon's Grill</title>
+  <rect width="180" height="48" rx="12" fill="#0ea5e9"/>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#0f172a">Jhon's Grill</text>
+</svg>

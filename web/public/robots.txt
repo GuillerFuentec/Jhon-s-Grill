@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.jhonsgrill.com/sitemap.xml

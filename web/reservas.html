@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Reservas · Jhon's Grill</title>
+  <link rel="stylesheet" href="/styles/theme.css" />
+  <script>
+    window.__PAGE_META__ = {
+      title: "Reservas",
+      description: "Reserva tu mesa en Jhon's Grill, elige horario y recibe confirmación inmediata por correo o WhatsApp.",
+      path: "/reservas.html",
+      nav: "reservas",
+      schemaType: "ReservationPage"
+    };
+    window.__PAGE_BREADCRUMB__ = [
+      { name: "Inicio", path: "/" },
+      { name: "Reservas", path: "/reservas.html" }
+    ];
+    window.__PAGE_SCHEMA__ = {
+      "@type": "Service",
+      "name": "Reservas en Jhon's Grill",
+      "provider": { "@id": "cfg.domain#restaurant" },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "cfg.reservationUrl",
+        "result": {
+          "@type": "FoodEstablishmentReservation",
+          "name": "Mesa en Jhon's Grill",
+          "provider": { "@id": "cfg.domain#restaurant" }
+        }
+      }
+    };
+  </script>
+  <script type="module">
+    import applyHeadEnhancements from "/scripts/seo/head.js";
+    applyHeadEnhancements();
+  </script>
+  <script type="module" src="/scripts/cookies/index.js"></script>
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+<body>
+  <!-- BEGIN: Site Header -->
+  <header class="site" role="banner">
+    <div class="container">
+      <div class="branding">
+        <a href="/" class="brand-link" aria-label="Ir al inicio">
+          <img data-config-logo width="180" height="48" loading="eager" decoding="async" />
+        </a>
+        <p class="muted" data-config="tagline"></p>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="/index.html" data-nav="home">Inicio</a>
+        <a href="/menu.html" data-nav="menu">Menú</a>
+        <a href="/reservas.html" data-nav="reservas">Reservas</a>
+        <a href="/contacto.html" data-nav="contacto">Contacto</a>
+        <a href="/nosotros.html" data-nav="nosotros">Nosotros</a>
+        <a href="/info.html" data-nav="info">Información</a>
+      </nav>
+    </div>
+  </header>
+  <!-- END: Site Header -->
+
+  <main>
+    <section class="section">
+      <div class="container card grid-two">
+        <div>
+          <h1>Reserva tu mesa</h1>
+          <p class="muted">Responde este formulario y confirma tu lugar en cuestión de minutos. Nuestro equipo te contactará para validar cualquier detalle especial.</p>
+          <div class="alert" role="status" aria-live="polite" id="reservation-message">Selecciona horario disponible entre semana de 11:00 a 22:00 o fin de semana de 11:00 a 23:30.</div>
+          <div class="card" style="margin-top:24px;">
+            <h2>¿Necesitas ayuda?</h2>
+            <p>Haz clic para hablar directo con nuestro equipo.</p>
+            <div class="list-inline">
+              <a class="btn btn-primary" data-config-tel="phone">Llámanos</a>
+              <a class="btn btn-ghost" data-config-url="orderUrl">Mensaje por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <form id="reservation-form" class="card" novalidate>
+          <fieldset>
+            <legend><h2>Datos de la reserva</h2></legend>
+            <div class="grid grid-cols-2">
+              <div class="form-group">
+                <label for="res-name">Nombre completo</label>
+                <input id="res-name" name="name" type="text" autocomplete="name" required placeholder="Tu nombre" />
+              </div>
+              <div class="form-group">
+                <label for="res-email">Correo electrónico</label>
+                <input id="res-email" name="email" type="email" autocomplete="email" required placeholder="correo@ejemplo.com" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2">
+              <div class="form-group">
+                <label for="res-phone">Teléfono</label>
+                <input id="res-phone" name="phone" type="tel" autocomplete="tel" required placeholder="55 0000 0000" />
+                <span class="form-helper">Usaremos este número para confirmar.</span>
+              </div>
+              <div class="form-group">
+                <label for="res-guests">Número de comensales</label>
+                <input id="res-guests" name="guests" type="number" min="1" max="12" required value="2" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2">
+              <div class="form-group">
+                <label for="res-date">Fecha</label>
+                <input id="res-date" name="date" type="date" required />
+              </div>
+              <div class="form-group">
+                <label for="res-time">Hora</label>
+                <input id="res-time" name="time" type="time" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="res-notes">Notas adicionales</label>
+              <textarea id="res-notes" name="notes" rows="4" placeholder="Alergias, ocasiones especiales o requerimientos"></textarea>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="marketing" value="yes" />
+                Deseo recibir novedades y promociones por correo
+              </label>
+            </div>
+            <button class="btn btn-primary" type="submit">Solicitar reserva</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card grid-two">
+        <div>
+          <h2>Salones y eventos privados</h2>
+          <p class="muted">Contamos con espacio para 30 personas, menú personalizado y equipo de audio. Consulta disponibilidad con mínimo 48 horas de anticipación.</p>
+        </div>
+        <div>
+          <h3>Ubicación</h3>
+          <address class="address-block" data-config-address></address>
+          <iframe title="Mapa de ubicación" data-config-map width="100%" height="240" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BEGIN: Site Footer -->
+  <footer class="site">
+    <div class="container">
+      <div class="branding">
+        <img data-config-logo width="180" height="48" loading="lazy" decoding="async" />
+        <p class="muted" data-config="tagline"></p>
+      </div>
+      <div class="footer-meta">
+        <span>&copy; <span data-config-year></span> <span data-config="companyName"></span>. Todos los derechos reservados.</span>
+        <nav aria-label="Enlaces legales">
+          <a href="/politica-de-privacidad.html">Política de privacidad</a>
+          <a href="/politica-de-cookies.html">Política de cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <!-- END: Site Footer -->
+
+  <script type="application/ld+json" id="ld-base"></script>
+  <script type="module">
+    import cfg from "/config.js";
+    import buildStructuredData from "/scripts/seo/schema.js";
+    const base = [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${cfg.domain}#website`,
+        "url": cfg.domain,
+        "name": cfg.companyName,
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": `${cfg.domain}/search?q={search_term_string}`,
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "@id": `${cfg.domain}#restaurant`,
+        "name": cfg.companyName,
+        "url": cfg.domain,
+        "image": new URL(cfg.media.ogDefault, cfg.domain).href,
+        "telephone": cfg.phone,
+        "priceRange": cfg.priceRange,
+        "servesCuisine": cfg.servesCuisine,
+        "hasMenu": cfg.menuUrl,
+        "acceptsReservations": Boolean(cfg.reservationUrl),
+        "sameAs": Object.values(cfg.social).filter(Boolean),
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": cfg.address.street,
+          "addressLocality": cfg.address.locality,
+          "addressRegion": cfg.address.region,
+          "postalCode": cfg.address.postalCode,
+          "addressCountry": cfg.address.country
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": cfg.geo.lat,
+          "longitude": cfg.geo.lng
+        },
+        "openingHours": cfg.openingHours
+      }
+    ];
+    const data = buildStructuredData(base);
+    document.getElementById("ld-base").textContent = JSON.stringify(data);
+  </script>
+  <script type="module" src="/scripts/site.js"></script>
+  <script type="module">
+    const form = document.getElementById("reservation-form");
+    const message = document.getElementById("reservation-message");
+    const formatErrors = (fields) => fields.map((f) => `• ${f}`).join("\n");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const errors = [];
+      if (!formData.get("name")) errors.push("Indica tu nombre completo");
+      if (!formData.get("email")) errors.push("Añade un correo electrónico válido");
+      if (!formData.get("phone")) errors.push("Ingresa un teléfono de contacto");
+      if (!formData.get("date")) errors.push("Selecciona la fecha");
+      if (!formData.get("time")) errors.push("Selecciona la hora");
+      if (!formData.get("guests")) errors.push("Indica el número de comensales");
+      if (errors.length) {
+        message.textContent = `Revisa la información:\n${formatErrors(errors)}`;
+        message.classList.add("alert");
+        return;
+      }
+      message.textContent = "¡Gracias! Recibirás la confirmación por correo y WhatsApp en los próximos minutos.";
+      form.reset();
+    });
+  </script>
+</body>
+</html>

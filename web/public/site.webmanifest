@@ -1,0 +1,28 @@
+{
+  "name": "Jhon's Grill",
+  "short_name": "Jhon's Grill",
+  "description": "Parrilla mexicana auténtica en tu ciudad.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/assets/logo.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://images.placeholders.dev/?width=512&height=512&text=JG&bg=0ea5e9&color=0f172a",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://images.placeholders.dev/?width=512&height=512&text=JG&bg=0ea5e9&color=0f172a&format=png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
