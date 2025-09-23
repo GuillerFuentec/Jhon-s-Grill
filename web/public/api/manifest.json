@@ -1,0 +1,319 @@
+{
+  "currency": "USD",
+  "Burgers": [
+    {
+      "name": "Classic Hamburger",
+      "description": "Hamburguesa clásica con lechuga, tomate, pepinillos y cebolla.",
+      "imgUrl": "/images/menu/burgers/classic-hamburger.jpg",
+      "price": { "single": 8.77, "platter": 10.50 }
+    },
+    {
+      "name": "Ultimate Cheeseburger",
+      "description": "Queso americano derretido, mayonesa, lechuga y tomate.",
+      "imgUrl": "/images/menu/burgers/ultimate-cheeseburger.jpg",
+      "price": { "single": 9.00, "platter": 11.25 }
+    },
+    {
+      "name": "Mushroom Cheeseburger",
+      "description": "Queso suizo, champiñones salteados, mayonesa y cebolla.",
+      "imgUrl": "/images/menu/burgers/mushroom-cheeseburger.jpg",
+      "price": { "single": 9.25, "platter": 11.50 }
+    },
+    {
+      "name": "Mexican Cheeseburger",
+      "description": "Queso Pepper Jack, pico de gallo, aguacate, lechuga y tomate.",
+      "imgUrl": "/images/menu/burgers/mexican-cheeseburger.jpg",
+      "price": { "single": 9.30, "platter": 12.99 }
+    },
+    {
+      "name": "BBQ Cheeseburger",
+      "description": "Queso americano, salsa BBQ, mayonesa y pepinillos.",
+      "imgUrl": "/images/menu/burgers/bbq-cheeseburger.jpg",
+      "price": { "single": 9.00, "platter": 11.25 }
+    },
+    {
+      "name": "Bacon Egg Cheeseburger",
+      "description": "Tocino, huevo, queso suizo y cebolla a la parrilla.",
+      "imgUrl": "/images/menu/burgers/bacon-egg-cheeseburger.jpg",
+      "price": { "single": 9.80, "platter": 12.99 }
+    },
+    {
+      "name": "Hawaiian Cheeseburger",
+      "description": "Piña, jamón y queso suizo con mayonesa.",
+      "imgUrl": "/images/menu/burgers/hawaiian-cheeseburger.jpg",
+      "price": { "single": 9.00, "platter": 11.25 }
+    }
+  ],
+  "Sandwiches": [
+    {
+      "name": "Crispy & Grilled Chicken Sandwich",
+      "description": "Pollo crujiente o asado con mayonesa, lechuga y tomate.",
+      "imgUrl": "/images/menu/sandwiches/crispy-grilled-chicken.jpg",
+      "price": { "single": 9.00, "platter": 11.80 }
+    },
+    {
+      "name": "Mushroom Chicken Sandwich",
+      "description": "Pollo a la parrilla con queso suizo, champiñones y mayonesa.",
+      "imgUrl": "/images/menu/sandwiches/mushroom-chicken.jpg",
+      "price": { "single": 9.25, "platter": 11.80 }
+    },
+    {
+      "name": "Grilled Chicken Mexican Sandwich",
+      "description": "Pollo asado con Pepper Jack, pico de gallo y aguacate.",
+      "imgUrl": "/images/menu/sandwiches/grilled-chicken-mexican.jpg",
+      "price": { "single": 9.80, "platter": 12.99 }
+    }
+  ],
+  "Tacos": [
+    {
+      "name": "Beef Fajita (Bistek)",
+      "description": "Tacos con bistek, cebolla asada y cilantro.",
+      "imgUrl": "/images/menu/tacos/beef-fajita.jpg",
+      "price": { "single": 13.86 }
+    },
+    {
+      "name": "Chicken (Pollo)",
+      "description": "Tacos de pollo a la parrilla con cilantro y cebolla.",
+      "imgUrl": "/images/menu/tacos/chicken.jpg",
+      "price": { "single": 13.86 }
+    },
+    {
+      "name": "Pastor (Pork)",
+      "description": "Tacos de pastor con piña y cebolla.",
+      "imgUrl": "/images/menu/tacos/pastor.jpg",
+      "price": { "single": 13.86 }
+    },
+    {
+      "name": "Mexican Sausage (Chorizo)",
+      "description": "Tacos de chorizo con cilantro y cebolla.",
+      "imgUrl": "/images/menu/tacos/chorizo.jpg",
+      "price": { "single": 13.86 }
+    },
+    {
+      "name": "3 Tacos Platter (Beans & Rice)",
+      "description": "Tres tacos servidos con frijoles y arroz.",
+      "imgUrl": "/images/menu/tacos/three-tacos-platter.jpg",
+      "price": { "platter": 13.86 }
+    }
+  ],
+  "Mexican Classics": [
+    {
+      "name": "Torta",
+      "description": "Torta estilo mexicano con jamón, huevo, lechuga y jalapeños.",
+      "imgUrl": "/images/menu/classics/torta.jpg",
+      "price": { "single": 13.86 }
+    },
+    {
+      "name": "Torta Mix",
+      "description": "Torta combinada con carnes mixtas.",
+      "imgUrl": "/images/menu/classics/torta-mix.jpg",
+      "price": { "single": 15.00 }
+    },
+    {
+      "name": "Crispy & Grilled Chicken Salad",
+      "description": "Ensalada de pollo crujiente o a la parrilla.",
+      "imgUrl": "/images/menu/classics/chicken-salad.jpg",
+      "price": { "single": 7.99 }
+    },
+    {
+      "name": "Fried Chicken Tender Platter",
+      "description": "Tiras de pollo con guarnición.",
+      "imgUrl": "/images/menu/classics/chicken-tender-platter.jpg",
+      "price": { "single": 6.50 }
+    }
+  ],
+  "Breakfast Burritos": [
+    {
+      "name": "Eggs with Chorizo",
+      "description": "Huevos con chorizo en tortilla.",
+      "imgUrl": "/images/menu/breakfast-burritos/eggs-chorizo.jpg",
+      "price": { "single": 7.50 }
+    },
+    {
+      "name": "Eggs with Sausage",
+      "description": "Huevos con salchicha en tortilla.",
+      "imgUrl": "/images/menu/breakfast-burritos/eggs-sausage.jpg",
+      "price": { "single": 7.50 }
+    },
+    {
+      "name": "Eggs with Ham",
+      "description": "Huevos con jamón en tortilla.",
+      "imgUrl": "/images/menu/breakfast-burritos/eggs-ham.jpg",
+      "price": { "single": 7.50 }
+    },
+    {
+      "name": "Eggs with Bacon",
+      "description": "Huevos con tocino en tortilla.",
+      "imgUrl": "/images/menu/breakfast-burritos/eggs-bacon.jpg",
+      "price": { "single": 7.50 }
+    },
+    {
+      "name": "Eggs with Potatoes",
+      "description": "Huevos con papas en tortilla.",
+      "imgUrl": "/images/menu/breakfast-burritos/eggs-potatoes.jpg",
+      "price": { "single": 7.50 }
+    }
+  ],
+  "Burritos Mix": [
+    {
+      "name": "Eggs with Sausage, Bacon & Cheese",
+      "description": "Huevos con salchicha, tocino y queso.",
+      "imgUrl": "/images/menu/burritos-mix/sausage-bacon-cheese.jpg",
+      "price": { "single": 8.00 }
+    },
+    {
+      "name": "Eggs with Ham, Bacon & Cheese",
+      "description": "Huevos con jamón, tocino y queso.",
+      "imgUrl": "/images/menu/burritos-mix/ham-bacon-cheese.jpg",
+      "price": { "single": 8.00 }
+    }
+  ],
+  "Quesadillas & Platters": [
+    {
+      "name": "Chicken Quesadilla",
+      "description": "Quesadilla de pollo con queso fundido.",
+      "imgUrl": "/images/menu/quesadillas/chicken-quesadilla.jpg",
+      "price": { "single": 15.00 }
+    },
+    {
+      "name": "Combo Quesadilla",
+      "description": "Quesadilla combinada de carnes.",
+      "imgUrl": "/images/menu/quesadillas/combo-quesadilla.jpg",
+      "price": { "single": 16.00 }
+    }
+  ],
+  "Mexican Burritos": [
+    {
+      "name": "Chicken Burrito",
+      "description": "Burrito de pollo con frijoles y arroz.",
+      "imgUrl": "/images/menu/burritos/chicken-burrito.jpg",
+      "price": { "single": 12.50 }
+    },
+    {
+      "name": "Beef Burrito",
+      "description": "Burrito de res con frijoles y arroz.",
+      "imgUrl": "/images/menu/burritos/beef-burrito.jpg",
+      "price": { "single": 13.00 }
+    },
+    {
+      "name": "Combo Burrito",
+      "description": "Burrito combinado de carnes.",
+      "imgUrl": "/images/menu/burritos/combo-burrito.jpg",
+      "price": { "single": 13.00 }
+    }
+  ],
+  "Breakfast Tacos": [
+    {
+      "name": "Eggs with Chorizo",
+      "description": "Taco de huevo con chorizo.",
+      "imgUrl": "/images/menu/breakfast-tacos/eggs-chorizo.jpg",
+      "price": { "single": 2.77 }
+    },
+    {
+      "name": "Eggs with Sausage",
+      "description": "Taco de huevo con salchicha.",
+      "imgUrl": "/images/menu/breakfast-tacos/eggs-sausage.jpg",
+      "price": { "single": 2.77 }
+    },
+    {
+      "name": "Eggs with Ham",
+      "description": "Taco de huevo con jamón.",
+      "imgUrl": "/images/menu/breakfast-tacos/eggs-ham.jpg",
+      "price": { "single": 2.77 }
+    },
+    {
+      "name": "Eggs with Bacon",
+      "description": "Taco de huevo con tocino.",
+      "imgUrl": "/images/menu/breakfast-tacos/eggs-bacon.jpg",
+      "price": { "single": 2.77 }
+    },
+    {
+      "name": "Eggs with Potatoes",
+      "description": "Taco de huevo con papas.",
+      "imgUrl": "/images/menu/breakfast-tacos/eggs-potatoes.jpg",
+      "price": { "single": 2.77 }
+    }
+  ],
+  "Extras": [
+    {
+      "name": "Chips & Salsa",
+      "description": "Totopos con salsa.",
+      "imgUrl": "/images/menu/extras/chips-salsa.jpg",
+      "price": { "single": 3.50 }
+    },
+    {
+      "name": "Fries Regular",
+      "description": "Papas fritas tamaño regular.",
+      "imgUrl": "/images/menu/extras/fries-regular.jpg",
+      "price": { "single": 3.50 }
+    },
+    {
+      "name": "Fries Large",
+      "description": "Papas fritas tamaño grande.",
+      "imgUrl": "/images/menu/extras/fries-large.jpg",
+      "price": { "single": 5.50 }
+    },
+    {
+      "name": "Bacon (Tocino)",
+      "description": "Porción de tocino.",
+      "imgUrl": "/images/menu/extras/bacon.jpg",
+      "price": { "single": 2.00 }
+    },
+    {
+      "name": "Cheese (Queso)",
+      "description": "Extra de queso.",
+      "imgUrl": "/images/menu/extras/cheese.jpg",
+      "price": { "single": 1.00 }
+    },
+    {
+      "name": "Mushrooms (Hongos)",
+      "description": "Champiñones salteados.",
+      "imgUrl": "/images/menu/extras/mushrooms.jpg",
+      "price": { "single": 1.00 }
+    },
+    {
+      "name": "Grilled Jalapeños",
+      "description": "Jalapeños a la parrilla.",
+      "imgUrl": "/images/menu/extras/grilled-jalapenos.jpg",
+      "price": { "single": 0.50 }
+    },
+    {
+      "name": "Grilled or Sautéed Onions",
+      "description": "Cebollas a la parrilla o salteadas.",
+      "imgUrl": "/images/menu/extras/grilled-onions.jpg",
+      "price": { "single": 1.00 }
+    }
+  ],
+  "Kid's Korner": [
+    {
+      "name": "Junior Burger (with Fries)",
+      "description": "Hamburguesa junior servida con papas.",
+      "imgUrl": "/images/menu/kids/junior-burger.jpg",
+      "price": { "single": 5.99 }
+    },
+    {
+      "name": "Mini Crispy Tender (Fries, Ranch & 2 Chicken Pieces)",
+      "description": "Mini tenders con papas y aderezo ranch.",
+      "imgUrl": "/images/menu/kids/mini-crispy-tender.jpg",
+      "price": { "single": 4.99 }
+    },
+    {
+      "name": "Kid Crispy Sandwich (Fries & Ranch)",
+      "description": "Sándwich crujiente para niños con papas y ranch.",
+      "imgUrl": "/images/menu/kids/kid-crispy-sandwich.jpg",
+      "price": { "single": 4.99 }
+    },
+    {
+      "name": "Kid Cheese Quesadilla Platter (Beans & Rice)",
+      "description": "Quesadilla de queso con frijoles y arroz.",
+      "imgUrl": "/images/menu/kids/kid-quesadilla-platter.jpg",
+      "price": { "single": 5.99 }
+    },
+    {
+      "name": "Grilled Cheese Sandwich with Fries",
+      "description": "Sándwich de queso a la parrilla con papas.",
+      "imgUrl": "/images/menu/kids/grilled-cheese-with-fries.jpg",
+      "price": { "single": 5.99 }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "aliases": {
+    "~/": "/",
+    "~scripts/": "/scripts/",
+    "~styles/": "/styles/",
+    "@/": "/src/"
+  },
+  "cdn": {
+    "feather": "https://unpkg.com/feather-icons",
+    "aos-css": "https://unpkg.com/aos@2.3.1/dist/aos.css",
+    "aos-js": "https://unpkg.com/aos@2.3.1/dist/aos.js"
+  },
+  "autoload": {
+    "css": [
+      "~styles/theme.css"
+    ],
+    "js": [
+      "~scripts/config/apply-config.js"
+    ],
+    "cdn": []
+  },
+  "pages": {
+    "/index.html": {
+      "css": [],
+      "js": [],
+      "cdn": ["cdn:feather", "cdn:aos-css", "cdn:aos-js"]
+    }
+  }
+}

@@ -1,26 +1,211 @@
 <!DOCTYPE html>
-<html lang="es">
+
+<html lang="es" class="overflow-x-hidden">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Auténticos tacos y comida mexicana casera. Disfruta de nuestros platillos tradicionales en un ambiente cálido y familiar. ¡Visítanos hoy!">
+        content="Auténticos tacos y comida mexicana casera. Disfruta de nuestros platillos tradicionales en un ambiente cálido y familiar. ¡Visítanos hoy!" />
     <title>Taquería El Auténtico - Comida Mexicana Tradicional</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <!-- Tailwind y librerías -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
+
     <!-- Sistema de Consentimiento de Cookies -->
     <script type="module" src="/scripts/cookies/index.js"></script>
+
+    <!-- Estilo base (paleta del modelo, con accent en blanco) -->
+    <style>
+        :root {
+            --fg: #0f172a;
+            --muted: #475569;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --accent: #ffffff
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden !important;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            color: var(--fg);
+            background: var(--bg);
+            overflow-x: hidden !important;
+        }
+
+        header {
+            background: var(--card);
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 10
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px
+        }
+
+        h1 {
+            font-size: clamp(24px, 3vw, 36px);
+            margin: 0 0 8px
+        }
+
+        h2 {
+            margin-top: 32px;
+            font-size: 22px;
+            color: var(--accent)
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 18px
+        }
+
+        p,
+        li {
+            color: var(--fg)
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px
+        }
+
+        nav.toc {
+            margin: 16px 0 0
+        }
+
+        nav.toc a {
+            display: block;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 6px 0;
+            border-left: 3px solid transparent;
+            padding-left: 12px
+        }
+
+        nav.toc a:hover {
+            color: var(--accent);
+            border-left-color: var(--accent)
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 14px
+        }
+
+        footer {
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+            background: var(--card)
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: #f1f5f9;
+            color: #111827;
+            margin-left: 8px
+        }
+
+        .nav-header {
+            background: #1f2937;
+            padding: 12px 0
+        }
+
+        .nav-header .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .nav-header h1 {
+            color: var(--accent);
+            margin: 0;
+            font-size: 20px
+        }
+
+        .nav-header a {
+            color: #d1d5db;
+            margin-left: 20px;
+            font-size: 14px
+        }
+
+        .nav-header a:hover {
+            color: var(--accent)
+        }
+
+        .back-link {
+            background: var(--accent);
+            color: #111827;
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 20px
+        }
+
+        .back-link:hover {
+            filter: brightness(.92);
+            text-decoration: none
+        }
+
+        /* Accesibilidad foco */
+        :focus-visible {
+            outline: 3px solid #e5e7eb;
+            outline-offset: 2px
+        }
+    </style>
+
+    <!-- Ajustes locales de la página -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -31,7 +216,7 @@
         }
 
         .hero-gradient {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://static.photos/food/1200x630/42');
+            background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./public/hero/hero.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -44,19 +229,21 @@
             transition: transform 0.3s ease;
         }
     </style>
+    <script src="/lib/loader/boot.js" defer></script>
+    <script type="module" src="/scripts/config/apply-config.js"></script>
 </head>
 
-<body class="bg-amber-50">
-    <!-- Navigation -->
-    <nav class="bg-red-600 text-white shadow-lg sticky top-0 z-50">
+<body class="bg-white">
+    <!-- Navigation (solo color, se mantiene estructura y ancho) -->
+    <nav class="nav-header text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="title-font text-2xl md:text-3xl font-bold">Taquería El Auténtico</a>
+            <a href="#" class="title-font text-2xl md:text-3xl font-bold">🌮 Taquería El Auténtico</a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="hover:text-amber-200 transition">Inicio</a>
-                <a href="menu.html" class="hover:text-amber-200 transition">Menú</a>
-                <a href="nosotros.html" class="hover:text-amber-200 transition">Nosotros</a>
-                <a href="contacto.html" class="hover:text-amber-200 transition">Contacto</a>
-                <a href="info.html" class="hover:text-amber-200 transition">Información</a>
+                <a href="index.html" class="transition">Inicio</a>
+                <a href="menu.html" class="transition">Menú</a>
+                <a href="nosotros.html" class="transition">Nosotros</a>
+                <a href="contacto.html" class="transition">Contacto</a>
+                <a href="info.html" class="transition">Información</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-white focus:outline-none">
@@ -64,13 +251,13 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-red-700 px-4 py-2">
-            <a href="index.html" class="block py-2 hover:text-amber-200 transition">Inicio</a>
-            <a href="menu.html" class="block py-2 hover:text-amber-200 transition">Menú</a>
-            <a href="nosotros.html" class="block py-2 hover:text-amber-200 transition">Nosotros</a>
-            <a href="contacto.html" class="block py-2 hover:text-amber-200 transition">Contacto</a>
-            <a href="info.html" class="block py-2 hover:text-amber-200 transition">Información</a>
+        <!-- Mobile menu (solo color) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 py-2">
+            <a href="index.html" class="block py-2 transition">Inicio</a>
+            <a href="menu.html" class="block py-2 transition">Menú</a>
+            <a href="nosotros.html" class="block py-2 transition">Nosotros</a>
+            <a href="contacto.html" class="block py-2 transition">Contacto</a>
+            <a href="info.html" class="block py-2 transition">Información</a>
         </div>
     </nav>
 
@@ -78,14 +265,18 @@
     <section id="inicio" class="hero-gradient min-h-screen flex items-center justify-center text-white">
         <div class="container mx-auto px-4 text-center" data-aos="fade-up">
             <h1 class="title-font text-4xl md:text-6xl font-bold mb-4">Auténticos Tacos Mexicanos</h1>
-            <p class="text-xl md:text-2xl mb-8">Sabores tradicionales que te transportarán a México</p>
+            <p class="!text-white text-xl md:text-2xl mb-8">
+                Sabores tradicionales que te transportarán a México
+            </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="tel:+525555555555"
-                    class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition">
+                <!-- Botón principal: de ámbar a blanco (solo color) -->
+                <a href="tel:+19757331439"
+                    class="bg-amber-500 !text-white hover:bg-amber-600 text-red-600 font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition">
                     <i data-feather="phone"></i> Llamar para ordenar
                 </a>
+                <!-- Botón secundario ya era blanco -->
                 <a href="menu.html"
-                    class="bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full text-lg transition">
+                    class="bg-white !text-black hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full text-lg transition">
                     Ver Menú
                 </a>
             </div>
@@ -101,12 +292,15 @@
                         class="rounded-lg shadow-xl w-full">
                 </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
-                    <h2 class="title-font text-3xl md:text-4xl font-bold text-red-600 mb-4">Ven a disfrutar con nosotros
+                    <!-- quitamos amber del título: mantenemos rojo existente -->
+                    <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-red-600 mb-4">Ven a disfrutar
+                        con nosotros
                     </h2>
                     <p class="text-gray-700 mb-6 text-lg">Nuestro acogedor espacio cuenta con capacidad para 25
                         personas, perfecto para disfrutar de nuestros platillos en un ambiente familiar y cálido.</p>
-                    <div class="bg-amber-100 p-6 rounded-lg">
-                        <h3 class="font-bold text-lg text-red-600 mb-2">¿Cómo llegar?</h3>
+                    <!-- caja: de bg-amber-100 a blanco (solo color) -->
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-bold !text-black text-lg text-red-600 mb-2">¿Cómo llegar?</h3>
                         <p class="text-gray-700">Nos encontrarás dentro de la estación de servicio "El Sol", con entrada
                             lateral junto a la tienda de conveniencia. ¡No te pierdas nuestros auténticos sabores
                             mexicanos!</p>
@@ -117,10 +311,11 @@
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="py-16 bg-amber-50">
+    <section id="menu" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="title-font text-3xl md:text-4xl font-bold text-center text-red-600 mb-12" data-aos="fade-up">
-                Nuestro Menú</h2>
+            <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-12"
+                data-aos="fade-up">
+            </h2>
 
             <!-- Menu Navigation -->
             <div class="flex overflow-x-auto pb-4 mb-8 scrollbar-hide" data-aos="fade-up">
@@ -130,16 +325,22 @@
                         data-category="tacos">Tacos</button>
                     <button
                         class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
-                        data-category="burritos">Burritos</button>
+                        data-category="burritos">Mexican Burritos</button>
                     <button
                         class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
                         data-category="quesadillas">Quesadillas</button>
                     <button
                         class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
-                        data-category="especialidades">Especialidades</button>
+                        data-category="especialidades">Burgers</button>
                     <button
                         class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
-                        data-category="postres">Postres</button>
+                        data-category="postres">Sandwiches</button>
+                    <button
+                        class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
+                        data-category="postres">Kids Corner</button>
+                    <button
+                        class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
+                        data-category="postres">Extras</button>
                 </div>
             </div>
 
@@ -154,7 +355,8 @@
                         <h3 class="text-xl font-bold text-red-600 mb-2">Tacos al Pastor</h3>
                         <p class="text-gray-600 mb-4">Deliciosos tacos con carne marinada en chiles y especias, servidos
                             con piña y cebolla.</p>
-                        <p class="text-amber-600 font-bold text-lg">$35 c/u</p>
+                        <!-- precio: de text-amber-600 a gris oscuro (solo color) -->
+                        <p class="text-gray-800 font-bold text-lg">$35 c/u</p>
                     </div>
                 </div>
 
@@ -168,7 +370,7 @@
                         <h3 class="text-xl font-bold text-red-600 mb-2">Tacos de Carnitas</h3>
                         <p class="text-gray-600 mb-4">Tradicionales tacos de cerdo dorado, acompañados con cilantro,
                             cebolla y limón.</p>
-                        <p class="text-amber-600 font-bold text-lg">$32 c/u</p>
+                        <p class="text-gray-800 font-bold text-lg">$32 c/u</p>
                     </div>
                 </div>
 
@@ -182,7 +384,7 @@
                         <h3 class="text-xl font-bold text-red-600 mb-2">Tacos de Barbacoa</h3>
                         <p class="text-gray-600 mb-4">Exquisita carne de res cocida lentamente, servida en tortillas
                             recién hechas.</p>
-                        <p class="text-amber-600 font-bold text-lg">$38 c/u</p>
+                        <p class="text-gray-800 font-bold text-lg">$38 c/u</p>
                     </div>
                 </div>
             </div>
@@ -194,25 +396,21 @@
 
             <!-- Bebidas Section -->
             <div class="mt-16 bg-white p-8 rounded-lg shadow-md" data-aos="fade-up">
-                <h3 class="text-2xl font-bold text-red-600 mb-4">Bebidas</h3>
+                <h3 class="text-2xl !text-black font-bold text-red-600 mb-4">Bebidas</h3>
                 <p class="text-gray-700 mb-6">Justo frente a nuestro local encontrarás un establecimiento que ofrece
                     variedad de bebidas: refrescos, jugos naturales, aguas frescas y cervezas. Puedes adquirir tus
                     bebidas favoritas para acompañar nuestros platillos.</p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div class="text-center">
-                        <i data-feather="coffee" class="w-8 h-8 mx-auto text-amber-600"></i>
+                        <i data-feather="coffee" class="w-8 h-8 mx-auto text-gray-700"></i>
                         <p class="mt-2">Aguas frescas</p>
                     </div>
                     <div class="text-center">
-                        <i data-feather="droplet" class="w-8 h-8 mx-auto text-amber-600"></i>
+                        <i data-feather="droplet" class="w-8 h-8 mx-auto text-gray-700"></i>
                         <p class="mt-2">Jugos naturales</p>
                     </div>
                     <div class="text-center">
-                        <i data-feather="glass" class="w-8 h-8 mx-auto text-amber-600"></i>
-                        <p class="mt-2">Refrescos</p>
-                    </div>
-                    <div class="text-center">
-                        <i data-feather="zap" class="w-8 h-8 mx-auto text-amber-600"></i>
+                        <i data-feather="zap" class="w-8 h-8 mx-auto text-gray-700"></i>
                         <p class="mt-2">Bebidas energéticas</p>
                     </div>
                 </div>
@@ -221,18 +419,21 @@
     </section>
 
     <!-- About Section -->
-    <section id="nosotros" class="py-16 bg-red-600 text-white">
+    <section id="nosotros" class="py-16 !bg-[#1f2937]  bg-red-600 text-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
                     <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Nuestra Historia</h2>
-                    <p class="mb-4 text-lg">Taquería El Auténtico nació del sueño de compartir los sabores tradicionales
+                    <p class="mb-4 !text-white text-lg">Taquería El Auténtico nació del sueño de compartir los sabores
+                        tradicionales
                         de México con el mundo. Nuestros fundadores, originarios de Puebla, trajeron consigo recetas
                         familiares transmitidas por generaciones.</p>
-                    <p class="mb-4 text-lg">Cada platillo que servimos está preparado con los mismos ingredientes y
+                    <p class="mb-4 !text-white text-lg">Cada platillo que servimos está preparado con los mismos
+                        ingredientes y
                         técnicas que se usan en los hogares mexicanos, garantizando una experiencia gastronómica
                         auténtica.</p>
-                    <p class="text-lg">¡Bienvenidos a nuestra mesa, donde la comida es preparada con amor y los sabores
+                    <p class="text-lg !text-white">¡Bienvenidos a nuestra mesa, donde la comida es preparada con amor y
+                        los sabores
                         te harán sentir como en casa!</p>
                 </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
@@ -246,7 +447,8 @@
     <!-- Contact Section -->
     <section id="contacto" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="title-font text-3xl md:text-4xl font-bold text-center text-red-600 mb-12" data-aos="fade-up">
+            <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-12"
+                data-aos="fade-up">
                 Visítanos</h2>
 
             <div class="flex flex-col md:flex-row gap-8">
@@ -255,110 +457,169 @@
                         <h3 class="text-2xl font-bold text-red-600 mb-4">Información de Contacto</h3>
 
                         <div class="mb-6">
-                            <div class="flex items-start mb-4">
-                                <i data-feather="map-pin" class="mr-4 text-amber-600 mt-1"></i>
+                            <div class="flex items-start mb-4 mt-2">
+                                <i data-feather="map-pin" class="mr-4 text-gray-700 mt-1"></i>
                                 <div>
                                     <h4 class="font-bold">Dirección</h4>
                                     <p>Av. México 123, Gasolinera El Sol<br>Ciudad de Ejemplo</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start mb-4">
-                                <i data-feather="phone" class="mr-4 text-amber-600 mt-1"></i>
+                            <div class="flex items-start mb-4 mt-2">
+                                <i data-feather="phone" class="mr-4 text-gray-700 mt-1"></i>
                                 <div>
                                     <h4 class="font-bold">Teléfono</h4>
-                                    <p>+52 55 5555 5555</p>
+                                    <p>+1 (975) 733-1439</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start">
-                                <i data-feather="clock" class="mr-4 text-amber-600 mt-1"></i>
+                            <div class="flex items-start mt-2">
+                                <i data-feather="clock" class="mr-4 text-gray-700 mt-1"></i>
                                 <div>
                                     <h4 class="font-bold">Horario</h4>
-                                    <p>Lunes a Domingo<br>10:00 am - 10:00 pm</p>
+                                    <p>Lunes a Sabado<br>7:00 am - 7:00 pm</p>
+                                    <p>Domingo - Cerrado</p>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="https://maps.google.com" target="_blank"
+                        <button onclick="openModal()"
                             class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition">
-                            <i data-feather="map" class="mr-2"></i> Ver en Google Maps
-                        </a>
+                            <i data-feather="map" class="mr-2"></i> Ver en Mapas
+                        </button>
+                        <!-- Modal -->
+                        <div id="mapModal"
+                            class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+                            <div class="bg-white rounded-lg p-6 w-80 shadow-lg">
+                                <h3 class="text-lg font-bold mb-4 text-center">Abrir ubicación en:</h3>
+                                <div class="flex flex-col gap-4">
+                                    <a href="https://maps.google.com?q=Av.+México+123,+Gasolinera+El+Sol,+Ciudad+de+Ejemplo"
+                                        target="_blank"
+                                        class="text-center bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition">
+                                        Google Maps
+                                    </a>
+                                    <a href="https://maps.apple.com/?q=Av.+México+123,+Gasolinera+El+Sol,+Ciudad+de+Ejemplo"
+                                        target="_blank"
+                                        class="text-center bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-900 transition">
+                                        Apple Maps
+                                    </a>
+                                </div>
+                                <button onclick="closeModal()"
+                                    class="mt-6 w-full bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded transition">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- GALLERY section -->
                 <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="bg-gray-100 p-6 rounded-lg h-full">
+                        <div class="text-center mb-10">
+                            <h2 class="title-fon text-red-600 text-4xl font-bold">Nuestro restaurante</h2>
+                        </div>
+
+                        <div id="galleryCarousel" class="relative w-full max-w-5xl mx-auto select-none">
+                            <div class="overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                                <ul id="galleryTrack" class="flex transition-transform duration-500 ease-out"
+                                    style="transform: translateX(0);">
+                                    <!-- Slides injected by ./scripts/gallery.js -->
+                                </ul>
+                            </div>
+
+                            <button id="galleryPrev"
+                                class="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 text-white p-2 hover:bg-black/80 focus:outline-none"
+                                aria-label="Previous">‹</button>
+                            <button id="galleryNext"
+                                class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 text-white p-2 hover:bg-black/80 focus:outline-none"
+                                aria-label="Next">›</button>
+
+                            <div id="galleryDots" class="flex justify-center gap-2 mt-4"></div>
+                        </div>
+
+                        <p id="galleryEmptyMsg" class="hidden text-center text-red-600 mt-6">
+                            There are no images in the gallery yet.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- <div class="md:w-1/2" data-aos="fade-left">
                     <div class="bg-gray-100 p-6 rounded-lg h-full">
                         <h3 class="text-2xl font-bold text-red-600 mb-4">¿Tienes alguna pregunta?</h3>
                         <form class="space-y-4">
                             <div>
                                 <label for="name" class="block text-gray-700 mb-1">Nombre</label>
                                 <input type="text" id="name"
-                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
                             </div>
                             <div>
                                 <label for="email" class="block text-gray-700 mb-1">Correo electrónico</label>
                                 <input type="email" id="email"
-                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
                             </div>
                             <div>
                                 <label for="message" class="block text-gray-700 mb-1">Mensaje</label>
                                 <textarea id="message" rows="4"
-                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
                             </div>
+                            Botón: de ámbar a blanco (solo color)
                             <button type="submit"
-                                class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full transition">
+                                class="bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full transition">
                                 Enviar Mensaje
                             </button>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-red-800 text-white py-12">
+    <footer class="!bg-[#1f2937]  !text-white py-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
                     <h3 class="title-font text-2xl font-bold mb-4">Taquería El Auténtico</h3>
-                    <p class="mb-4">Auténticos sabores mexicanos en cada bocado.</p>
+                    <p class="mb-4 !text-white">Auténticos sabores mexicanos en cada bocado.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="hover:text-amber-300 transition"><i data-feather="facebook"></i></a>
-                        <a href="#" class="hover:text-amber-300 transition"><i data-feather="instagram"></i></a>
-                        <a href="#" class="hover:text-amber-300 transition"><i data-feather="twitter"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-feather="twitter"></i></a>
                     </div>
                 </div>
 
                 <div class="mb-8 md:mb-0">
-                    <h4 class="font-bold text-lg mb-4">Horario</h4>
-                    <p>Lunes a Domingo</p>
-                    <p>10:00 am - 10:00 pm</p>
+                    <h4 class="font-bold  text-lg mb-4">Horario</h4>
+                    <p class="!text-white">Lunes a Domingo</p>
+                    <p class="!text-white">10:00 am - 10:00 pm</p>
                 </div>
 
                 <div>
                     <h4 class="font-bold text-lg mb-4">Contacto</h4>
-                    <p class="mb-2">Av. México 123, Gasolinera El Sol</p>
-                    <p class="mb-2">Ciudad de Ejemplo</p>
-                    <a href="tel:+525555555555" class="hover:text-amber-300 transition">+52 55 5555 5555</a>
+                    <p class="mb-2 !text-white">Av. México 123, Gasolinera El Sol</p>
+                    <p class="mb-2 !text-white">Ciudad de Ejemplo</p>
+                    <a href="tel:+19757331439" class="hover:text-white transition">+1 (975) 733-1439</a>
                 </div>
             </div>
 
             <div class="border-t border-red-700 mt-8 pt-8 text-center">
-                <p>&copy; 2023 Taquería El Auténtico. Todos los derechos reservados.</p>
+                <p class="!text-white">&copy; 2023 Taquería El Auténtico. Todos los derechos reservados.</p>
                 <p class="mt-2">
-                    
-                    <a href="/politica-de-cookies.html" class="hover:text-amber-300 transition text-sm">Política de Cookies</a>
-                    <a href="/politica-de-privacidad.html" class="hover:text-amber-300 transition text-sm">Política de Privacidad</a>
+                    <a href="/politica-de-cookies.html"
+                        class="hover:text-white transition text-sm !text-blue-300">Política de
+                        Cookies</a>
+                    <a href="/politica-de-privacidad.html"
+                        class="hover:text-white transition text-sm !text-blue-300">Política de
+                        Privacidad</a>
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Call Button -->
+    <!-- Floating Call Button (sin cambios de tamaño, solo colores ya correctos) -->
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="tel:+525555555555"
+        <a href="tel:+19757331439"
             class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-bounce">
             <i data-feather="phone" class="w-6 h-6"></i>
         </a>
@@ -366,11 +627,7 @@
 
     <script>
         // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
         // Initialize Feather Icons
         feather.replace();
@@ -409,170 +666,60 @@
         });
     </script>
 
-    <!-- Banner de Cookies HTML -->
-    <!-- Banner en Español -->
-    <div id="cookie-banner-es" class="hidden fixed inset-x-0 bottom-0 z-50 bg-gray-900 text-white p-4 shadow-2xl">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-                <!-- Contenido del mensaje -->
-                <div class="flex-1">
-                    <h2 class="text-lg font-semibold mb-2">🍪 Usamos cookies</h2>
-                    <p class="text-sm text-gray-300">
-                        Utilizamos cookies para mejorar la funcionalidad y medir el rendimiento. Con tu permiso, también para fines de marketing. 
-                        <a href="/politica-de-cookies.html" target="_blank" rel="noopener" class="text-blue-400 underline hover:text-blue-300">
-                            Ver política de cookies
-                        </a>.
-                    </p>
-                </div>
-                
-                <!-- Botones de acción -->
-                <div class="flex gap-3 w-full md:w-auto">
-                    <!-- Botón Aceptar (izquierda) -->
-                    <button onclick="handleCookieConsent('accept')" 
-                            class="flex-1 md:flex-initial bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                        ✅ Aceptar todo
-                    </button>
-                    
-                    <!-- Botón Rechazar (derecha) -->
-                    <button onclick="handleCookieConsent('reject')" 
-                            class="flex-1 md:flex-initial bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                        ❌ Rechazar todo
-                    </button>
-                </div>
-            </div>
+    <!-- Banner de cookies (simplificado, sin emojis ni elección) -->
+    <div id="cookie-banner" class="hidden fixed inset-x-0 bottom-0 z-50 bg-gray-900 text-white p-4 shadow-2xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-start md:items-center gap-3">
+            <p class="text-sm text-gray-200 m-0">
+                Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra
+                <a href="/politica-de-privacidad.html" target="_blank" rel="noopener"
+                    class="text-blue-500 underline">Política de Privacidad</a>.
+            </p>
+            <div class="flex-1"></div>
+            <button id="cookie-ack"
+                class="bg-white hover:bg-gray-100 text-gray-900 font-semibold py-2 px-4 rounded transition">
+                Acepto
+            </button>
         </div>
     </div>
 
-    <!-- Banner en Inglés -->
-    <div id="cookie-banner-en" class="hidden fixed inset-x-0 bottom-0 z-50 bg-gray-900 text-white p-4 shadow-2xl">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-                <!-- Contenido del mensaje -->
-                <div class="flex-1">
-                    <h2 class="text-lg font-semibold mb-2">🍪 We use cookies</h2>
-                    <p class="text-sm text-gray-300">
-                        We use cookies to improve functionality and measure performance. With your consent, also for marketing purposes. 
-                        <a href="/politica-de-cookies.html" target="_blank" rel="noopener" class="text-blue-400 underline hover:text-blue-300">
-                            View cookie policy
-                        </a>.
-                    </p>
-                </div>
-                
-                <!-- Botones de acción -->
-                <div class="flex gap-3 w-full md:w-auto">
-                    <!-- Accept Button (left) -->
-                    <button onclick="handleCookieConsent('accept')" 
-                            class="flex-1 md:flex-initial bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                        ✅ Accept all
-                    </button>
-                    
-                    <!-- Reject Button (right) -->
-                    <button onclick="handleCookieConsent('reject')" 
-                            class="flex-1 md:flex-initial bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                        ❌ Reject all
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script integrado para funcionar sin dependencias externas -->
     <script>
-    // Funciones para manejar cookies sin dependencias
-    function setCookieBasic(name, value, days) {
-        const maxAge = days * 24 * 60 * 60;
-        const encoded = encodeURIComponent(value);
-        const secure = location.protocol === 'https:' ? '; Secure' : '';
-        document.cookie = `${name}=${encoded}; Path=/; Max-Age=${maxAge}; SameSite=Lax${secure}`;
-    }
-
-    function getCookieBasic(name) {
-        return document.cookie
-            .split('; ')
-            .map(v => v.split('='))
-            .reduce((acc, [k, v]) => (k === name ? decodeURIComponent(v) : acc), null);
-    }
-
-    function hasExistingConsent() {
-        return getCookieBasic('site_consent') || localStorage.getItem('site_consent');
-    }
-
-    function detectLanguage() {
-        return navigator.language?.startsWith('en') || document.documentElement.lang === 'en' ? 'en' : 'es';
-    }
-
-    function showCookieBanner() {
-        if (hasExistingConsent()) return;
-        
-        const lang = detectLanguage();
-        const bannerId = `cookie-banner-${lang}`;
-        const banner = document.getElementById(bannerId);
-        
-        if (banner) {
-            banner.classList.remove('hidden');
+        // Aviso simple: solo informar y cerrar
+        function setCookieBasic(name, value, days) {
+            const maxAge = days * 24 * 60 * 60;
+            const encoded = encodeURIComponent(value);
+            const secure = location.protocol === 'https:' ? '; Secure' : '';
+            document.cookie = `${name}=${encoded}; Path=/; Max-Age=${maxAge}; SameSite=Lax${secure}`;
         }
-    }
+        function getCookieBasic(name) {
+            return document.cookie.split('; ').map(v => v.split('='))
+                .reduce((acc, [k, v]) => (k === name ? decodeURIComponent(v) : acc), null);
+        }
 
-    function showCookieBannerManual() {
-        const lang = detectLanguage();
-        const bannerId = `cookie-banner-${lang}`;
-        const banner = document.getElementById(bannerId);
-        
-        if (banner) {
-            banner.classList.remove('hidden');
-        }
-    }
-
-    function handleCookieConsent(action) {
-        const lang = detectLanguage();
-        
-        const consentData = {
-            version: 1,
-            lang: lang,
-            categories: {
-                necessary: true,
-                analytics: action === 'accept',
-                performance: action === 'accept',
-                marketing: action === 'accept'
-            },
-            timestamp: Date.now()
-        };
-        
-        // Guardar consentimiento
-        const jsonData = JSON.stringify(consentData);
-        setCookieBasic('site_consent', jsonData, 180); // 6 meses
-        
-        try {
-            localStorage.setItem('site_consent', jsonData);
-        } catch (e) {
-            // Ignorar errores de localStorage
-        }
-        
-        // Ocultar banners
-        const bannerEs = document.getElementById('cookie-banner-es');
-        const bannerEn = document.getElementById('cookie-banner-en');
-        if (bannerEs) bannerEs.classList.add('hidden');
-        if (bannerEn) bannerEn.classList.add('hidden');
-        
-        // Notificar al sistema de cookies si está disponible
-        if (window.CookieConsent && window.CookieConsent._emit) {
-            window.CookieConsent._emit('change', consentData);
-        }
-        
-        // Recargar para aplicar scripts si se aceptó
-        if (action === 'accept') {
-            // Opcional: recargar la página para cargar scripts analíticos
-            // window.location.reload();
-        }
-    }
-
-    // Mostrar banner cuando el DOM esté listo
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', showCookieBanner);
-    } else {
-        showCookieBanner();
-    }
+        (function initCookieNotice() {
+            const KEY = 'cookie_notice_ack';
+            if (!getCookieBasic(KEY)) {
+                document.getElementById('cookie-banner')?.classList.remove('hidden');
+            }
+            document.getElementById('cookie-ack')?.addEventListener('click', () => {
+                setCookieBasic(KEY, '1', 365);
+                document.getElementById('cookie-banner')?.classList.add('hidden');
+            });
+        })();
     </script>
+    <!-- POP-UP MAPS -->
+    <script>
+        function openModal() {
+            document.getElementById('mapModal').classList.remove('hidden');
+            document.getElementById('mapModal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('mapModal').classList.add('hidden');
+            document.getElementById('mapModal').classList.remove('flex');
+        }
+    </script>
+    <!-- Gallery script -->
+    <script src="./scripts/gallery.js"></script>
 </body>
 
 </html>

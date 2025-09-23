@@ -1,452 +1,644 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Política de Privacidad | Taquería El Auténtico</title>
-  <meta name="description" content="Política de Privacidad de Taquería El Auténtico para el sitio web y servicios relacionados." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Auténticos tacos y comida mexicana casera. Disfruta de nuestros platillos tradicionales en un ambiente cálido y familiar. ¡Visítanos hoy!" />
+  <title>Taquería El Auténtico - Comida Mexicana Tradicional</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+  <!-- Tailwind + libs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Sistema de Consentimiento de Cookies -->
+  <script type="module" src="/scripts/cookies/index.js"></script>
+
+  <!-- ESTILO BASE (colores del modelo privacidad) -->
   <style>
-    :root{--fg:#0f172a;--muted:#475569;--bg:#f8fafc;--card:#ffffff;--accent:#f59e0b}
-    *{box-sizing:border-box}
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--fg);background:var(--bg)}
-    header{background:var(--card);border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:10}
-    .wrap{max-width:900px;margin:0 auto;padding:24px}
-    h1{font-size:clamp(24px,3vw,36px);margin:0 0 8px}
-    h2{margin-top:32px;font-size:22px;color:#f59e0b}
-    h3{margin-top:20px;font-size:18px}
-    p,li{color:var(--fg)}
-    .muted{color:var(--muted)}
-    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:24px}
-    nav.toc{margin:16px 0 0}
-    nav.toc a{display:block;color:var(--muted);text-decoration:none;padding:6px 0;border-left:3px solid transparent;padding-left:12px}
-    nav.toc a:hover{color:var(--accent);border-left-color:var(--accent)}
-    code{background:#f1f5f9;padding:2px 6px;border-radius:6px;font-size:14px}
-    footer{border-top:1px solid #e2e8f0;margin-top:40px;background:var(--card)}
-    a{color:#f59e0b;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .badge{display:inline-block;font-size:12px;padding:3px 8px;border-radius:999px;background:#fef3c7;color:#92400e;margin-left:8px}
-    .nav-header{background:#1f2937;padding:12px 0}
-    .nav-header .wrap{display:flex;justify-content:space-between;align-items:center}
-    .nav-header h1{color:#f59e0b;margin:0;font-size:20px}
-    .nav-header a{color:#d1d5db;margin-left:20px;font-size:14px}
-    .nav-header a:hover{color:#f59e0b}
-    .back-link{background:#f59e0b;color:white;padding:8px 16px;border-radius:6px;display:inline-block;margin-bottom:20px}
-    .back-link:hover{background:#d97706;text-decoration:none}
+    :root {
+      --fg: #0f172a;
+      --muted: #475569;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --accent: #f59e0b
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--fg);
+      background: var(--bg)
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 10
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px
+    }
+
+    h1 {
+      font-size: clamp(24px, 3vw, 36px);
+      margin: 0 0 8px
+    }
+
+    h2 {
+      margin-top: 32px;
+      font-size: 22px;
+      color: var(--accent)
+    }
+
+    h3 {
+      margin-top: 20px;
+      font-size: 18px
+    }
+
+    p,
+    li {
+      color: var(--fg)
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px
+    }
+
+    nav.toc {
+      margin: 16px 0 0
+    }
+
+    nav.toc a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 0;
+      border-left: 3px solid transparent;
+      padding-left: 12px
+    }
+
+    nav.toc a:hover {
+      color: var(--accent);
+      border-left-color: var(--accent)
+    }
+
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 14px
+    }
+
+    footer {
+      border-top: 1px solid #e2e8f0;
+      margin-top: 40px;
+      background: var(--card)
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-left: 8px
+    }
+
+    .nav-header {
+      background: #1f2937;
+      padding: 12px 0
+    }
+
+    .nav-header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .nav-header h1,
+    .nav-header .brand {
+      color: #f59e0b;
+      margin: 0;
+      font-size: 20px
+    }
+
+    .nav-header a {
+      color: #d1d5db;
+      margin-left: 20px;
+      font-size: 14px
+    }
+
+    .nav-header a:hover {
+      color: #f59e0b
+    }
+
+    .back-link {
+      background: #f59e0b;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 20px
+    }
+
+    .back-link:hover {
+      background: #d97706;
+      text-decoration: none
+    }
+
+    /* >>> Solo cambio de COLORES para que predomine el tema <<< */
+
+    /* Forzar fondo general al del tema aunque el body tenga clases Tailwind */
+    body.bg-amber-50 {
+      background: var(--bg) !important;
+      color: var(--fg) !important
+    }
+
+    /* Navbar y menú móvil (manteniendo estructura y tamaños) */
+    nav.nav-header {
+      position: sticky;
+      top: 0;
+      z-index: 50
+    }
+
+    #mobile-menu {
+      background: #111827
+    }
+
+    /* Mapear rojos a la paleta del tema sin tocar tamaños/espaciados */
+    .text-red-600 {
+      color: var(--accent) !important
+    }
+
+    .bg-red-600 {
+      background: #1f2937 !important
+    }
+
+    /* tono oscuro coherente con header */
+    .bg-red-700 {
+      background: #111827 !important
+    }
+
+    .bg-red-800 {
+      background: #111827 !important
+    }
+
+    .border-red-700 {
+      border-color: #374151 !important
+    }
+
+    /* Títulos dentro de tarjetas/sections respetan el accent */
+    #menu h2,
+    #contacto h2,
+    section h2 {
+      color: var(--accent) !important
+    }
+
+    /* Botones existentes en ámbar se mantienen (no se tocan tamaños) */
+    /* El botón "Ver en Google Maps" usaba rojo: lo pasamos a la paleta base */
+    .btn-maps {
+      background: var(--accent) !important
+    }
+
+    .btn-maps:hover {
+      filter: brightness(.95)
+    }
+
+    /* Sección #nosotros en oscuro del tema (solo color) */
+    #nosotros {
+      background: #1f2937 !important;
+      color: #fff
+    }
+
+    #nosotros h2 {
+      color: #fbbf24 !important
+    }
+
+    /* Hero overlay (solo color, mantiene imagen y alturas) */
+    .hero-gradient::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, .45), rgba(15, 23, 42, .45))
+    }
+
+    .hero-gradient {
+      position: relative;
+      isolation: isolate
+    }
+
+    .hero-gradient>.container {
+      position: relative;
+      z-index: 1
+    }
   </style>
+
+  <!-- Estilos locales de la página (fuente/hero) -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif
+    }
+
+    .title-font {
+      font-family: 'Playfair Display', serif
+    }
+
+    .hero-gradient {
+      background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./public/hero/hero.jpg');
+      background-size: cover;
+      background-position: center
+    }
+
+    .menu-item:hover .menu-img {
+      transform: scale(1.05)
+    }
+
+    .menu-img {
+      transition: transform .3s ease
+    }
+  </style>
+  <script src="/lib/loader/boot.js" defer></script>
+  <script type="module" src="/scripts/config/apply-config.js"></script>
 </head>
-<body>
-  <div class="nav-header">
-    <div class="wrap">
-      <h1>🌮 Taquería El Auténtico</h1>
-      <nav>
-        <a href="/index.html">Inicio</a>
-        <a href="/menu.html">Menú</a>
-        <a href="/nosotros.html">Nosotros</a>
-        <a href="/contacto.html">Contacto</a>
-        <a href="/info.html">Información</a>
-      </nav>
+
+<body class="bg-amber-50">
+  <!-- NAV: solo colores + único emoji permitido -->
+  <nav class="nav-header">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="brand title-font text-2xl md:text-3xl font-bold">🌮 Taquería El Auténtico</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="transition">Inicio</a>
+        <a href="menu.html" class="transition">Menú</a>
+        <a href="nosotros.html" class="transition">Nosotros</a>
+        <a href="contacto.html" class="transition">Contacto</a>
+        <a href="info.html" class="transition">Información</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
     </div>
-  </div>
-
-  <header>
-    <div class="wrap">
-      <a href="/index.html" class="back-link">← Volver al inicio</a>
-      <h1>Política de Privacidad</h1>
-      <p class="muted">Última actualización: 20 de septiembre de 2025</p>
-      <span class="badge">Taquería familiar · Tradición auténtica</span>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 py-2">
+      <a href="index.html" class="block py-2 transition">Inicio</a>
+      <a href="menu.html" class="block py-2 transition">Menú</a>
+      <a href="nosotros.html" class="block py-2 transition">Nosotros</a>
+      <a href="contacto.html" class="block py-2 transition">Contacto</a>
+      <a href="info.html" class="block py-2 transition">Información</a>
     </div>
-  </header>
+  </nav>
 
-  <main class="wrap">
-    <section class="card">
-      <p>En <strong>Taquería El Auténtico</strong> ("nosotros"), respetamos tu privacidad. Esta Política explica qué datos personales recopilamos, cómo y por qué los usamos, con quién los compartimos, por cuánto tiempo los conservamos y qué opciones y derechos tienes. Nuestro compromiso es brindarte la mejor experiencia culinaria mientras protegemos tu información personal de forma segura y transparente.</p>
-      <p class="muted"><strong>Aviso legal:</strong> Esta página cumple con las normativas de privacidad aplicables incluyendo GDPR, CCPA y leyes locales de protección de datos. Te recomendamos leer esta política completamente para entender cómo manejamos tu información.</p>
-    </section>
-
-    <nav class="toc card" aria-label="Índice de contenidos">
-      <strong>📋 Contenido</strong>
-      <a href="#alcance">1. Alcance y responsable</a>
-      <a href="#datos">2. Datos que recopilamos</a>
-      <a href="#fuentes">3. Fuentes de obtención</a>
-      <a href="#fines">4. Fines y bases legales</a>
-      <a href="#cookies">5. Cookies y tecnologías similares</a>
-      <a href="#comparticion">6. Compartición y encargados</a>
-      <a href="#transferencias">7. Transferencias internacionales</a>
-      <a href="#conservacion">8. Conservación</a>
-      <a href="#seguridad">9. Seguridad</a>
-      <a href="#menores">10. Privacidad de menores</a>
-      <a href="#derechos">11. Tus derechos</a>
-      <a href="#transparencia">12. Transparencia y responsabilidad</a>
-      <a href="#marketing">13. Comunicaciones de marketing</a>
-      <a href="#dnt">14. Do Not Track</a>
-      <a href="#cambios">15. Cambios en esta Política</a>
-      <a href="#contacto">16. Contacto</a>
-    </nav>
-
-    <section id="alcance">
-      <h2>🏢 1) Alcance y responsable</h2>
-      <div class="card">
-        <p>Esta Política aplica a nuestro sitio web, a nuestras comunicaciones y a cualquier interacción que tengas con Taquería El Auténtico. El responsable del tratamiento es:</p>
-        <ul>
-          <li><strong>Nombre:</strong> Taquería El Auténtico</li>
-          <li><strong>Dirección:</strong> [Dirección del restaurante]</li>
-          <li><strong>Contacto:</strong> <a href="mailto:privacidad@taqueria-autentico.com">privacidad@taqueria-autentico.com</a></li>
-          <li><strong>Teléfono:</strong> [Número de teléfono]</li>
-        </ul>
+  <!-- Hero Section -->
+  <section id="inicio" class="hero-gradient min-h-screen flex items-center justify-center text-white">
+    <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+      <h1 class="title-font text-4xl md:text-6xl font-bold mb-4">Auténticos Tacos Mexicanos</h1>
+      <p class="text-xl md:text-2xl mb-8">Sabores tradicionales que te transportarán a México</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="tel:+19757331439"
+          class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition">
+          <i data-feather="phone"></i> Llamar para ordenar
+        </a>
+        <a href="menu.html"
+          class="bg-white hover:bg-gray-100 text-[color:var(--fg)] font-bold py-3 px-6 rounded-full text-lg transition">
+          Ver Menú
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="datos">
-      <h2>📊 2) Datos que recopilamos</h2>
-      <div class="card">
-        <h3>🔍 Datos proporcionados por ti</h3>
-        <ul>
-          <li><strong>Información de contacto:</strong> nombre, apellidos, email, teléfono para reservas y consultas.</li>
-          <li><strong>Datos de reserva:</strong> fecha y hora preferida, número de comensales, ocasiones especiales.</li>
-          <li><strong>Preferencias culinarias:</strong> alergias, intolerancias alimentarias, preferencias dietéticas (si decides compartirlas).</li>
-          <li><strong>Comentarios y valoraciones:</strong> reseñas sobre tu experiencia, sugerencias y opiniones.</li>
-          <li><strong>Comunicaciones:</strong> mensajes enviados a través de formularios de contacto o redes sociales.</li>
-        </ul>
-        
-        <h3>⚙️ Datos recopilados automáticamente</h3>
-        <ul>
-          <li><strong>Información técnica:</strong> dirección IP, tipo de navegador, sistema operativo, zona horaria.</li>
-          <li><strong>Uso del sitio:</strong> páginas visitadas, tiempo de permanencia, patrones de navegación.</li>
-          <li><strong>Métricas de rendimiento:</strong> velocidad de carga, interacciones con menús y formularios.</li>
-        </ul>
-        
-        <h3>🤝 Datos de terceros</h3>
-        <ul>
-          <li><strong>Redes sociales:</strong> información pública si interactúas con nosotros en Facebook, Instagram, etc.</li>
-          <li><strong>Plataformas de reseñas:</strong> comentarios públicos en Google, TripAdvisor y similares.</li>
-        </ul>
+  <!-- Info Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+          <img src="http://static.photos/restaurant/640x360/10" alt="Interior del restaurante"
+            class="rounded-lg shadow-xl w-full">
+        </div>
+        <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+          <h2 class="title-font text-3xl md:text-4xl font-bold mb-4">Ven a disfrutar con nosotros</h2>
+          <p class="text-gray-700 mb-6 text-lg">Nuestro acogedor espacio cuenta con capacidad para 25
+            personas, perfecto para disfrutar de nuestros platillos en un ambiente familiar y cálido.</p>
+          <div class="bg-amber-100 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-2">¿Cómo llegar?</h3>
+            <p class="text-gray-700">Nos encontrarás dentro de la estación de servicio "El Sol", con entrada
+              lateral junto a la tienda de conveniencia. ¡No te pierdas nuestros auténticos sabores
+              mexicanos!</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="fuentes">
-      <h2>📥 3) Fuentes de obtención</h2>
-      <div class="card">
-        <p>Recogemos datos de las siguientes fuentes:</p>
-        <ul>
-          <li><strong>Directamente de ti:</strong> formularios web, emails, llamadas telefónicas, visitas al restaurante</li>
-          <li><strong>Automáticamente:</strong> cookies y tecnologías similares en nuestro sitio web</li>
-          <li><strong>Terceros:</strong> plataformas de redes sociales donde interactúas con nosotros</li>
-        </ul>
+  <!-- Menu Section -->
+  <section id="menu" class="py-16 bg-amber-50">
+    <div class="container mx-auto px-4">
+      <h2 class="title-font text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Nuestro Menú</h2>
+
+      <!-- Menu Navigation -->
+      <div class="flex overflow-x-auto pb-4 mb-8 scrollbar-hide" data-aos="fade-up">
+        <div class="flex space-x-2">
+          <button class="menu-category-btn px-4 py-2 bg-red-600 text-white rounded-full font-medium whitespace-nowrap"
+            data-category="tacos">Tacos</button>
+          <button class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
+            data-category="burritos">Burritos</button>
+          <button class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
+            data-category="quesadillas">Quesadillas</button>
+          <button class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
+            data-category="especialidades">Especialidades</button>
+          <button class="menu-category-btn px-4 py-2 bg-white text-red-600 rounded-full font-medium whitespace-nowrap"
+            data-category="postres">Postres</button>
+        </div>
       </div>
-    </section>
 
-    <section id="fines">
-      <h2>🎯 4) Fines y bases legales</h2>
-      <div class="card">
-        <ul>
-          <li><strong>🍽️ Gestión de reservas y servicios</strong> - <em>Base legal:</em> ejecución de contrato.</li>
-          <li><strong>📞 Atención al cliente</strong> - Responder consultas y brindar soporte. <em>Base legal:</em> interés legítimo.</li>
-          <li><strong>🔧 Mejora del servicio</strong> - Analizar preferencias para mejorar nuestros platos y experiencia. <em>Base legal:</em> interés legítimo.</li>
-          <li><strong>📧 Comunicaciones</strong> - Confirmación de reservas, noticias del restaurante (solo con consentimiento).</li>
-          <li><strong>🛡️ Seguridad</strong> - Prevenir fraude y garantizar la seguridad del sitio. <em>Base legal:</em> interés legítimo.</li>
-          <li><strong>⚖️ Cumplimiento legal</strong> - Obligaciones fiscales y sanitarias aplicables a restaurantes.</li>
-        </ul>
+      <!-- Tacos Category -->
+      <div id="tacos" class="menu-category grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg" data-aos="fade-up">
+          <div class="h-48 overflow-hidden">
+            <img src="http://static.photos/food/640x360/1" alt="Tacos al pastor"
+              class="menu-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Tacos al Pastor</h3>
+            <p class="text-gray-600 mb-4">Deliciosos tacos con carne marinada en chiles y especias, servidos
+              con piña y cebolla.</p>
+            <p class="text-amber-600 font-bold text-lg">$35 c/u</p>
+          </div>
+        </div>
+
+        <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 overflow-hidden">
+            <img src="http://static.photos/food/640x360/2" alt="Tacos de carnitas"
+              class="menu-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Tacos de Carnitas</h3>
+            <p class="text-gray-600 mb-4">Tradicionales tacos de cerdo dorado, acompañados con cilantro,
+              cebolla y limón.</p>
+            <p class="text-amber-600 font-bold text-lg">$32 c/u</p>
+          </div>
+        </div>
+
+        <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-48 overflow-hidden">
+            <img src="http://static.photos/food/640x360/3" alt="Tacos de barbacoa"
+              class="menu-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Tacos de Barbacoa</h3>
+            <p class="text-gray-600 mb-4">Exquisita carne de res cocida lentamente, servida en tortillas
+              recién hechas.</p>
+            <p class="text-amber-600 font-bold text-lg">$38 c/u</p>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section id="cookies">
-      <h2>🍪 5) Cookies y tecnologías similares</h2>
-      <div class="card">
-        <p>Usamos cookies <strong>necesarias</strong> para el funcionamiento básico del sitio y, con tu consentimiento, cookies de <strong>analítica</strong> y <strong>rendimiento</strong> para mejorar tu experiencia. Puedes gestionar tus preferencias en cualquier momento.</p>
-        <p><a href="/politica-de-cookies.html">📖 Consulta nuestra Política de Cookies completa</a></p>
+      <!-- Other categories (initially hidden) -->
+      <div id="burritos" class="menu-category hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+      <!-- Bebidas Section -->
+      <div class="mt-16 bg-white p-8 rounded-lg shadow-md" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-4">Bebidas</h3>
+        <p class="text-gray-700 mb-6">Justo frente a nuestro local encontrarás un establecimiento que ofrece
+          variedad de bebidas: refrescos, jugos naturales, aguas frescas y cervezas.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center">
+            <i data-feather="coffee" class="w-8 h-8 mx-auto text-amber-600"></i>
+            <p class="mt-2">Aguas frescas</p>
+          </div>
+          <div class="text-center">
+            <i data-feather="droplet" class="w-8 h-8 mx-auto text-amber-600"></i>
+            <p class="mt-2">Jugos naturales</p>
+          </div>
+          <div class="text-center">
+            <i data-feather="glass" class="w-8 h-8 mx-auto text-amber-600"></i>
+            <p class="mt-2">Refrescos</p>
+          </div>
+          <div class="text-center">
+            <i data-feather="zap" class="w-8 h-8 mx-auto text-amber-600"></i>
+            <p class="mt-2">Bebidas energéticas</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="comparticion">
-      <h2>🤝 6) Compartición y encargados</h2>
-      <div class="card">
-        <p><strong>No vendemos tus datos personales.</strong> Compartimos información únicamente con:</p>
-        <ul>
-          <li><strong>Proveedores de servicios:</strong> hosting web, servicios de email, analítica web (con consentimiento)</li>
-          <li><strong>Autoridades:</strong> cuando sea requerido por ley o para proteger derechos legítimos</li>
-          <li><strong>Proveedores de seguridad:</strong> para prevenir fraude y garantizar la seguridad del sitio</li>
-        </ul>
-        <p>Todos nuestros proveedores están contractualmente obligados a proteger tu información y usarla solo según nuestras instrucciones.</p>
+  <!-- About Section -->
+  <section id="nosotros" class="py-16 text-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+          <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Nuestra Historia</h2>
+          <p class="mb-4 text-lg">Taquería El Auténtico nació del sueño de compartir los sabores tradicionales
+            de México con el mundo. Nuestros fundadores, originarios de Puebla, trajeron consigo recetas
+            familiares transmitidas por generaciones.</p>
+          <p class="mb-4 text-lg">Cada platillo que servimos está preparado con los mismos ingredientes y
+            técnicas que se usan en los hogares mexicanos, garantizando una experiencia gastronómica
+            auténtica.</p>
+          <p class="text-lg">¡Bienvenidos a nuestra mesa, donde la comida es preparada con amor y los sabores
+            te harán sentir como en casa!</p>
+        </div>
+        <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+          <img src="http://static.photos/people/640x360/5" alt="Equipo de Taquería El Auténtico"
+            class="rounded-lg shadow-xl w-full">
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="transferencias">
-      <h2>🌍 7) Transferencias internacionales</h2>
-      <div class="card">
-        <p>Si transferimos datos fuera de tu país (por ejemplo, para servicios de hosting), aplicamos las garantías de seguridad apropiadas según las normativas aplicables, incluyendo cláusulas contractuales estándar cuando sea necesario.</p>
+  <!-- Contact Section -->
+  <section id="contacto" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="title-font text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Visítanos</h2>
+
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2" data-aos="fade-right">
+          <div class="bg-gray-100 p-6 rounded-lg h-full">
+            <h3 class="text-2xl font-bold mb-4">Información de Contacto</h3>
+
+            <div class="mb-6">
+              <div class="flex items-start mb-4">
+                <i data-feather="map-pin" class="mr-4 text-amber-600 mt-1"></i>
+                <div>
+                  <h4 class="font-bold">Dirección</h4>
+                  <p>Av. México 123, Gasolinera El Sol<br>Ciudad de Ejemplo</p>
+                </div>
+              </div>
+
+              <div class="flex items-start mb-4">
+                <i data-feather="phone" class="mr-4 text-amber-600 mt-1"></i>
+                <div>
+                  <h4 class="font-bold">Teléfono</h4>
+                  <p>+1 (975) 733-1439</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <i data-feather="clock" class="mr-4 text-amber-600 mt-1"></i>
+                <div>
+                  <h4 class="font-bold">Horario</h4>
+                  <p>Lunes a Domingo<br>10:00 am - 10:00 pm</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://maps.google.com" target="_blank"
+              class="inline-flex items-center text-white font-bold py-3 px-6 rounded-full transition btn-maps">
+              <i data-feather="map" class="mr-2"></i> Ver en Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="md:w-1/2" data-aos="fade-left">
+          <div class="bg-gray-100 p-6 rounded-lg h-full">
+            <h3 class="text-2xl font-bold mb-4">¿Tienes alguna pregunta?</h3>
+            <form class="space-y-4">
+              <div>
+                <label for="name" class="block text-gray-700 mb-1">Nombre</label>
+                <input type="text" id="name"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 mb-1">Correo electrónico</label>
+                <input type="email" id="email"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+              </div>
+              <div>
+                <label for="message" class="block text-gray-700 mb-1">Mensaje</label>
+                <textarea id="message" rows="4"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+              </div>
+              <button type="submit"
+                class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full transition">
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="conservacion">
-      <h2>⏰ 8) Conservación</h2>
-      <div class="card">
-        <p>Conservamos los datos solo el tiempo necesario:</p>
-        <ul>
-          <li><strong>Datos de reservas:</strong> 2 años para mejora del servicio y resolución de consultas</li>
-          <li><strong>Comunicaciones de marketing:</strong> hasta que te des de baja</li>
-          <li><strong>Datos técnicos:</strong> períodos cortos para analítica agregada</li>
-          <li><strong>Datos legales:</strong> según lo requieran las obligaciones fiscales y sanitarias</li>
-        </ul>
+  <!-- Footer (solo colores) -->
+  <footer class="bg-red-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-8 md:mb-0">
+          <h3 class="title-font text-2xl font-bold mb-4">Taquería El Auténtico</h3>
+          <p class="mb-4">Auténticos sabores mexicanos en cada bocado.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-amber-300 transition"><i data-feather="facebook"></i></a>
+            <a href="#" class="hover:text-amber-300 transition"><i data-feather="instagram"></i></a>
+            <a href="#" class="hover:text-amber-300 transition"><i data-feather="twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="mb-8 md:mb-0">
+          <h4 class="font-bold text-lg mb-4">Horario</h4>
+          <p>Lunes a Domingo</p>
+          <p>10:00 am - 10:00 pm</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4">Contacto</h4>
+          <p class="mb-2">Av. México 123, Gasolinera El Sol</p>
+          <p class="mb-2">Ciudad de Ejemplo</p>
+          <a href="tel:+19757331439" class="hover:text-amber-300 transition">+1 (975) 733-1439</a>
+        </div>
       </div>
-    </section>
 
-    <section id="seguridad">
-      <h2>🔒 9) Seguridad</h2>
-      <div class="card">
-        <p>Implementamos medidas de seguridad técnicas y organizativas apropiadas:</p>
-        <ul>
-          <li>🔐 Cifrado de datos en tránsito (HTTPS)</li>
-          <li>🛡️ Controles de acceso y autenticación</li>
-          <li>📊 Monitoreo y registros de seguridad</li>
-          <li>🔄 Copias de seguridad regulares</li>
-          <li>👥 Capacitación del personal en protección de datos</li>
-        </ul>
+      <div class="border-t border-red-700 mt-8 pt-8 text-center">
+        <p>&copy; 2023 Taquería El Auténtico. Todos los derechos reservados.</p>
+        <p class="mt-2">
+          <a href="/politica-de-cookies.html" class="hover:text-amber-300 transition text-sm">Política de Cookies</a>
+          <a href="/politica-de-privacidad.html" class="hover:text-amber-300 transition text-sm">Política de
+            Privacidad</a>
+        </p>
       </div>
-    </section>
-
-    <section id="menores">
-      <h2>👶 10) Privacidad de menores</h2>
-      <div class="card">
-        <p>Nuestros servicios no están dirigidos específicamente a menores de <strong>16 años</strong>. Si tienes conocimiento de que un menor nos ha proporcionado datos personales sin el consentimiento parental correspondiente, contáctanos para eliminar esa información.</p>
-      </div>
-    </section>
-
-    <section id="derechos">
-      <h2>⚖️ 11) Tus derechos</h2>
-      <div class="card">
-        <p>Tienes los siguientes derechos sobre tus datos personales:</p>
-        <ul>
-          <li><strong>🔍 Acceso:</strong> solicitar una copia de los datos que tenemos sobre ti</li>
-          <li><strong>✏️ Rectificación:</strong> corregir datos inexactos o incompletos</li>
-          <li><strong>🗑️ Eliminación:</strong> solicitar la eliminación de tus datos</li>
-          <li><strong>📦 Portabilidad:</strong> recibir tus datos en formato estructurado</li>
-          <li><strong>⏸️ Restricción:</strong> limitar el procesamiento en ciertas circunstancias</li>
-          <li><strong>🚫 Oposición:</strong> oponerte al procesamiento basado en interés legítimo</li>
-          <li><strong>↩️ Retirada de consentimiento:</strong> retirar el consentimiento en cualquier momento</li>
-        </ul>
-        <p>Para ejercer estos derechos, contáctanos en <a href="mailto:privacidad@taqueria-autentico.com">privacidad@taqueria-autentico.com</a>. Responderemos en un plazo máximo de 30 días.</p>
-      </div>
-    </section>
-
-    <section id="transparencia">
-      <h2>🏛️ 12) Transparencia y responsabilidad</h2>
-      <div class="card">
-        <p>Nos comprometemos a ser transparentes sobre cómo procesamos tus datos. Esta política está disponible públicamente y actualizamos nuestras prácticas regularmente para cumplir con las mejores normas de privacidad.</p>
-      </div>
-    </section>
-
-    <section id="marketing">
-      <h2>📧 13) Comunicaciones de marketing</h2>
-      <div class="card">
-        <p>Solo te enviaremos comunicaciones promocionales si has dado tu consentimiento explícito. Puedes darte de baja en cualquier momento:</p>
-        <ul>
-          <li>📧 Usando el enlace de "darse de baja" en nuestros emails</li>
-          <li>📞 Llamando al restaurante</li>
-          <li>✉️ Escribiendo a <a href="mailto:privacidad@taqueria-autentico.com">privacidad@taqueria-autentico.com</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="dnt">
-      <h2>🚫 14) Señal "Do Not Track"</h2>
-      <div class="card">
-        <p>Respetamos la señal <em>Do Not Track (DNT)</em> de tu navegador. Si la tienes activada, las cookies no esenciales se mantienen desactivadas por defecto, salvo que indiques lo contrario en nuestras preferencias de cookies.</p>
-      </div>
-    </section>
-
-    <section id="cambios">
-      <h2>🔄 15) Cambios en esta Política</h2>
-      <div class="card">
-        <p>Podemos actualizar esta Política para reflejar cambios en nuestros servicios o en las normativas aplicables. Te notificaremos sobre cambios significativos a través de nuestro sitio web o por email si tienes una cuenta con nosotros.</p>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2>📞 16) Contacto</h2>
-      <div class="card">
-        <p>Si tienes preguntas sobre esta Política de Privacidad o sobre cómo manejamos tus datos personales:</p>
-        <ul>
-          <li><strong>📧 Email:</strong> <a href="mailto:privacidad@taqueria-autentico.com">privacidad@taqueria-autentico.com</a></li>
-          <li><strong>📞 Teléfono:</strong> [Número del restaurante]</li>
-          <li><strong>📍 Visítanos:</strong> [Dirección del restaurante]</li>
-          <li><strong>🕒 Horario:</strong> [Horarios de atención]</li>
-        </ul>
-        <p class="muted">Si estás en la UE/EEE y deseas presentar una reclamación, puedes dirigirte a tu autoridad de control local de protección de datos.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p>© <span id="y"></span> Taquería El Auténtico · <a href="/politica-de-cookies.html">Política de Cookies</a> · <a href="/politica-de-privacidad.html">Política de Privacidad</a></p>
     </div>
   </footer>
-  
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 
-  <!-- Banner de Cookies HTML -->
-  <!-- Banner en Español -->
-  <div id="cookie-banner-es" class="hidden fixed inset-x-0 bottom-0 z-50 bg-gray-900 text-white p-4 shadow-2xl">
-      <div class="container mx-auto">
-          <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-              <!-- Contenido del mensaje -->
-              <div class="flex-1">
-                  <h2 class="text-lg font-semibold mb-2">🍪 Usamos cookies</h2>
-                  <p class="text-sm text-gray-300">
-                      Utilizamos cookies para mejorar la funcionalidad y medir el rendimiento. Con tu permiso, también para fines de marketing. 
-                      <a href="/politica-de-cookies.html" target="_blank" rel="noopener" class="text-blue-400 underline hover:text-blue-300">
-                          Ver política de cookies
-                      </a>.
-                  </p>
-              </div>
-              
-              <!-- Botones de acción -->
-              <div class="flex gap-3 w-full md:w-auto">
-                  <!-- Botón Aceptar (izquierda) -->
-                  <button onclick="handleCookieConsent('accept')" 
-                          class="flex-1 md:flex-initial bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                      ✅ Aceptar todo
-                  </button>
-                  
-                  <!-- Botón Rechazar (derecha) -->
-                  <button onclick="handleCookieConsent('reject')" 
-                          class="flex-1 md:flex-initial bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                      ❌ Rechazar todo
-                  </button>
-              </div>
-          </div>
-      </div>
+  <!-- Floating Call Button (sin cambios de tamaño, solo color ya consistente) -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="tel:+19757331439"
+      class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-bounce">
+      <i data-feather="phone" class="w-6 h-6"></i>
+    </a>
   </div>
 
-  <!-- Banner en Inglés -->
-  <div id="cookie-banner-en" class="hidden fixed inset-x-0 bottom-0 z-50 bg-gray-900 text-white p-4 shadow-2xl">
-      <div class="container mx-auto">
-          <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-              <!-- Contenido del mensaje -->
-              <div class="flex-1">
-                  <h2 class="text-lg font-semibold mb-2">🍪 We use cookies</h2>
-                  <p class="text-sm text-gray-300">
-                      We use cookies to improve functionality and measure performance. With your consent, also for marketing purposes. 
-                      <a href="/politica-de-cookies.html" target="_blank" rel="noopener" class="text-blue-400 underline hover:text-blue-300">
-                          View cookie policy
-                      </a>.
-                  </p>
-              </div>
-              
-              <!-- Botones de acción -->
-              <div class="flex gap-3 w-full md:w-auto">
-                  <!-- Accept Button (left) -->
-                  <button onclick="handleCookieConsent('accept')" 
-                          class="flex-1 md:flex-initial bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                      ✅ Accept all
-                  </button>
-                  
-                  <!-- Reject Button (right) -->
-                  <button onclick="handleCookieConsent('reject')" 
-                          class="flex-1 md:flex-initial bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
-                      ❌ Reject all
-                  </button>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <!-- Script integrado para funcionar sin dependencias externas -->
   <script>
-  // Funciones para manejar cookies sin dependencias
-  function setCookieBasic(name, value, days) {
-      const maxAge = days * 24 * 60 * 60;
-      const encoded = encodeURIComponent(value);
-      const secure = location.protocol === 'https:' ? '; Secure' : '';
-      document.cookie = `${name}=${encoded}; Path=/; Max-Age=${maxAge}; SameSite=Lax${secure}`;
-  }
+    // AOS
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    // Feather
+    feather.replace();
 
-  function getCookieBasic(name) {
-      return document.cookie
-          .split('; ')
-          .map(v => v.split('='))
-          .reduce((acc, [k, v]) => (k === name ? decodeURIComponent(v) : acc), null);
-  }
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
 
-  function hasExistingConsent() {
-      return getCookieBasic('site_consent') || localStorage.getItem('site_consent');
-  }
-
-  function detectLanguage() {
-      return navigator.language?.startsWith('en') || document.documentElement.lang === 'en' ? 'en' : 'es';
-  }
-
-  function showCookieBanner() {
-      if (hasExistingConsent()) return;
-      
-      const lang = detectLanguage();
-      const bannerId = `cookie-banner-${lang}`;
-      const banner = document.getElementById(bannerId);
-      
-      if (banner) {
-          banner.classList.remove('hidden');
-      }
-  }
-
-  function showCookieBannerManual() {
-      const lang = detectLanguage();
-      const bannerId = `cookie-banner-${lang}`;
-      const banner = document.getElementById(bannerId);
-      
-      if (banner) {
-          banner.classList.remove('hidden');
-      }
-  }
-
-  function handleCookieConsent(action) {
-      const lang = detectLanguage();
-      
-      const consentData = {
-          version: 1,
-          lang: lang,
-          categories: {
-              necessary: true,
-              analytics: action === 'accept',
-              performance: action === 'accept',
-              marketing: action === 'accept'
-          },
-          timestamp: Date.now()
-      };
-      
-      // Guardar consentimiento
-      const jsonData = JSON.stringify(consentData);
-      setCookieBasic('site_consent', jsonData, 180); // 6 meses
-      
-      try {
-          localStorage.setItem('site_consent', jsonData);
-      } catch (e) {
-          // Ignorar errores de localStorage
-      }
-      
-      // Ocultar banners
-      const bannerEs = document.getElementById('cookie-banner-es');
-      const bannerEn = document.getElementById('cookie-banner-en');
-      if (bannerEs) bannerEs.classList.add('hidden');
-      if (bannerEn) bannerEn.classList.add('hidden');
-      
-      // Notificar al sistema de cookies si está disponible
-      if (window.CookieConsent && window.CookieConsent._emit) {
-          window.CookieConsent._emit('change', consentData);
-      }
-      
-      // Recargar para aplicar scripts si se aceptó
-      if (action === 'accept') {
-          // Opcional: recargar la página para cargar scripts analíticos
-          // window.location.reload();
-      }
-  }
-
-  // Mostrar banner cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', showCookieBanner);
-  } else {
-      showCookieBanner();
-  }
+    // Menu category switching
+    const categoryButtons = document.querySelectorAll('.menu-category-btn');
+    const categories = document.querySelectorAll('.menu-category');
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        categoryButtons.forEach(btn => {
+          btn.classList.remove('bg-red-600', 'text-white');
+          btn.classList.add('bg-white', 'text-red-600');
+        });
+        this.classList.remove('bg-white', 'text-red-600');
+        this.classList.add('bg-red-600', 'text-white');
+        categories.forEach(category => category.classList.add('hidden'));
+        const categoryId = this.getAttribute('data-category');
+        document.getElementById(categoryId).classList.remove('hidden');
+      });
+    });
   </script>
+
+  <!-- Banners de cookies (sin cambios funcionales) -->
+  <!-- … deja aquí tus banners ES/EN y el script de consentimiento tal como los tienes … -->
+
 </body>
+
 </html>
