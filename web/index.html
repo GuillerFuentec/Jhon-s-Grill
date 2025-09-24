@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="Auténticos tacos y comida mexicana casera. Disfruta de nuestros platillos tradicionales en un ambiente cálido y familiar. ¡Visítanos hoy!" />
-    <title>Taquería El Auténtico - Comida Mexicana Tradicional</title>
+    <title>Jhon's Backyard Grill - Comida Mexicana Tradicional</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     <!-- Tailwind y librerías -->
@@ -28,222 +28,23 @@
     <script type="module" src="/scripts/cookies/index.js"></script>
 
     <!-- Estilo base (paleta del modelo, con accent en blanco) -->
-    <style>
-        :root {
-            --fg: #0f172a;
-            --muted: #475569;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --accent: #ffffff
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden !important;
-        }
-
-        body {
-            padding: 0;
-            margin: 0;
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-            color: var(--fg);
-            background: var(--bg);
-            overflow-x: hidden !important;
-        }
-
-        header {
-            background: var(--card);
-            border-bottom: 1px solid #e2e8f0;
-            position: sticky;
-            top: 0;
-            z-index: 10
-        }
-
-        .wrap {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 24px
-        }
-
-        h1 {
-            font-size: clamp(24px, 3vw, 36px);
-            margin: 0 0 8px
-        }
-
-        h2 {
-            margin-top: 32px;
-            font-size: 22px;
-            color: var(--accent)
-        }
-
-        h3 {
-            margin-top: 20px;
-            font-size: 18px
-        }
-
-        p,
-        li {
-            color: var(--fg)
-        }
-
-        .muted {
-            color: var(--muted)
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px
-        }
-
-        nav.toc {
-            margin: 16px 0 0
-        }
-
-        nav.toc a {
-            display: block;
-            color: var(--muted);
-            text-decoration: none;
-            padding: 6px 0;
-            border-left: 3px solid transparent;
-            padding-left: 12px
-        }
-
-        nav.toc a:hover {
-            color: var(--accent);
-            border-left-color: var(--accent)
-        }
-
-        code {
-            background: #f1f5f9;
-            padding: 2px 6px;
-            border-radius: 6px;
-            font-size: 14px
-        }
-
-        footer {
-            border-top: 1px solid #e2e8f0;
-            margin-top: 40px;
-            background: var(--card)
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none
-        }
-
-        a:hover {
-            text-decoration: underline
-        }
-
-        .badge {
-            display: inline-block;
-            font-size: 12px;
-            padding: 3px 8px;
-            border-radius: 999px;
-            background: #f1f5f9;
-            color: #111827;
-            margin-left: 8px
-        }
-
-        .nav-header {
-            background: #1f2937;
-            padding: 12px 0
-        }
-
-        .nav-header .wrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
-
-        .nav-header h1 {
-            color: var(--accent);
-            margin: 0;
-            font-size: 20px
-        }
-
-        .nav-header a {
-            color: #d1d5db;
-            margin-left: 20px;
-            font-size: 14px
-        }
-
-        .nav-header a:hover {
-            color: var(--accent)
-        }
-
-        .back-link {
-            background: var(--accent);
-            color: #111827;
-            padding: 8px 16px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 20px
-        }
-
-        .back-link:hover {
-            filter: brightness(.92);
-            text-decoration: none
-        }
-
-        /* Accesibilidad foco */
-        :focus-visible {
-            outline: 3px solid #e5e7eb;
-            outline-offset: 2px
-        }
-    </style>
-
-    <!-- Ajustes locales de la página -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .title-font {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .hero-gradient {
-            background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./public/hero/hero.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .menu-item:hover .menu-img {
-            transform: scale(1.05);
-        }
-
-        .menu-img {
-            transition: transform 0.3s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="/styles/global.css" />
     <script src="/lib/loader/boot.js" defer></script>
     <script type="module" src="/scripts/config/apply-config.js"></script>
+    <script src="./scripts/video.js" defer></script>
 </head>
 
 <body class="bg-white">
     <!-- Navigation (solo color, se mantiene estructura y ancho) -->
-    <nav class="nav-header text-white shadow-lg sticky top-0 z-50">
+    <nav class="nav-header text-white shadow-lg fixed inset-x-0 top-0 z-[9999]">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="title-font text-2xl md:text-3xl font-bold">🌮 Taquería El Auténtico</a>
+            <a href="#" class="title-font text-2xl md:text-3xl font-bold">🌮 Jhon's Backyard Grill</a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="transition">Inicio</a>
+                <a href="#index" class="transition">Inicio</a>
                 <a href="menu.html" class="transition">Menú</a>
-                <a href="nosotros.html" class="transition">Nosotros</a>
-                <a href="contacto.html" class="transition">Contacto</a>
-                <a href="info.html" class="transition">Información</a>
+                <a href="#nosotros" class="transition">Nosotros</a>
+                <a href="#contacto" class="transition">Contacto</a>
+                <a href="#info" class="transition">Información</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-white focus:outline-none">
@@ -251,20 +52,25 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile menu (solo color) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 py-2">
-            <a href="index.html" class="block py-2 transition">Inicio</a>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 py-2 absolute inset-x-0 top-full">
+            <a href="#index" class="block py-2 transition">Inicio</a>
             <a href="menu.html" class="block py-2 transition">Menú</a>
-            <a href="nosotros.html" class="block py-2 transition">Nosotros</a>
-            <a href="contacto.html" class="block py-2 transition">Contacto</a>
-            <a href="info.html" class="block py-2 transition">Información</a>
+            <a href="#nosotros" class="block py-2 transition">Nosotros</a>
+            <a href="#contacto" class="block py-2 transition">Contacto</a>
+            <a href="#info" class="block py-2 transition">Información</a>
         </div>
     </nav>
+
+    <!-- Spacer para que el contenido no quede cubierto por el navbar fijo -->
+    <div class="h-[60px] md:h-[64px]"></div>
+
 
     <!-- Hero Section -->
     <section id="inicio" class="hero-gradient min-h-screen flex items-center justify-center text-white">
         <div class="container mx-auto px-4 text-center" data-aos="fade-up">
-            <h1 class="title-font text-4xl md:text-6xl font-bold mb-4">Auténticos Tacos Mexicanos</h1>
+            <h1 class="title-font text-4xl md:text-6xl font-bold mb-4">We are cooking now</h1>
             <p class="!text-white text-xl md:text-2xl mb-8">
                 Sabores tradicionales que te transportarán a México
             </p>
@@ -272,16 +78,48 @@
                 <!-- Botón principal: de ámbar a blanco (solo color) -->
                 <a href="tel:+19757331439"
                     class="bg-amber-500 !text-white hover:bg-amber-600 text-red-600 font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition">
-                    <i data-feather="phone"></i> Llamar para ordenar
+                    <i data-feather="phone"></i> Call and Pick Up
                 </a>
                 <!-- Botón secundario ya era blanco -->
-                <a href="menu.html"
+                <a href="#menu"
                     class="bg-white !text-black hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full text-lg transition">
                     Ver Menú
                 </a>
             </div>
         </div>
     </section>
+
+    <!-- Sección de Video -->
+    <section id="video" class="py-10 md:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-6 md:mb-8">
+                Conoce Jhon's Backyard Grill Kitchen
+            </h2>
+
+            <!-- Contenedor: mobile fijo 375x290, desktop 9:16 -->
+            <div class="relative mx-auto rounded-xl overflow-hidden shadow-lg bg-black
+                max-w-[375px] pt-[77.33%] 
+                md:max-w-[500px] lg:max-w-[450px] md:aspect-[16/9] md:pt-0 md:max-h-[65vh]">
+
+                <video id="promoVideo" class="absolute inset-0 w-full h-full object-cover" preload="metadata"
+                    poster="public/menu/tacos/tacos-platte.jpg" playsinline muted loop controls>
+                    <!-- Se inyecta la <source> desde el script -->
+                </video>
+
+                <!-- Botón manual si el autoplay es bloqueado -->
+                <button id="playFallbackBtn" class="hidden absolute inset-0 m-auto h-14 w-14 md:h-16 md:w-16 rounded-full bg-white/70 backdrop-blur
+               flex items-center justify-center text-black text-xl font-bold">
+                    ▶
+                </button>
+            </div>
+
+            <p class="text-center text-xs md:text-sm text-gray-600 mt-3 md:mt-4">
+                Si tu navegador no reproduce automáticamente, toca el botón ▶ o
+                <a id="videoDownloadLink" href="public/kitchen/promo.mp4" class="underline">descarga el video</a>.
+            </p>
+        </div>
+    </section>
+
 
     <!-- Info Section -->
     <section class="py-16 bg-white">
@@ -296,7 +134,7 @@
                     <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-red-600 mb-4">Ven a disfrutar
                         con nosotros
                     </h2>
-                    <p class="text-gray-700 mb-6 text-lg">Nuestro acogedor espacio cuenta con capacidad para 25
+                    <p class="text-gray-700 mb-6 text-lg">Nuestro acogedor espacio cuenta con capacidad para 45
                         personas, perfecto para disfrutar de nuestros platillos en un ambiente familiar y cálido.</p>
                     <!-- caja: de bg-amber-100 a blanco (solo color) -->
                     <div class="bg-white p-6 rounded-lg">
@@ -311,7 +149,12 @@
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="py-16 bg-white"></section>
+    <section class="py-16 bg-white">
+        <div id="menu" class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="nosotros" class="py-16 !bg-[#1f2937]  bg-red-600 text-white">
@@ -319,7 +162,7 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
                     <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Nuestra Historia</h2>
-                    <p class="mb-4 !text-white text-lg">Taquería El Auténtico nació del sueño de compartir los sabores
+                    <p class="mb-4 !text-white text-lg">Jhon's Backyard Grill nació del sueño de compartir los sabores
                         tradicionales
                         de México con el mundo. Nuestros fundadores, originarios de Puebla, trajeron consigo recetas
                         familiares transmitidas por generaciones.</p>
@@ -332,7 +175,7 @@
                         te harán sentir como en casa!</p>
                 </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
-                    <img src="http://static.photos/people/640x360/5" alt="Equipo de Taquería El Auténtico"
+                    <img src="http://static.photos/people/640x360/5" alt="Equipo de Jhon's Backyard Grill"
                         class="rounded-lg shadow-xl w-full">
                 </div>
             </div>
@@ -356,7 +199,7 @@
                                 <i data-feather="map-pin" class="mr-4 text-gray-700 mt-1"></i>
                                 <div>
                                     <h4 class="font-bold">Dirección</h4>
-                                    <p>Av. México 123, Gasolinera El Sol<br>Ciudad de Ejemplo</p>
+                                    <p>17604 Davenport Rd,<br>Dallas, TX 75252</p>
                                 </div>
                             </div>
 
@@ -388,12 +231,12 @@
                             <div class="bg-white rounded-lg p-6 w-80 shadow-lg">
                                 <h3 class="text-lg font-bold mb-4 text-center">Abrir ubicación en:</h3>
                                 <div class="flex flex-col gap-4">
-                                    <a href="https://maps.google.com?q=Av.+México+123,+Gasolinera+El+Sol,+Ciudad+de+Ejemplo"
+                                    <a href="https://maps.google.com?q=17604+Davenport+Rd,+Dallas,+TX+75252"
                                         target="_blank"
                                         class="text-center bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition">
                                         Google Maps
                                     </a>
-                                    <a href="https://maps.apple.com/?q=Av.+México+123,+Gasolinera+El+Sol,+Ciudad+de+Ejemplo"
+                                    <a href="https://maps.apple.com/?q=17604+Davenport+Rd,+Dallas,+TX+75252"
                                         target="_blank"
                                         class="text-center bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-900 transition">
                                         Apple Maps
@@ -438,34 +281,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- <div class="md:w-1/2" data-aos="fade-left">
-                    <div class="bg-gray-100 p-6 rounded-lg h-full">
-                        <h3 class="text-2xl font-bold text-red-600 mb-4">¿Tienes alguna pregunta?</h3>
-                        <form class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-gray-700 mb-1">Nombre</label>
-                                <input type="text" id="name"
-                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-gray-700 mb-1">Correo electrónico</label>
-                                <input type="email" id="email"
-                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-gray-700 mb-1">Mensaje</label>
-                                <textarea id="message" rows="4"
-                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
-                            </div>
-                            Botón: de ámbar a blanco (solo color)
-                            <button type="submit"
-                                class="bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full transition">
-                                Enviar Mensaje
-                            </button>
-                        </form>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -475,7 +290,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
-                    <h3 class="title-font text-2xl font-bold mb-4">Taquería El Auténtico</h3>
+                    <h3 class="title-font text-2xl font-bold mb-4">Jhon's Backyard Grill</h3>
                     <p class="mb-4 !text-white">Auténticos sabores mexicanos en cada bocado.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="hover:text-white transition"><i data-feather="facebook"></i></a>
@@ -492,14 +307,14 @@
 
                 <div>
                     <h4 class="font-bold text-lg mb-4">Contacto</h4>
-                    <p class="mb-2 !text-white">Av. México 123, Gasolinera El Sol</p>
-                    <p class="mb-2 !text-white">Ciudad de Ejemplo</p>
+                    <p class="mb-2 !text-white">17604 Davenport Rd,</p>
+                    <p class="mb-2 !text-white">Dallas, TX 75252</p>
                     <a href="tel:+19757331439" class="hover:text-white transition">+1 (975) 733-1439</a>
                 </div>
             </div>
 
             <div class="border-t border-red-700 mt-8 pt-8 text-center">
-                <p class="!text-white">&copy; 2023 Taquería El Auténtico. Todos los derechos reservados.</p>
+                <p class="!text-white">&copy; 2025 Jhon's Backyard Grill. Todos los derechos reservados.</p>
                 <p class="mt-2">
                     <a href="/politica-de-cookies.html"
                         class="hover:text-white transition text-sm !text-blue-300">Política de
