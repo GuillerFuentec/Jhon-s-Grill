@@ -7,7 +7,8 @@
     "prepare": "is-ci || node ./tools/inject-boot.mjs",
     "dev": "live-server --port=8080 --entry-file=/index.html --watch=public",
     "start": "node ./tools/inject-boot.mjs && serve -s . -l ${PORT:-3000}",
-    "deploy": "railway up"
+    "deploy": "railway up",
+    "deploy:cloudflare": "pnpm dlx wrangler deploy"
   },
   "dependencies": {
     "serve": "^14.2.5"

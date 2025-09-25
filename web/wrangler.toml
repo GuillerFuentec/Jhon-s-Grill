@@ -1,0 +1,16 @@
+﻿name = "restaurant-web"
+main = "worker.js"
+compatibility_date = "2025-09-25"
+
+[assets]
+directory = "."
+binding = "ASSETS"
+exclude = [
+  "node_modules",
+  "tools",
+  "docs",
+  "package.json",
+  "pnpm-lock.yaml",
+  ".gitignore",
+  ".nvmrc"
+]
