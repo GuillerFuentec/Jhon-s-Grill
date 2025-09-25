@@ -18,7 +18,7 @@ function priceToText(p = {}) {
     parts.push(`${usd.format(p.single)} (single)`);
   if (typeof p.platter === "number")
     parts.push(`${usd.format(p.platter)} (platter)`);
-  return parts.length ? parts.join(" â€¢ ") : "";
+  return parts.length ? parts.join("- ") : "";
 }
 
 /* DOM targets */
