@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
-<html lang="es" class="overflow-x-hidden">
+<html lang="en" class="overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Auténticos tacos y comida mexicana casera. Disfruta de nuestros platillos tradicionales en un ambiente cálido y familiar. ¡Visítanos hoy!" />
-    <title>Jhon's Backyard Grill - Comida Mexicana Tradicional</title>
+        content="Authentic tacos and homestyle Mexican food. Enjoy traditional dishes in a warm, welcoming atmosphere. Visit us today!" />
+    <title>Jhon's Backyard Grill - Authentic Mexican Flavor</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
-    <!-- Tailwind y librerías -->
+    <!-- Tailwind and utilities -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -24,10 +24,10 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet" />
 
-    <!-- Sistema de Consentimiento de Cookies -->
+    <!-- Cookie consent system -->
     <script type="module" src="/scripts/cookies/index.js"></script>
 
-    <!-- Estilo base (paleta del modelo, con accent en blanco) -->
+    <!-- Base theme styling with white accent -->
     <link rel="stylesheet" href="/styles/global.css" />
     <script src="/lib/loader/boot.js" defer></script>
     <script type="module" src="/scripts/config/apply-config.js"></script>
@@ -35,16 +35,16 @@
 </head>
 
 <body class="bg-white">
-    <!-- Navigation (solo color, se mantiene estructura y ancho) -->
+    <!-- Navigation (colors adjusted, structure unchanged) -->
     <nav class="nav-header text-white shadow-lg fixed inset-x-0 top-0 z-[9999]">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="title-font text-2xl md:text-3xl font-bold">🌮 Jhon's Backyard Grill</a>
+            <a href="#" class="title-font text-2xl md:text-3xl font-bold">Jhon's Backyard Grill</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#index" class="transition">Inicio</a>
-                <a href="menu.html" class="transition">Menú</a>
-                <a href="#nosotros" class="transition">Nosotros</a>
-                <a href="#contacto" class="transition">Contacto</a>
-                <a href="#info" class="transition">Información</a>
+                <a href="#index" class="transition">Home</a>
+                <a href="menu.html" class="transition">Menu</a>
+                <a href="#nosotros" class="transition">About</a>
+                <a href="#contacto" class="transition">Contact</a>
+                <a href="#info" class="transition">Info</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-white focus:outline-none">
@@ -55,15 +55,15 @@
 
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 py-2 absolute inset-x-0 top-full">
-            <a href="#index" class="block py-2 transition">Inicio</a>
-            <a href="menu.html" class="block py-2 transition">Menú</a>
-            <a href="#nosotros" class="block py-2 transition">Nosotros</a>
-            <a href="#contacto" class="block py-2 transition">Contacto</a>
-            <a href="#info" class="block py-2 transition">Información</a>
+            <a href="#index" class="block py-2 transition">Home</a>
+            <a href="menu.html" class="block py-2 transition">Menu</a>
+            <a href="#nosotros" class="block py-2 transition">About</a>
+            <a href="#contacto" class="block py-2 transition">Contact</a>
+            <a href="#info" class="block py-2 transition">Info</a>
         </div>
     </nav>
 
-    <!-- Spacer para que el contenido no quede cubierto por el navbar fijo -->
+    <!-- Spacer so the fixed navbar does not cover content -->
     <div class="h-[60px] md:h-[64px]"></div>
 
 
@@ -72,50 +72,50 @@
         <div class="container mx-auto px-4 text-center" data-aos="fade-up">
             <h1 class="title-font text-4xl md:text-6xl font-bold mb-4">We are cooking now</h1>
             <p class="!text-white text-xl md:text-2xl mb-8">
-                Sabores tradicionales que te transportarán a México
+                Traditional flavors that take you straight to Mexico
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <!-- Botón principal: de ámbar a blanco (solo color) -->
+                <!-- Primary button -->
                 <a href="tel:+19757331439"
                     class="bg-amber-500 !text-white hover:bg-amber-600 text-red-600 font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition">
                     <i data-feather="phone"></i> Call and Pick Up
                 </a>
-                <!-- Botón secundario ya era blanco -->
+                <!-- Secondary button -->
                 <a href="#menu"
                     class="bg-white !text-black hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full text-lg transition">
-                    Ver Menú
+                    View Menu
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Video -->
+    <!-- Video Section -->
     <section id="video" class="py-10 md:py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-6 md:mb-8">
-                Conoce Jhon's Backyard Grill Kitchen
+                Tour Jhon's Backyard Grill Kitchen
             </h2>
 
-            <!-- Contenedor: mobile fijo 375x290, desktop 9:16 -->
+            <!-- Container: mobile fixed 375x290, desktop 16:9 -->
             <div class="relative mx-auto rounded-xl overflow-hidden shadow-lg bg-black
                 max-w-[375px] pt-[77.33%] 
                 md:max-w-[500px] lg:max-w-[450px] md:aspect-[16/9] md:pt-0 md:max-h-[65vh]">
 
                 <video id="promoVideo" class="absolute inset-0 w-full h-full object-cover" preload="metadata"
                     poster="public/menu/tacos/tacos-platte.jpg" playsinline muted loop controls>
-                    <!-- Se inyecta la <source> desde el script -->
+                    <!-- The <source> element is injected by the script -->
                 </video>
 
-                <!-- Botón manual si el autoplay es bloqueado -->
+                <!-- Manual play button if autoplay is blocked -->
                 <button id="playFallbackBtn" class="hidden absolute inset-0 m-auto h-14 w-14 md:h-16 md:w-16 rounded-full bg-white/70 backdrop-blur
                flex items-center justify-center text-black text-xl font-bold">
-                    ▶
+                    Play
                 </button>
             </div>
 
             <p class="text-center text-xs md:text-sm text-gray-600 mt-3 md:mt-4">
-                Si tu navegador no reproduce automáticamente, toca el botón ▶ o
-                <a id="videoDownloadLink" href="public/kitchen/promo.mp4" class="underline">descarga el video</a>.
+                If autoplay does not start, tap Play or
+                <a id="videoDownloadLink" href="public/kitchen/promo.mp4" class="underline">download the video</a>.
             </p>
         </div>
     </section>
@@ -126,22 +126,18 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
-                    <img src="http://static.photos/restaurant/640x360/10" alt="Interior del restaurante"
+                    <img src="http://static.photos/restaurant/640x360/10" alt="Restaurant interior"
                         class="rounded-lg shadow-xl w-full">
                 </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
-                    <!-- quitamos amber del título: mantenemos rojo existente -->
-                    <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-red-600 mb-4">Ven a disfrutar
-                        con nosotros
+                    <!-- Title color adjustments preserved -->
+                    <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-red-600 mb-4">Join us for a great time
                     </h2>
-                    <p class="text-gray-700 mb-6 text-lg">Nuestro acogedor espacio cuenta con capacidad para 45
-                        personas, perfecto para disfrutar de nuestros platillos en un ambiente familiar y cálido.</p>
-                    <!-- caja: de bg-amber-100 a blanco (solo color) -->
+                    <p class="text-gray-700 mb-6 text-lg">Our cozy dining room seats up to 45 guests, perfect for enjoying our dishes in a warm, family-friendly setting.</p>
+                    <!-- Info card -->
                     <div class="bg-white p-6 rounded-lg">
-                        <h3 class="font-bold !text-black text-lg text-red-600 mb-2">¿Cómo llegar?</h3>
-                        <p class="text-gray-700">Nos encontrarás dentro de la estación de servicio "El Sol", con entrada
-                            lateral junto a la tienda de conveniencia. ¡No te pierdas nuestros auténticos sabores
-                            mexicanos!</p>
+                        <h3 class="font-bold !text-black text-lg text-red-600 mb-2">How to get here?</h3>
+                        <p class="text-gray-700">You will find us inside the gas station; just come in and ask for Jhon's Backyard Grill. We can't wait to serve you!</p>
                     </div>
                 </div>
             </div>
@@ -161,21 +157,15 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
-                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Nuestra Historia</h2>
-                    <p class="mb-4 !text-white text-lg">Jhon's Backyard Grill nació del sueño de compartir los sabores
-                        tradicionales
-                        de México con el mundo. Nuestros fundadores, originarios de Puebla, trajeron consigo recetas
-                        familiares transmitidas por generaciones.</p>
-                    <p class="mb-4 !text-white text-lg">Cada platillo que servimos está preparado con los mismos
-                        ingredientes y
-                        técnicas que se usan en los hogares mexicanos, garantizando una experiencia gastronómica
-                        auténtica.</p>
+                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+                    <p class="mb-4 !text-white text-lg">Jhon's Backyard Grill was born from the dream of sharing Mexico's traditional flavors with our community. Our founders from Puebla brought family recipes that have been passed down for generations.</p>
+                    <p class="mb-4 !text-white text-lg">Every dish we serve uses the same ingredients and techniques found in Mexican homes, guaranteeing an authentic culinary experience.</p>
                     <p class="text-lg !text-white">¡Bienvenidos a nuestra mesa, donde la comida es preparada con amor y
-                        los sabores
-                        te harán sentir como en casa!</p>
+                        the flavors
+                        will make you feel right at home!</p>
                 </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
-                    <img src="http://static.photos/people/640x360/5" alt="Equipo de Jhon's Backyard Grill"
+                    <img src="http://static.photos/people/640x360/5" alt="Team at Jhon's Backyard Grill"
                         class="rounded-lg shadow-xl w-full">
                 </div>
             </div>
@@ -187,18 +177,18 @@
         <div class="container mx-auto px-4">
             <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-12"
                 data-aos="fade-up">
-                Visítanos</h2>
+                Visit Us</h2>
 
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/2" data-aos="fade-right">
                     <div class="bg-gray-100 p-6 rounded-lg h-full">
-                        <h3 class="text-2xl font-bold text-red-600 mb-4">Información de Contacto</h3>
+                        <h3 class="text-2xl font-bold text-red-600 mb-4">Contact Information</h3>
 
                         <div class="mb-6">
                             <div class="flex items-start mb-4 mt-2">
                                 <i data-feather="map-pin" class="mr-4 text-gray-700 mt-1"></i>
                                 <div>
-                                    <h4 class="font-bold">Dirección</h4>
+                                    <h4 class="font-bold">Address</h4>
                                     <p>17604 Davenport Rd,<br>Dallas, TX 75252</p>
                                 </div>
                             </div>
@@ -206,7 +196,7 @@
                             <div class="flex items-start mb-4 mt-2">
                                 <i data-feather="phone" class="mr-4 text-gray-700 mt-1"></i>
                                 <div>
-                                    <h4 class="font-bold">Teléfono</h4>
+                                    <h4 class="font-bold">Phone</h4>
                                     <p>+1 (975) 733-1439</p>
                                 </div>
                             </div>
@@ -214,22 +204,22 @@
                             <div class="flex items-start mt-2">
                                 <i data-feather="clock" class="mr-4 text-gray-700 mt-1"></i>
                                 <div>
-                                    <h4 class="font-bold">Horario</h4>
-                                    <p>Lunes a Sabado<br>7:00 am - 7:00 pm</p>
-                                    <p>Domingo - Cerrado</p>
+                                    <h4 class="font-bold">Hours</h4>
+                                    <p>Monday to Saturday<br>7:00 am - 7:00 pm</p>
+                                    <p>Sunday - Closed</p>
                                 </div>
                             </div>
                         </div>
 
                         <button onclick="openModal()"
                             class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition">
-                            <i data-feather="map" class="mr-2"></i> Ver en Mapas
+                            <i data-feather="map" class="mr-2"></i> Open in Maps
                         </button>
                         <!-- Modal -->
                         <div id="mapModal"
                             class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
                             <div class="bg-white rounded-lg p-6 w-80 shadow-lg">
-                                <h3 class="text-lg font-bold mb-4 text-center">Abrir ubicación en:</h3>
+                                <h3 class="text-lg font-bold mb-4 text-center">Open location in:</h3>
                                 <div class="flex flex-col gap-4">
                                     <a href="https://maps.google.com?q=17604+Davenport+Rd,+Dallas,+TX+75252"
                                         target="_blank"
@@ -244,7 +234,7 @@
                                 </div>
                                 <button onclick="closeModal()"
                                     class="mt-6 w-full bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded transition">
-                                    Cancelar
+                                    Cancel
                                 </button>
                             </div>
                         </div>
@@ -255,7 +245,7 @@
                 <div class="md:w-1/2" data-aos="fade-left">
                     <div class="bg-gray-100 p-6 rounded-lg h-full">
                         <div class="text-center mb-10">
-                            <h2 class="title-fon text-red-600 text-4xl font-bold">Nuestro restaurante</h2>
+                            <h2 class="title-fon text-red-600 text-4xl font-bold">Our restaurant</h2>
                         </div>
 
                         <div id="galleryCarousel" class="relative w-full max-w-5xl mx-auto select-none">
@@ -268,10 +258,10 @@
 
                             <button id="galleryPrev"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 text-white p-2 hover:bg-black/80 focus:outline-none"
-                                aria-label="Previous">‹</button>
+                                aria-label="Previous"><</button>
                             <button id="galleryNext"
                                 class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 text-white p-2 hover:bg-black/80 focus:outline-none"
-                                aria-label="Next">›</button>
+                                aria-label="Next">></button>
 
                             <div id="galleryDots" class="flex justify-center gap-2 mt-4"></div>
                         </div>
@@ -291,7 +281,7 @@
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
                     <h3 class="title-font text-2xl font-bold mb-4">Jhon's Backyard Grill</h3>
-                    <p class="mb-4 !text-white">Auténticos sabores mexicanos en cada bocado.</p>
+                    <p class="mb-4 !text-white">Authentic Mexican flavors in every bite.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="hover:text-white transition"><i data-feather="facebook"></i></a>
                         <a href="#" class="hover:text-white transition"><i data-feather="instagram"></i></a>
@@ -300,13 +290,13 @@
                 </div>
 
                 <div class="mb-8 md:mb-0">
-                    <h4 class="font-bold  text-lg mb-4">Horario</h4>
-                    <p class="!text-white">Lunes a Domingo</p>
+                    <h4 class="font-bold  text-lg mb-4">Hours</h4>
+                    <p class="!text-white">Monday to Sunday</p>
                     <p class="!text-white">10:00 am - 10:00 pm</p>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Contacto</h4>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
                     <p class="mb-2 !text-white">17604 Davenport Rd,</p>
                     <p class="mb-2 !text-white">Dallas, TX 75252</p>
                     <a href="tel:+19757331439" class="hover:text-white transition">+1 (975) 733-1439</a>
@@ -314,20 +304,18 @@
             </div>
 
             <div class="border-t border-red-700 mt-8 pt-8 text-center">
-                <p class="!text-white">&copy; 2025 Jhon's Backyard Grill. Todos los derechos reservados.</p>
+                <p class="!text-white">&copy; 2025Jhon's Backyard Grill. All rights reserved.</p>
                 <p class="mt-2">
                     <a href="/politica-de-cookies.html"
-                        class="hover:text-white transition text-sm !text-blue-300">Política de
-                        Cookies</a>
+                        class="hover:text-white transition text-sm !text-blue-300">Cookie Policy</a>
                     <a href="/politica-de-privacidad.html"
-                        class="hover:text-white transition text-sm !text-blue-300">Política de
-                        Privacidad</a>
+                        class="hover:text-white transition text-sm !text-blue-300">Privacy Policy</a>
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Call Button (sin cambios de tamaño, solo colores ya correctos) -->
+    <!-- Floating Call Button (size unchanged, colors already correct) -->
     <div class="fixed bottom-6 right-6 z-50">
         <a href="tel:+19757331439"
             class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-bounce">
@@ -376,24 +364,24 @@
         });
     </script>
 
-    <!-- Banner de cookies (simplificado, sin emojis ni elección) -->
+    <!-- Banner de cookies (simplified, no emojis or choices) -->
     <div id="cookie-banner" class="hidden fixed inset-x-0 bottom-0 z-50 bg-gray-900 text-white p-4 shadow-2xl">
         <div class="container mx-auto flex flex-col md:flex-row items-start md:items-center gap-3">
             <p class="text-sm text-gray-200 m-0">
-                Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra
+                We use cookies to improve your experience. By continuing, you agree to our
                 <a href="/politica-de-privacidad.html" target="_blank" rel="noopener"
-                    class="text-blue-500 underline">Política de Privacidad</a>.
+                    class="text-blue-500 underline">Privacy Policy</a>.
             </p>
             <div class="flex-1"></div>
             <button id="cookie-ack"
                 class="bg-white hover:bg-gray-100 text-gray-900 font-semibold py-2 px-4 rounded transition">
-                Acepto
+                I Accept
             </button>
         </div>
     </div>
 
     <script>
-        // Aviso simple: solo informar y cerrar
+        // Simple notice: show once and dismiss
         function setCookieBasic(name, value, days) {
             const maxAge = days * 24 * 60 * 60;
             const encoded = encodeURIComponent(value);
@@ -434,3 +422,11 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+

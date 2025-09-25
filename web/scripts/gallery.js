@@ -1,4 +1,4 @@
-const GALLERY_DIR = "../public/spot/";
+﻿const GALLERY_DIR = "../public/spot/";
 const MANIFEST = GALLERY_DIR + "manifest.json";
 const MAX_PROBE = 30;
 const EXTS = ["jpg", "jpeg", "png", "webp", "avif"];
@@ -41,7 +41,7 @@ function probeImage(url) {
 }
 
 async function discoverImages() {
-  // 1) Intentar manifest.json (array de rutas relativas o nombres de archivo)
+  // 1) Try manifest.json (list of relative paths or filenames)
   const manifest = await tryFetchJson(MANIFEST);
   if (Array.isArray(manifest) && manifest.length) {
     return manifest.map((x) =>
@@ -49,11 +49,11 @@ async function discoverImages() {
     );
   }
 
-  // 2) Auto-probar 1..MAX_PROBE con extensiones comunes
+  // 2) Probe files 1..MAX_PROBE with common extensions
   const found = [];
   for (let i = 1; i <= MAX_PROBE; i++) {
     let hit = null;
-    // Intenta 1.jpg, 01.jpg, 001.jpg
+    // Try 1.jpg, 01.jpg, 001.jpg
     const bases = [String(i), String(i).padStart(2, "0"), String(i).padStart(3, "0")];
     for (const base of bases) {
       for (const ext of EXTS) {
@@ -79,7 +79,7 @@ function buildSlides(urls) {
     const li = document.createElement("li");
     li.className = "min-w-full h-80 md:h-[28rem] relative bg-gray-200";
     li.innerHTML = `
-      <img src="${src}" alt="Trabajo de barbería"
+      <img src="${src}" alt="Restaurant highlight"
            class="w-full h-full object-cover block" loading="lazy">
     `;
     track.appendChild(li);
@@ -93,7 +93,7 @@ function buildDots(count) {
     const b = document.createElement("button");
     b.className =
       "h-2.5 w-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition";
-    b.setAttribute("aria-label", `Ir al slide ${i + 1}`);
+    b.setAttribute("aria-label", `Go to slide ${i + 1}`);
     b.addEventListener("click", () => goTo(i, true));
     dots.appendChild(b);
   }
@@ -152,7 +152,7 @@ function bindControls() {
   root.addEventListener("mouseenter", stopAuto);
   root.addEventListener("mouseleave", startAuto);
 
-  // Swipe táctil
+  // Swipe tÃ¡ctil
   root.addEventListener("touchstart", (e) => {
     state.touching = true;
     state.touchStartX = e.touches[0].clientX;
@@ -195,3 +195,4 @@ async function bootstrapGallery() {
 }
 
 bootstrapGallery();
+

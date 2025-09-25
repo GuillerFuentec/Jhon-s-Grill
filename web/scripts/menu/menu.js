@@ -1,4 +1,4 @@
-// type="module"
+﻿// type="module"
 const API_URL = "../public/api/manifest.json";
 
 /* Utils */
@@ -18,7 +18,7 @@ function priceToText(p = {}) {
     parts.push(`${usd.format(p.single)} (single)`);
   if (typeof p.platter === "number")
     parts.push(`${usd.format(p.platter)} (platter)`);
-  return parts.length ? parts.join(" • ") : "";
+  return parts.length ? parts.join(" â€¢ ") : "";
 }
 
 /* DOM targets */
@@ -63,7 +63,7 @@ function makeImg(srcPrimary, srcFallback, alt) {
   img.decoding = "async";
   img.alt = alt || "";
   img.className = "menu-img w-full h-full object-cover";
-  // prefer local imgUrl; if falla, usa imgNetUrl; si no, placeholder
+  // Prefer the local image; fall back to the network image, otherwise show a placeholder
   img.src = srcPrimary || srcFallback || placeholder;
   img.onerror = () => {
     if (img.src !== srcFallback && srcFallback) {
@@ -164,8 +164,10 @@ function renderNav(categories, data) {
     ensureContainers();
     gridWrap.innerHTML = `
       <div class="text-center col-span-full text-red-600">
-        No se pudo cargar el menú. Intenta recargar la página.
+        We couldn't load the menu. Please refresh the page.
       </div>
     `;
   }
 })();
+
+
