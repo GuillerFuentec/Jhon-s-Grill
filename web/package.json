@@ -4,15 +4,16 @@
   "private": true,
   "description": "Simply mexican restaurant website",
   "scripts": {
-    "prepare": "node ../packages/tools/inject-boot.mjs",
+    "prepare": "is-ci || node ./tools/inject-boot.mjs",
     "dev": "live-server --port=8080 --entry-file=/index.html --watch=public",
-    "start": "node ../packages/tools/inject-boot.mjs && serve -s public -l $PORT",
+    "start": "node ./tools/inject-boot.mjs && serve -s . -l ${PORT:-3000}",
     "deploy": "railway up"
   },
   "dependencies": {
     "serve": "^14.2.5"
   },
   "devDependencies": {
+    "is-ci": "^4.1.0",
     "live-server": "^1.2.2"
   },
   "engines": {

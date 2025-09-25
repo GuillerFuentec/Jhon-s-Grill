@@ -256,7 +256,7 @@
             }
         }
     ],
-    "Quesadillas & Platters": [
+    "Quesadillas": [
         {
             "name": "Chicken Quesadilla",
             "description": "Quesadilla de pollo con queso fundido.",
@@ -267,9 +267,9 @@
             }
         },
         {
-            "name": "Combo Quesadilla",
+            "name": "Combo Quesadilla de Fajitas",
             "description": "Quesadilla combinada de carnes.",
-            "imgUrl": "/public/menu/quesadillas/quesadilla.jpeg",
+            "imgUrl": "/public/menu/quesadillas/quesadilla-fajita.jpg",
             "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Chicken_Quesadilla_dish_at_Latin_Bistro.jpg",
             "price": {
                 "single": 16.00
