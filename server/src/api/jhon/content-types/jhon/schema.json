@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jhons",
+  "info": {
+    "singularName": "jhon",
+    "pluralName": "jhons",
+    "displayName": "JHON"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

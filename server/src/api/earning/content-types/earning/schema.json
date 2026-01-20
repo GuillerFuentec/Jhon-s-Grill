@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "earnings",
+  "info": {
+    "singularName": "earning",
+    "pluralName": "earnings",
+    "displayName": "earning"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

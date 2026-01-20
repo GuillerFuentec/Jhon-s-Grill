@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "q_as",
+  "info": {
+    "singularName": "q-a",
+    "pluralName": "q-as",
+    "displayName": "Q/A"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

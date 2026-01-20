@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "analitics",
+  "info": {
+    "singularName": "analitic",
+    "pluralName": "analitics",
+    "displayName": "analitic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}
