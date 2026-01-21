@@ -36,7 +36,7 @@
 
 <body class="bg-white">
     <!-- Navigation (colors adjusted, structure unchanged) -->
-    <nav class="nav-header text-white shadow-lg fixed inset-x-0 top-0 z-[9999]">
+    <nav class="nav-header text-white shadow-lg fixed inset-x-0 top-0 z-9999">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="#" class="title-font text-2xl md:text-3xl font-bold">Jhon's Backyard Grill</a>
             <div class="hidden md:flex space-x-8">
@@ -64,7 +64,7 @@
     </nav>
 
     <!-- Spacer so the fixed navbar does not cover content -->
-    <div class="h-[60px] md:h-[64px]"></div>
+    <div class="h-15 md:h-16"></div>
 
 
     <!-- Hero Section -->
@@ -77,12 +77,12 @@
             <div class="flex flex-col md:flex-row justify-center gap-4">
                 <!-- Primary button -->
                 <a href="tel:+19727331439"
-                    class="bg-amber-500 !text-white hover:bg-amber-600 text-red-600 font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition">
+                    class="bg-amber-500 text-white! hover:bg-amber-600 font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition">
                     <i data-feather="phone"></i> Call and Pick Up
                 </a>
                 <!-- Secondary button -->
                 <a href="#menu"
-                    class="bg-white !text-black hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full text-lg transition">
+                    class="bg-white text-black! hover:bg-gray-100 font-bold py-3 px-6 rounded-full text-lg transition">
                     View Menu
                 </a>
             </div>
@@ -92,14 +92,14 @@
     <!-- Video Section -->
     <section id="video" class="py-10 md:py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-6 md:mb-8">
+            <h2 class="title-font text-black! text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8">
                 Tour Jhon's Backyard Grill Kitchen
             </h2>
 
             <!-- Container: mobile fixed 375x290, desktop 16:9 -->
             <div class="relative mx-auto rounded-xl overflow-hidden shadow-lg bg-black
-                max-w-[375px] pt-[77.33%] 
-                md:max-w-[500px] lg:max-w-[450px] md:aspect-[16/9] md:pt-0 md:max-h-[65vh]">
+                max-w-93.75 pt-[77.33%] 
+                md:max-w-125 lg:max-w-112.5 md:aspect-video md:pt-0 md:max-h-[65vh]">
 
                 <video id="promoVideo" class="absolute inset-0 w-full h-full object-cover" preload="metadata"
                     poster="public/menu/tacos/tacos-platte.jpg" playsinline muted loop controls>
@@ -107,8 +107,7 @@
                 </video>
 
                 <!-- Manual play button if autoplay is blocked -->
-                <button id="playFallbackBtn" class="hidden absolute inset-0 m-auto h-14 w-14 md:h-16 md:w-16 rounded-full bg-white/70 backdrop-blur
-               flex items-center justify-center text-black text-xl font-bold">
+                <button id="playFallbackBtn" class="hidden absolute inset-0 m-auto h-14 w-14 md:h-16 md:w-16 rounded-full bg-white/70 backdrop-blur text-black text-xl font-bold">
                     Play
                 </button>
             </div>
@@ -131,14 +130,14 @@
                 </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
                     <!-- Title color adjustments preserved -->
-                    <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-red-600 mb-4">Join us for a
+                    <h2 class="title-font text-black! text-3xl md:text-4xl font-bold mb-4">Join us for a
                         great time
                     </h2>
                     <p class="text-gray-700 mb-6 text-lg">Our cozy dining room seats up to 45 guests, perfect for
                         enjoying our dishes in a warm, family-friendly setting.</p>
                     <!-- Info card -->
                     <div class="bg-white p-6 rounded-lg">
-                        <h3 class="font-bold !text-black text-lg text-red-600 mb-2">How to get here?</h3>
+                        <h3 class="font-bold text-black! text-lg mb-2">How to get here?</h3>
                         <p class="text-gray-700">You will find us inside the gas station; just come in and ask for
                             Jhon's Backyard Grill. We can't wait to serve you!</p>
                     </div>
@@ -156,17 +155,17 @@
     </section>
 
     <!-- About Section -->
-    <section id="nosotros" class="py-16 !bg-[#1f2937]  bg-red-600 text-white">
+    <section id="nosotros" class="py-16 bg-[#1f2937]! text-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
                     <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
-                    <p class="mb-4 !text-white text-lg">Jhon's Backyard Grill was born from the dream of sharing
+                    <p class="mb-4 text-white! text-lg">Jhon's Backyard Grill was born from the dream of sharing
                         Mexico's traditional flavors with our community. Our founders from Puebla brought family recipes
                         that have been passed down for generations.</p>
-                    <p class="mb-4 !text-white text-lg">Every dish we serve uses the same ingredients and techniques
+                    <p class="mb-4 text-white! text-lg">Every dish we serve uses the same ingredients and techniques
                         found in Mexican homes, guaranteeing an authentic culinary experience.</p>
-                    <p class="text-lg !text-white">¡Bienvenidos a nuestra mesa, donde la comida es preparada con amor y
+                    <p class="text-lg text-white!">¡Bienvenidos a nuestra mesa, donde la comida es preparada con amor y
                         the flavors
                         will make you feel right at home!</p>
                 </div>
@@ -181,7 +180,7 @@
     <!-- Contact Section -->
     <section id="contacto" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-12"
+            <h2 class="title-font text-black! text-3xl md:text-4xl font-bold text-center mb-12"
                 data-aos="fade-up">
                 Visit Us</h2>
 
@@ -283,12 +282,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="!bg-[#1f2937]  !text-white py-12">
+    <footer class="bg-[#1f2937]! text-white! py-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
                     <h3 class="title-font text-2xl font-bold mb-4">Jhon's Backyard Grill</h3>
-                    <p class="mb-4 !text-white">Authentic Mexican flavors in every bite.</p>
+                    <p class="mb-4 text-white!">Authentic Mexican flavors in every bite.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="hover:text-white transition"><i data-feather="facebook"></i></a>
                         <a href="#" class="hover:text-white transition"><i data-feather="instagram"></i></a>
@@ -298,29 +297,29 @@
 
                 <div class="mb-8 md:mb-0">
                     <h4 class="font-bold  text-lg mb-4">Hours</h4>
-                    <p class="!text-white">Monday to Saturday</p>
-                    <p class="!text-white">10:00 am - 10:00 pm</p>
-                    <p class="!text-white">Sunday: Closed</p>
+                    <p class="text-white!">Monday to Saturday</p>
+                    <p class="text-white!">10:00 am - 10:00 pm</p>
+                    <p class="text-white!">Sunday: Closed</p>
                 </div>
 
                 <div>
                     <h4 class="font-bold text-lg mb-4">Contact</h4>
-                    <p class="mb-2 !text-white">17604 Davenport Rd,</p>
-                    <p class="mb-2 !text-white">Dallas, TX 75252</p>
+                    <p class="mb-2 text-white!">17604 Davenport Rd,</p>
+                    <p class="mb-2 text-white!">Dallas, TX 75252</p>
                     <a href="tel:+19727331439" class="hover:text-white transition">+1 (972) 733-1439</a>
                 </div>
             </div>
 
             <div class="border-t border-red-700 mt-8 pt-8 text-center">
-                <p class="!text-white">&copy; 2025Jhon's Backyard Grill. All rights reserved.</p>
+                <p class="text-white!">&copy; 2025Jhon's Backyard Grill. All rights reserved.</p>
                 <p class="mt-2">
                     <a href="/politica-de-cookies.html"
-                        class="hover:text-white transition text-sm !text-blue-300">Cookie Policy</a> 
+                        class="hover:text-white transition text-sm text-blue-300!">Cookie Policy</a> 
                     <a href="/politica-de-privacidad.html"
-                        class="hover:text-white transition text-sm !text-blue-300">Privacy Policy</a>
+                        class="hover:text-white transition text-sm text-blue-300!">Privacy Policy</a>
                 </p>
-                <p class="pt-4 !text-white">Designed by <a href="https://guillermocopello.com" target="_blank"
-                        class="!text-blue-300">Raccoon
+                <p class="pt-4 text-white!">Designed by <a href="https://guillermocopello.com" target="_blank"
+                        class="text-blue-300!">Raccoon
                         Studios LLC</a></p>
             </div>
         </div>

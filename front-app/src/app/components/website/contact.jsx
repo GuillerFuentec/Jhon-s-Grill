@@ -8,7 +8,7 @@ export function Contact() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <section id="contacto" className="py-16 bg-white">
+    <section id="contact" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2
           className="title-font text-3xl md:text-4xl font-bold text-center text-red-600 mb-12"
@@ -24,7 +24,7 @@ export function Contact() {
                 Contact Information
               </h3>
 
-              <div className="mb-6">
+              <div className="mb-6 text-black">
                 <div className="flex items-start mb-4 mt-2">
                   <i
                     data-feather="map-pin"
@@ -79,7 +79,7 @@ export function Contact() {
               {isModalOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
                   <div className="bg-white rounded-lg p-6 w-80 shadow-lg">
-                    <h3 className="text-lg font-bold mb-4 text-center">
+                    <h3 className="text-lg font-bold mb-4 text-center text-black">
                       Open location in:
                     </h3>
                     <div className="flex flex-col gap-4">
@@ -87,7 +87,7 @@ export function Contact() {
                         href="https://maps.google.com?q=17604+Davenport+Rd,+Dallas,+TX+75252"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition"
+                        className="text-center bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
                       >
                         Google Maps
                       </a>
@@ -95,14 +95,14 @@ export function Contact() {
                         href="https://maps.apple.com/?q=17604+Davenport+Rd,+Dallas,+TX+75252"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-900 transition"
+                        className="text-center bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-900 transition"
                       >
                         Apple Maps
                       </a>
                     </div>
                     <button
                       onClick={closeModal}
-                      className="mt-6 w-full bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded transition"
+                      className="mt-10 w-full bg-red-800 hover:bg-red-700 text-white py-2 px-4 rounded transition"
                     >
                       Cancel
                     </button>

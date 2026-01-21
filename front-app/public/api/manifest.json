@@ -1,10 +1,10 @@
-﻿{
+{
   "currency": "USD",
   "Burgers": [
     {
       "name": "Classic Hamburger",
       "description": "Classic burger with lettuce, tomato, pickles, and onion.",
-      "imgUrl": "/public/menu/burgers/classic-burger.jpg",
+      "imgUrl": "/menu/burgers/classic-burger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 8.77,
@@ -14,7 +14,7 @@
     {
       "name": "Ultimate Cheeseburger",
       "description": "Melted American cheese, mayo, lettuce, and tomato.",
-      "imgUrl": "/public/menu/burgers/ultimate-cheeseburger.jpg",
+      "imgUrl": "/menu/burgers/ultimate-cheeseburger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 9,
@@ -24,7 +24,7 @@
     {
       "name": "Mushroom Cheeseburger",
       "description": "Swiss cheese, sauteed mushrooms, mayo, and onion.",
-      "imgUrl": "/public/menu/burgers/mushroom-burger.jpg",
+      "imgUrl": "/menu/burgers/mushroom-burger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 9.25,
@@ -34,7 +34,7 @@
     {
       "name": "Mexican Cheeseburger",
       "description": "Pepper Jack cheese, pico de gallo, avocado, lettuce, and tomato.",
-      "imgUrl": "/public/menu/burgers/mexican-cheeseburger.jpg",
+      "imgUrl": "/menu/burgers/mexican-cheeseburger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 9.3,
@@ -44,7 +44,7 @@
     {
       "name": "BBQ Cheeseburger",
       "description": "American cheese, BBQ sauce, mayo, and pickles.",
-      "imgUrl": "/public/menu/burgers/bbq-cheeseburger.jpg",
+      "imgUrl": "/menu/burgers/bbq-cheeseburger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 9,
@@ -54,7 +54,7 @@
     {
       "name": "Bacon Egg Cheeseburger",
       "description": "Crispy bacon, fried egg, Swiss cheese, and grilled onions.",
-      "imgUrl": "/public/menu/burgers/bacon-egg-cheeseburger.jpg",
+      "imgUrl": "/menu/burgers/bacon-egg-cheeseburger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 9.8,
@@ -64,7 +64,7 @@
     {
       "name": "Hawaiian Cheeseburger",
       "description": "Pineapple, ham, and Swiss cheese with mayo.",
-      "imgUrl": "/public/menu/burgers/hawaiian-cheeseburger.jpg",
+      "imgUrl": "/menu/burgers/hawaiian-cheeseburger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 9,
@@ -76,7 +76,7 @@
     {
       "name": "Crispy & Grilled Chicken Sandwich",
       "description": "Crispy or grilled chicken with mayo, lettuce, and tomato.",
-      "imgUrl": "/public/menu/sandwiches/sandwich.jpg",
+      "imgUrl": "/menu/sandwiches/sandwich.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Chicken_sandwich.jpg",
       "price": {
         "single": 9,
@@ -86,7 +86,7 @@
     {
       "name": "Mushroom Chicken Sandwich",
       "description": "Grilled chicken with Swiss cheese, mushrooms, and mayo.",
-      "imgUrl": "/public/menu/sandwiches/sandwich.jpg",
+      "imgUrl": "/menu/sandwiches/sandwich.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Chicken_sandwich.jpg",
       "price": {
         "single": 9.25,
@@ -96,7 +96,7 @@
     {
       "name": "Grilled Chicken Mexican Sandwich",
       "description": "Grilled chicken with Pepper Jack, pico de gallo, and avocado.",
-      "imgUrl": "/public/menu/sandwiches/sandwich.jpg",
+      "imgUrl": "/menu/sandwiches/sandwich.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Chicken_sandwich.jpg",
       "price": {
         "single": 9.8,
@@ -108,7 +108,7 @@
     {
       "name": "Beef Fajita (Bistek)",
       "description": "Beef fajita tacos with grilled onions and cilantro.",
-      "imgUrl": "/public/menu/tacos/tacos-platte.jpg",
+      "imgUrl": "/menu/tacos/tacos-platte.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/01_Tacos_al_Pastor.jpg",
       "price": {
         "single": 13.86
@@ -117,7 +117,7 @@
     {
       "name": "Chicken (Pollo)",
       "description": "Grilled chicken tacos with cilantro and onion.",
-      "imgUrl": "/public/menu/tacos/tacos-combo.jpg",
+      "imgUrl": "/menu/tacos/tacos-combo.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/01_Tacos_al_Pastor.jpg",
       "price": {
         "single": 13.86
@@ -126,7 +126,7 @@
     {
       "name": "Pastor (Pork)",
       "description": "Marinated pork pastor tacos with pineapple and onion.",
-      "imgUrl": "/public/menu/tacos/tacos-combo.jpg",
+      "imgUrl": "/menu/tacos/tacos-combo.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/01_Tacos_al_Pastor.jpg",
       "price": {
         "single": 13.86
@@ -135,7 +135,7 @@
     {
       "name": "Mexican Sausage (Chorizo)",
       "description": "Chorizo tacos with cilantro and onion.",
-      "imgUrl": "/public/menu/tacos/tacos-platte.jpg",
+      "imgUrl": "/menu/tacos/tacos-platte.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/01_Tacos_al_Pastor.jpg",
       "price": {
         "single": 13.86
@@ -144,7 +144,7 @@
     {
       "name": "3 Tacos Platter (Beans & Rice)",
       "description": "Three tacos served with beans and rice.",
-      "imgUrl": "/public/menu/tacos/tacos-platte.jpg",
+      "imgUrl": "/menu/tacos/tacos-platte.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/01_Tacos_al_Pastor.jpg",
       "price": {
         "platter": 13.86
@@ -155,7 +155,7 @@
     {
       "name": "Torta",
       "description": "Mexican-style sandwich with ham, egg, lettuce, and jalapenos.",
-      "imgUrl": "/public/menu/classics/torta.jpg",
+      "imgUrl": "/menu/classics/torta.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Mexican_Torta_534757.jpg",
       "price": {
         "single": 13.86
@@ -164,7 +164,7 @@
     {
       "name": "Torta Mix",
       "description": "Sandwich stacked with a mix of meats.",
-      "imgUrl": "/public/menu/classics/torta-mix.jpg",
+      "imgUrl": "/menu/classics/torta-mix.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Mexican_Torta_534757.jpg",
       "price": {
         "single": 15
@@ -173,7 +173,7 @@
     {
       "name": "Crispy & Grilled Chicken Salad",
       "description": "Salad topped with crispy or grilled chicken.",
-      "imgUrl": "/public/menu/classics/chicken-salad.jpg",
+      "imgUrl": "/menu/classics/chicken-salad.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/A_chicken_salad.jpg",
       "price": {
         "single": 7.99
@@ -182,7 +182,7 @@
     {
       "name": "Fried Chicken Tender Platter",
       "description": "Chicken tenders with sides.",
-      "imgUrl": "/public/menu/classics/chicken-tender-platter.jpg",
+      "imgUrl": "/menu/classics/chicken-tender-platter.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_tenders_and_french_fries_-_June_2023_-_Sarah_Stierch.jpg",
       "price": {
         "single": 6.5
@@ -193,7 +193,7 @@
     {
       "name": "Eggs with Chorizo",
       "description": "Eggs with chorizo wrapped in a tortilla.",
-      "imgUrl": "/public/menu/breakfast-burritos/eggs-chorizo.jpg",
+      "imgUrl": "/menu/breakfast-burritos/eggs-chorizo.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Breakfast_burrito_%28cropped%29.jpg",
       "price": {
         "single": 7.5
@@ -202,7 +202,7 @@
     {
       "name": "Eggs with Sausage",
       "description": "Eggs with sausage wrapped in a tortilla.",
-      "imgUrl": "/public/menu/breakfast-burritos/eggs-sausage.jpg",
+      "imgUrl": "/menu/breakfast-burritos/eggs-sausage.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Breakfast_burrito_%28cropped%29.jpg",
       "price": {
         "single": 7.5
@@ -211,7 +211,7 @@
     {
       "name": "Eggs with Ham",
       "description": "Eggs with ham wrapped in a tortilla.",
-      "imgUrl": "/public/menu/breakfast-burritos/eggs-ham.jpg",
+      "imgUrl": "/menu/breakfast-burritos/eggs-ham.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Breakfast_burrito_%28cropped%29.jpg",
       "price": {
         "single": 7.5
@@ -220,7 +220,7 @@
     {
       "name": "Eggs with Bacon",
       "description": "Eggs with bacon wrapped in a tortilla.",
-      "imgUrl": "/public/menu/breakfast-burritos/eggs-bacon.jpg",
+      "imgUrl": "/menu/breakfast-burritos/eggs-bacon.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Breakfast_burrito_%28cropped%29.jpg",
       "price": {
         "single": 7.5
@@ -229,7 +229,7 @@
     {
       "name": "Eggs with Potatoes",
       "description": "Eggs with potatoes wrapped in a tortilla.",
-      "imgUrl": "/public/menu/breakfast-burritos/eggs-potatoes.jpg",
+      "imgUrl": "/menu/breakfast-burritos/eggs-potatoes.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Breakfast_burritos.jpg",
       "price": {
         "single": 7.5
@@ -240,7 +240,7 @@
     {
       "name": "Eggs with Sausage, Bacon & Cheese",
       "description": "Eggs with sausage, bacon, and cheese.",
-      "imgUrl": "/public/menu/burritos-mix/sausage-bacon-cheese.jpg",
+      "imgUrl": "/menu/burritos-mix/sausage-bacon-cheese.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burrito.JPG",
       "price": {
         "single": 8
@@ -249,7 +249,7 @@
     {
       "name": "Eggs with Ham, Bacon & Cheese",
       "description": "Eggs with ham, bacon, and cheese.",
-      "imgUrl": "/public/menu/burritos-mix/ham-bacon-cheese.jpg",
+      "imgUrl": "/menu/burritos-mix/ham-bacon-cheese.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burrito.JPG",
       "price": {
         "single": 8
@@ -260,7 +260,7 @@
     {
       "name": "Chicken Quesadilla",
       "description": "Chicken quesadilla with melted cheese.",
-      "imgUrl": "/public/menu/quesadillas/quesadilla.jpeg",
+      "imgUrl": "/menu/quesadillas/quesadilla.jpeg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Chicken_Quesadilla_dish_at_Latin_Bistro.jpg",
       "price": {
         "single": 15
@@ -269,7 +269,7 @@
     {
       "name": "Combo Quesadilla de Fajitas",
       "description": "Quesadilla stuffed with mixed meats.",
-      "imgUrl": "/public/menu/quesadillas/quesadilla-fajita.jpg",
+      "imgUrl": "/menu/quesadillas/quesadilla-fajita.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Chicken_Quesadilla_dish_at_Latin_Bistro.jpg",
       "price": {
         "single": 16
@@ -278,7 +278,7 @@
     {
       "name": "Fish (Tilapia Platter)",
       "description": "Tilapia fillet, breaded or grilled.",
-      "imgUrl": "/public/menu/platters/fish-tilapia.jpg",
+      "imgUrl": "/menu/platters/fish-tilapia.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_tacos_with_lemonade.jpg",
       "price": {
         "single": 15
@@ -289,7 +289,7 @@
     {
       "name": "Chicken Burrito",
       "description": "Chicken burrito with beans and rice.",
-      "imgUrl": "/public/menu/burritos/chicken-burrito.jpg",
+      "imgUrl": "/menu/burritos/chicken-burrito.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burrito.JPG",
       "price": {
         "single": 12.5
@@ -298,7 +298,7 @@
     {
       "name": "Beef Burrito",
       "description": "Beef burrito with beans and rice.",
-      "imgUrl": "/public/menu/burritos/beef-burrito.jpg",
+      "imgUrl": "/menu/burritos/beef-burrito.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burrito.JPG",
       "price": {
         "single": 13
@@ -307,7 +307,7 @@
     {
       "name": "Combo Burrito",
       "description": "Burrito loaded with mixed meats.",
-      "imgUrl": "/public/menu/burritos/combo-burrito.jpg",
+      "imgUrl": "/menu/burritos/combo-burrito.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burrito.JPG",
       "price": {
         "single": 13
@@ -318,7 +318,7 @@
     {
       "name": "Eggs with Chorizo",
       "description": "Breakfast taco with eggs and chorizo.",
-      "imgUrl": "/public/menu/eggs/eggs-tacos.jpg",
+      "imgUrl": "/menu/eggs/eggs-tacos.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos.jpg",
       "price": {
         "single": 2.77
@@ -327,7 +327,7 @@
     {
       "name": "Eggs with Sausage",
       "description": "Breakfast taco with eggs and sausage.",
-      "imgUrl": "/public/menu/eggs/eggs-tacos.jpg",
+      "imgUrl": "/menu/eggs/eggs-tacos.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos.jpg",
       "price": {
         "single": 2.77
@@ -336,7 +336,7 @@
     {
       "name": "Eggs with Ham",
       "description": "Breakfast taco with eggs and ham.",
-      "imgUrl": "/public/menu/eggs/eggs-tacos.jpg",
+      "imgUrl": "/menu/eggs/eggs-tacos.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos.jpg",
       "price": {
         "single": 2.77
@@ -345,7 +345,7 @@
     {
       "name": "Eggs with Bacon",
       "description": "Breakfast taco with eggs and bacon.",
-      "imgUrl": "/public/menu/breakfast-tacos/eggs-bacon.jpg",
+      "imgUrl": "/menu/breakfast-tacos/eggs-bacon.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos.jpg",
       "price": {
         "single": 2.77
@@ -354,7 +354,7 @@
     {
       "name": "Eggs with Potatoes",
       "description": "Breakfast taco with eggs and potatoes.",
-      "imgUrl": "/public/menu/breakfast-tacos/eggs-potatoes.jpg",
+      "imgUrl": "/menu/breakfast-tacos/eggs-potatoes.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos.jpg",
       "price": {
         "single": 2.77
@@ -365,7 +365,7 @@
     {
       "name": "Chips & Salsa",
       "description": "Crispy tortilla chips with salsa.",
-      "imgUrl": "/public/menu/extras/chips.jpg",
+      "imgUrl": "/menu/extras/chips.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Salsa_%28sauce%29.jpg",
       "price": {
         "single": 3.5
@@ -374,7 +374,7 @@
     {
       "name": "Fries Regular",
       "description": "Regular portion of French fries.",
-      "imgUrl": "/public/menu/extras/fries-regular.jpg",
+      "imgUrl": "/menu/extras/fries-regular.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/French_Fries.JPG",
       "price": {
         "single": 3.5
@@ -383,7 +383,7 @@
     {
       "name": "Fries Large",
       "description": "Large portion of French fries.",
-      "imgUrl": "/public/menu/extras/fries-large.jpg",
+      "imgUrl": "/menu/extras/fries-large.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/French_Fries.JPG",
       "price": {
         "single": 5.5
@@ -392,7 +392,7 @@
     {
       "name": "Bacon (Tocino)",
       "description": "Side of bacon.",
-      "imgUrl": "/public/menu/extras/bacon.jpg",
+      "imgUrl": "/menu/extras/bacon.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Bacon_strips.jpg",
       "price": {
         "single": 2
@@ -401,7 +401,7 @@
     {
       "name": "Cheese (Queso)",
       "description": "Extra cheese.",
-      "imgUrl": "/public/menu/extras/cheese.jpg",
+      "imgUrl": "/menu/extras/cheese.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Single_wrapped_slice_of_processed_cheese.jpg",
       "price": {
         "single": 1
@@ -410,7 +410,7 @@
     {
       "name": "Mushrooms (Hongos)",
       "description": "Sauteed mushrooms.",
-      "imgUrl": "/public/menu/extras/mushrooms.jpg",
+      "imgUrl": "/menu/extras/mushrooms.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Saut%C3%A9ed_field_mushrooms_at_The_Wooden_Whisk_in_St_Leonards.jpg",
       "price": {
         "single": 1
@@ -419,7 +419,7 @@
     {
       "name": "Grilled Jalapenos",
       "description": "Grilled jalapenos.",
-      "imgUrl": "/public/menu/extras/grilled-jalapenos.jpg",
+      "imgUrl": "/menu/extras/grilled-jalapenos.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ripe_jalapeno_pepper.jpg",
       "price": {
         "single": 0.5
@@ -428,7 +428,7 @@
     {
       "name": "Grilled or Sauteed Onions",
       "description": "Grilled or sauteed onions.",
-      "imgUrl": "/public/menu/extras/grilled-onions.jpg",
+      "imgUrl": "/menu/extras/grilled-onions.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cooked_onions_in_frying_pan.JPG",
       "price": {
         "single": 1
@@ -439,7 +439,7 @@
     {
       "name": "Junior Burger (with Fries)",
       "description": "Junior burger served with fries.",
-      "imgUrl": "/public/menu/kids/junior-burger.jpg",
+      "imgUrl": "/menu/kids/junior-burger.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg",
       "price": {
         "single": 5.99
@@ -448,7 +448,7 @@
     {
       "name": "Mini Crispy Tender (Fries, Ranch & 2 Chicken Pieces)",
       "description": "Mini chicken tenders with fries and ranch.",
-      "imgUrl": "/public/menu/kids/mini-crispy-tender.jpg",
+      "imgUrl": "/menu/kids/mini-crispy-tender.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_tenders_and_french_fries_-_June_2023_-_Sarah_Stierch.jpg",
       "price": {
         "single": 4.99
@@ -457,7 +457,7 @@
     {
       "name": "Kid Crispy Sandwich (Fries & Ranch)",
       "description": "Kid-sized crispy chicken sandwich with fries and ranch.",
-      "imgUrl": "/public/menu/kids/kids-sandwich.jpg",
+      "imgUrl": "/menu/kids/kids-sandwich.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Chicken_sandwich.jpg",
       "price": {
         "single": 4.99
@@ -466,7 +466,7 @@
     {
       "name": "Kid Cheese Quesadilla Platter (Beans & Rice)",
       "description": "Cheese quesadilla with beans and rice.",
-      "imgUrl": "/public/menu/kids/kid-quesadilla-platter.jpg",
+      "imgUrl": "/menu/kids/kid-quesadilla-platter.jpg",
       "imgNetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Chicken_Quesadilla_dish_at_Latin_Bistro.jpg",
       "price": {
         "single": 5.99
@@ -475,7 +475,7 @@
     {
       "name": "Grilled Cheese Sandwich with Fries",
       "description": "Grilled cheese sandwich with fries.",
-      "imgUrl": "/public/menu/kids/grilled-cheese-with-fries.jpg",
+      "imgUrl": "/menu/kids/grilled-cheese-with-fries.jpg",
       "imgNetUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Classic_Grilled_Cheese_Sandwich_%2825791331763%29_%28cropped%29.jpg",
       "price": {
         "single": 5.99

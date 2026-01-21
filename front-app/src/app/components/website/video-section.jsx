@@ -13,21 +13,22 @@ export function Video() {
   return (
     <section id="video" className="py-10 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="title-font !text-black text-3xl md:text-4xl font-bold text-center text-red-600 mb-6 md:mb-8">
+        <h2 className="title-font text-black! text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8">
           Tour Jhon's Backyard Grill Kitchen
         </h2>
 
         <div
           className="relative mx-auto rounded-xl overflow-hidden shadow-lg bg-black
-                max-w-[375px] pt-[77.33%] 
-                md:max-w-[500px] lg:max-w-[450px] md:aspect-[16/9] md:pt-0 md:max-h-[65vh]"
+                max-w-93.75 pt-[77.33%] 
+                md:max-w-125 lg:max-w-112.5 md:aspect-video md:pt-0 md:max-h-[65vh]"
         >
           <video
             id="promoVideo"
             className="absolute inset-0 w-full h-full object-cover"
             preload="metadata"
-            poster="public/menu/tacos/tacos-platte.jpg"
-            playsinline
+            poster="/menu/tacos/tacos-platte.jpg"
+            src="/kitchen/promo.mp4"
+            playsInline
             muted
             loop
             controls
@@ -35,8 +36,7 @@ export function Video() {
 
           <button
             id="playFallbackBtn"
-            className="hidden absolute inset-0 m-auto h-14 w-14 md:h-16 md:w-16 rounded-full bg-white/70 backdrop-blur
-               flex items-center justify-center text-black text-xl font-bold"
+            className="hidden absolute inset-0 m-auto h-14 w-14 md:h-16 md:w-16 rounded-full bg-white/70 backdrop-blur text-black text-xl font-bold"
           >
             Play
           </button>
@@ -46,10 +46,10 @@ export function Video() {
           If autoplay does not start, tap Play or
           <a
             id="videoDownloadLink"
-            href="public/kitchen/promo.mp4"
+            href="/kitchen/promo.mp4"
             className="underline"
           >
-            download the video
+            {" "}download the video
           </a>
           .
         </p>

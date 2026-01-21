@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AboutUs() {
   return (
-    <section id="nosotros" className="py-16 bg-gray-800 text-white">
+    <section id="about" className="py-16 bg-gray-800 text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
@@ -12,7 +12,7 @@ export default function AboutUs() {
               that have been passed down for generations.</p>
             <p className="mb-4 text-lg">Every dish we serve uses the same ingredients and techniques
               found in Mexican homes, guaranteeing an authentic culinary experience.</p>
-            <p className="text-lg">¡Bienvenidos a nuestra mesa, donde la comida es preparada con amor y
+            <p className="text-lg">Welcome to our table, where the food is prepared with love and
               the flavors will make you feel right at home!</p>
           </div>
           <div className="md:w-1/2 md:pl-12" data-aos="fade-left">
