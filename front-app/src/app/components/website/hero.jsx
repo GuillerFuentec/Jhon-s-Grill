@@ -1,4 +1,5 @@
 import React from "react";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 
 export function Hero() {
   return (
@@ -19,7 +20,7 @@ export function Hero() {
               href="tel:+19727331439"
               className="bg-amber-500 text-white hover:bg-amber-600 font-bold py-3 px-6 rounded-full text-lg flex items-center justify-center gap-2 transition"
             >
-              <i data-feather="phone"></i> Call and Pick Up
+              <PhoneIcon className="w-5 h-5" /> Order now
             </a>
             <a
               href="#menu"

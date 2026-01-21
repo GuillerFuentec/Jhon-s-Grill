@@ -1,5 +1,11 @@
 'use client'
 import { useState } from "react";
+import { Gallery } from "./gallery";
+import {
+  MapPinIcon,
+  PhoneIcon,
+  ClockIcon,
+} from "@heroicons/react/24/outline";
 
 export function Contact() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,10 +32,7 @@ export function Contact() {
 
               <div className="mb-6 text-black">
                 <div className="flex items-start mb-4 mt-2">
-                  <i
-                    data-feather="map-pin"
-                    className="mr-4 text-gray-700 mt-1"
-                  ></i>
+                  <MapPinIcon className="mr-4 text-gray-700 mt-1 w-5 h-5" />
                   <div>
                     <h4 className="font-bold">Address</h4>
                     <p>
@@ -41,10 +44,7 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-start mb-4 mt-2">
-                  <i
-                    data-feather="phone"
-                    className="mr-4 text-gray-700 mt-1"
-                  ></i>
+                  <PhoneIcon className="mr-4 text-gray-700 mt-1 w-5 h-5" />
                   <div>
                     <h4 className="font-bold">Phone</h4>
                     <p>+1 (972) 733-1439</p>
@@ -52,10 +52,7 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-start mt-2">
-                  <i
-                    data-feather="clock"
-                    className="mr-4 text-gray-700 mt-1"
-                  ></i>
+                  <ClockIcon className="mr-4 text-gray-700 mt-1 w-5 h-5" />
                   <div>
                     <h4 className="font-bold">Hours</h4>
                     <p>
@@ -72,7 +69,7 @@ export function Contact() {
                 onClick={openModal}
                 className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition"
               >
-                <i data-feather="map" className="mr-2"></i> Open in Maps
+                <MapPinIcon className="mr-2 w-5 h-5" /> Open in Maps
               </button>
 
               {/* Modal */}
@@ -121,47 +118,7 @@ export function Contact() {
                 </h2>
               </div>
 
-              <div
-                id="galleryCarousel"
-                className="relative w-full max-w-5xl mx-auto select-none"
-              >
-                <div className="overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                  <ul
-                    id="galleryTrack"
-                    className="flex transition-transform duration-500 ease-out"
-                    style={{ transform: "translateX(0)" }}
-                  >
-                    {/* Slides injected by ./scripts/gallery.js */}
-                  </ul>
-                </div>
-
-                <button
-                  id="galleryPrev"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 text-white p-2 hover:bg-black/80 focus:outline-none"
-                  aria-label="Previous"
-                >
-                  &lt;
-                </button>
-                <button
-                  id="galleryNext"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 text-white p-2 hover:bg-black/80 focus:outline-none"
-                  aria-label="Next"
-                >
-                  &gt;
-                </button>
-
-                <div
-                  id="galleryDots"
-                  className="flex justify-center gap-2 mt-4"
-                ></div>
-              </div>
-
-              <p
-                id="galleryEmptyMsg"
-                className="hidden text-center text-red-600 mt-6"
-              >
-                There are no images in the gallery yet.
-              </p>
+              <Gallery />
             </div>
           </div>
         </div>

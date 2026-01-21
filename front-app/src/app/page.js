@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="">
+      <main className="pt-16">
         <Hero />
         <Video />
         <Infosection />

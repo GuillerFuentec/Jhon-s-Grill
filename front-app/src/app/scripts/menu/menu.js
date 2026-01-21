@@ -1,6 +1,7 @@
-﻿'use client';
+﻿"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { PlusIcon } from "@heroicons/react/24/outline";
 
 /* Utils */
 const usd = new Intl.NumberFormat("en-US", {
@@ -24,7 +25,11 @@ export function priceToText(p = {}) {
 }
 
 function MenuImage({ srcPrimary, srcFallback, alt }) {
-  const [src, setSrc] = useState(srcPrimary || srcFallback || "https://via.placeholder.com/640x360?text=Photo");
+  const [src, setSrc] = useState(
+    srcPrimary ||
+      srcFallback ||
+      "https://via.placeholder.com/640x360?text=Photo"
+  );
 
   const handleError = () => {
     if (src !== srcFallback && srcFallback) {
@@ -38,7 +43,7 @@ function MenuImage({ srcPrimary, srcFallback, alt }) {
     <img
       loading="lazy"
       decoding="async"
-      alt={alt || ""}
+      alt={alt || "mexican food plate"}
       className="menu-img w-full h-full object-cover"
       src={src}
       onError={handleError}
@@ -69,6 +74,7 @@ function MenuCard({ item, index }) {
           </p>
         )}
       </div>
+      <button className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition"><PlusIcon className="text-white"/></button>
     </div>
   );
 }
@@ -142,9 +148,7 @@ export function Menu({ apiUrl = "/api/manifest.json" }) {
 
   if (error) {
     return (
-      <div className="text-center col-span-full text-red-600">
-        {error}
-      </div>
+      <div className="text-center col-span-full text-red-600">{error}</div>
     );
   }
 
@@ -212,5 +216,3 @@ export function useMenu(apiUrl = "/api/manifest.json") {
 }
 
 export { MenuNav, MenuGrid, MenuCard, MenuImage };
-
-

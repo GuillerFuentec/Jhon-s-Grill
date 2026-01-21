@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  PhoneIcon,
+  GlobeAltIcon,
+  CameraIcon,
+  ChatBubbleLeftRightIcon,
+} from "@heroicons/react/24/outline";
 
 export function Footer() {
   return (
@@ -15,13 +21,13 @@ export function Footer() {
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="hover:text-white transition">
-                  <i data-feather="facebook"></i>
+                  <GlobeAltIcon className="w-5 h-5" />
                 </a>
                 <a href="#" className="hover:text-white transition">
-                  <i data-feather="instagram"></i>
+                  <CameraIcon className="w-5 h-5" />
                 </a>
                 <a href="#" className="hover:text-white transition">
-                  <i data-feather="twitter"></i>
+                  <ChatBubbleLeftRightIcon className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -75,12 +81,12 @@ export function Footer() {
         </div>
       </footer>
 
-      <div className="fixed bottom-6 right-6 z-50">
+          <div className="fixed bottom-6 right-6 z-50">
         <a
           href="tel:+19727331439"
           className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-bounce"
         >
-          <i data-feather="phone" className="w-6 h-6"></i>
+          <PhoneIcon className="w-6 h-6" />
         </a>
       </div>
     </>
