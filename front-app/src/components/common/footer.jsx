@@ -58,7 +58,7 @@ export function Footer() {
                 href="/politica-de-cookies.html"
                 className="hover:text-white transition text-sm text-blue-300"
               >
-                Cookie Policy
+                Cookie Policy{" "}
               </a>
               <a
                 href="/politica-de-privacidad.html"

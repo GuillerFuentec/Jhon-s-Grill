@@ -19,7 +19,7 @@ export function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 z-50 bg-white shadow-sm dark:bg-gray-800/50 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10"
+      className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-800/50 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10"
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 justify-between">
@@ -30,7 +30,7 @@ export function Navbar() {
               <span className="sr-only">Open main menu</span>
               <Bars3Icon
                 aria-hidden="true"
-                className="block size-6 group-data-open:hidden"
+                className="block text-white size-6 group-data-open:hidden"
               />
               <XMarkIcon
                 aria-hidden="true"
@@ -40,7 +40,7 @@ export function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <Image src="/logo.jpeg" width={48} height={48}/>
+              <Image alt="logo" src="/logo.png" width={48} height={48} />
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <a
@@ -74,7 +74,10 @@ export function Navbar() {
               type="button"
               className="relative rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 dark:hover:text-white dark:focus:outline-indigo-500"
             >
-              <ShoppingCartIcon aria-hidden="true" className="size-6 mr-3" />
+              <ShoppingCartIcon
+                aria-hidden="true"
+                className="text-white size-6 mr-3"
+              />
             </button>
             <button
               type="button"
@@ -82,7 +85,7 @@ export function Navbar() {
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
+              <BellIcon aria-hidden="true" className="text-white size-6" />
             </button>
 
             {/* Profile dropdown */}
@@ -140,13 +143,15 @@ export function Navbar() {
           >
             Home
           </DisclosureButton>
-          <DisclosureButton
-            as="a"
-            href="#menu"
-            className="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:bg-white/5 dark:hover:text-white"
-          >
-            Menu
-          </DisclosureButton>
+          <div className="bg-red-800 hover:bg-red-700 active:bg-red-600 mr-2.5 ml-1 rounded-md">
+            <DisclosureButton
+              as="a"
+              href="#menu"
+              className="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:bg-white/5 dark:hover:text-white"
+            >
+              Menu
+            </DisclosureButton>
+          </div>
           <DisclosureButton
             as="a"
             href="#about"

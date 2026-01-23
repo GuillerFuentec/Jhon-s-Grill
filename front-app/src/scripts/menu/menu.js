@@ -28,7 +28,7 @@ function MenuImage({ srcPrimary, srcFallback, alt }) {
   const [src, setSrc] = useState(
     srcPrimary ||
       srcFallback ||
-      "https://via.placeholder.com/640x360?text=Photo"
+      "https://via.placeholder.com/640x360?text=Photo",
   );
 
   const handleError = () => {
@@ -52,6 +52,14 @@ function MenuImage({ srcPrimary, srcFallback, alt }) {
 }
 
 function MenuCard({ item, index }) {
+  const [isRotating, setIsRotating] = useState(false);
+
+  const handleAddToCart = () => {
+    setIsRotating(true);
+    setTimeout(() => setIsRotating(false), 1500);
+    // Add to cart logic here if needed
+  };
+
   return (
     <div
       className="menu-item bg-white rounded-lg overflow-hidden shadow-lg"
@@ -74,7 +82,15 @@ function MenuCard({ item, index }) {
           </p>
         )}
       </div>
-      <button className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition"><PlusIcon className="text-white"/></button>
+      <div className="p-4">
+        <button 
+          className="btn-icon inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition"
+          onClick={handleAddToCart}
+        >
+          <PlusIcon className={`plus-icon text-white size-5 ${isRotating ? 'animate-rotate' : ''}`} />
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 }
@@ -125,12 +141,12 @@ export function Menu({ apiUrl = "/api/manifest.json" }) {
         const menuData = await res.json();
 
         const cats = Object.keys(menuData).filter(
-          (k) => k.toLowerCase() !== "currency"
+          (k) => k.toLowerCase() !== "currency",
         );
 
         cats.forEach((cat) => {
           menuData[cat] = (menuData[cat] || []).filter(
-            (it) => it && it.name && it.price
+            (it) => it && it.name && it.price,
           );
         });
 
@@ -184,12 +200,12 @@ export function useMenu(apiUrl = "/api/manifest.json") {
         const menuData = await res.json();
 
         const cats = Object.keys(menuData).filter(
-          (k) => k.toLowerCase() !== "currency"
+          (k) => k.toLowerCase() !== "currency",
         );
 
         cats.forEach((cat) => {
           menuData[cat] = (menuData[cat] || []).filter(
-            (it) => it && it.name && it.price
+            (it) => it && it.name && it.price,
           );
         });
 

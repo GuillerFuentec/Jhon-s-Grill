@@ -44,3 +44,28 @@ body {
 .menu-img {
   transition: transform 0.3s ease;
 }
+
+
+.btn-icon {
+  border: none;
+  cursor: pointer;
+}
+
+.plus-icon {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+/* Trigger animation when button is pressed (touch / click) */
+.animate-rotate {
+  animation: rotate-360 1.5s ease-in-out;
+}
+
+@keyframes rotate-360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
