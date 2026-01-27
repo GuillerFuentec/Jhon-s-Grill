@@ -16,7 +16,7 @@ import {
 import Image from "next/image";
 import { config } from "@/config/config.js";
 
-export function Navbar() {
+export function AppNavbar() {
   return (
     <Disclosure
       as="nav"
@@ -41,40 +41,22 @@ export function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <a href="#home">
+              <a href="/">
                 <Image alt="logo" src="/logo.png" width={48} height={48} />
               </a>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <a
-                href="#home"
+                href="/"
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
               >
                 Home
-              </a>
-              <a
-                href="#menu"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
-              >
-                Menu
-              </a>
-              <a
-                href="#about"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
-              >
-                About
               </a>
               <a
                 href={config.CONTACT_PHONE_LINK}
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
               >
                 Contact
-              </a>
-              <a
-                href="#visit-us"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
-              >
-                Visit Us
               </a>
             </div>
           </div>
@@ -161,13 +143,6 @@ export function Navbar() {
               Menu
             </DisclosureButton>
           </div>
-          <DisclosureButton
-            as="a"
-            href="#about"
-            className="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:bg-white/5 dark:hover:text-white"
-          >
-            About
-          </DisclosureButton>
           <DisclosureButton
             as="a"
             href={config.CONTACT_PHONE_LINK}

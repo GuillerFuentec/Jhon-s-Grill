@@ -1,10 +1,10 @@
-import { Navbar } from "@/components/common/navbar";
+import { AppNavbar } from "@/components/common/appNavbar";
 import { Footer } from "@/components/common/footer";
 
 export default function PrivacyPolicy() {
   return (
     <>
-      <Navbar />
+      <AppNavbar />
       <section className="py-16 bg-white min-h-screen">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="title-font text-3xl md:text-4xl font-bold text-center text-red-600 mb-12">
@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
             </p>
           </div>
         </div>
-      </section> 
+      </section>
       <Footer />
     </>
   );

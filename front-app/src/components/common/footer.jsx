@@ -61,7 +61,7 @@ export function Footer() {
                 Cookie Policy{" "}
               </a>
               <a
-                href="/politica-de-privacidad.html"
+                href="/privacy"
                 className="hover:text-white transition text-sm text-blue-300"
               >
                 Privacy Policy

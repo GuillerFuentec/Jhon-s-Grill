@@ -5,7 +5,7 @@ import { Video } from "@/components/website/video-section";
 import { Infosection } from "@/components/website/info-section";
 import { Menu } from "@/components/website/menu";
 import AboutUs from "@/components/website/about-us";
-import { Contact } from "@/components/website/contact";
+import { VisitUs } from "@/components/website/visit-us";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         <Infosection />
         <Menu />
         <AboutUs />
-        <Contact />
+        <VisitUs />
       </main>
       <Footer />
     </>

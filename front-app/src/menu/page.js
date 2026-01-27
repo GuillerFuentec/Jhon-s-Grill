@@ -1,4 +1,4 @@
-import { Menu } from '../scripts/menu/menu.js';
+import { Menu } from '@/scripts/menu/menu.js';
 
 export default function MenuPage() {
   return (

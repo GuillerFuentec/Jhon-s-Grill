@@ -7,14 +7,14 @@ import {
   ClockIcon,
 } from "@heroicons/react/24/outline";
 
-export function Contact() {
+export function VisitUs() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section id="visit-us" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2
           className="title-font text-3xl md:text-4xl font-bold text-center text-red-600 mb-12"

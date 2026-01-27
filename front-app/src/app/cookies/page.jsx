@@ -1,10 +1,10 @@
-import { Navbar } from "@/components/common/navbar";
+import { AppNavbar } from "@/components/common/appNavbar";
 import { Footer } from "@/components/common/footer";
 
 export default function page() {
   return (
     <>
-      <Navbar />
+      <AppNavbar />
       <section className="py-16 bg-white min-h-screen">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="title-font text-3xl md:text-4xl font-bold text-center text-red-600 mb-12">
@@ -68,7 +68,9 @@ export default function page() {
               publicitarias. Solo se cargan si das tu consentimiento explícito.
             </p>
 
-            <h2 className="text-2xl font-bold text-red-600 mb-4">Tus opciones</h2>
+            <h2 className="text-2xl font-bold text-red-600 mb-4">
+              Tus opciones
+            </h2>
             <p className="mb-4 text-black">
               Puedes gestionar tus preferencias de cookies en cualquier momento
               haciendo clic en "Preferencias de cookies" en el pie de página de
@@ -80,7 +82,9 @@ export default function page() {
               sitio web.
             </p>
 
-            <h2 className="text-2xl font-bold text-red-600 mb-4">Do Not Track</h2>
+            <h2 className="text-2xl font-bold text-red-600 mb-4">
+              Do Not Track
+            </h2>
             <p className="mb-6 text-black">
               Respetamos la configuración "Do Not Track" de tu navegador. Si
               tienes activada esta opción, automáticamente rechazaremos todas
@@ -99,9 +103,7 @@ export default function page() {
 
             <div className="bg-amber-100 p-6 rounded-lg mt-8">
               <p className="text-center">
-                <button
-                  className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition"
-                >
+                <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition">
                   Gestionar Preferencias de Cookies
                 </button>
               </p>
