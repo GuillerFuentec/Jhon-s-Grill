@@ -1,11 +1,9 @@
+"use client";
+
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -15,8 +13,29 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { config } from "@/config/config.js";
+import Dropdown from "@/components/interactive_components/dropdown";
+import { useCart } from "@/contexts/cart/cartContext";
+import { useAuth } from "@/contexts/auth/authContext";
 
 export function Navbar() {
+  const { items, getTotalItems, getSubtotal, removeItem } = useCart();
+  const { isAuthenticated } = useAuth();
+
+  const cartItems = items.map(item => ({
+    type: 'div',
+    label: `${item.name} x${item.quantity} - $${(item.price?.single || 0) * item.quantity}`,
+  }));
+
+  if (cartItems.length === 0) {
+    cartItems.push({ type: 'div', label: 'No items in cart' });
+  } else {
+    cartItems.push({ type: 'div', label: `Subtotal: $${getSubtotal().toFixed(2)}` });
+    cartItems.push({
+      type: 'link',
+      label: isAuthenticated ? 'Checkout' : 'Login to Checkout',
+      href: isAuthenticated ? '/checkout' : '/login'
+    });
+  }
   return (
     <Disclosure
       as="nav"
@@ -79,66 +98,52 @@ export function Navbar() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button
-              type="button"
-              className="relative rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 dark:hover:text-white dark:focus:outline-indigo-500"
-            >
-              <ShoppingCartIcon
-                aria-hidden="true"
-                className="text-white size-6 mr-3"
-              />
-            </button>
-            <button
-              type="button"
-              className="relative rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 dark:hover:text-white dark:focus:outline-indigo-500"
-            >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="text-white size-6" />
-            </button>
+            <Dropdown
+              trigger={
+                <>
+                  <span className="sr-only">Shopping cart</span>
+                  <ShoppingCartIcon aria-hidden="true" className="text-white size-6" />
+                  {getTotalItems() > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {getTotalItems()}
+                    </span>
+                  )}
+                </>
+              }
+              items={cartItems}
+              className="mr-3 relative"
+            />
+            <Dropdown
+              trigger={
+                <>
+                  <span className="sr-only">View notifications</span>
+                  <BellIcon aria-hidden="true" className="text-white size-6" />
+                </>
+              }
+              items={[
+                { type: 'div', label: 'No new notifications' },
+                { type: 'link', label: 'View All', href: '/notifications' },
+              ]}
+            />
 
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
-              <MenuButton className="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
-                <span className="absolute -inset-1.5" />
-                <span className="sr-only">Open user menu</span>
-                <img
-                  alt=""
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  className="size-8 rounded-full bg-gray-100 outline -outline-offset-1 outline-black/5 dark:bg-gray-800 dark:outline-white/10"
-                />
-              </MenuButton>
-
-              <MenuItems
-                transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
-              >
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-300 dark:data-focus:bg-white/5"
-                  >
-                    Your profile
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-300 dark:data-focus:bg-white/5"
-                  >
-                    Settings
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-300 dark:data-focus:bg-white/5"
-                  >
-                    Sign out
-                  </a>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
+            <Dropdown
+              trigger={
+                <>
+                  <span className="sr-only">Open user menu</span>
+                  <img
+                    alt=""
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    className="size-8 rounded-full bg-gray-100 outline -outline-offset-1 outline-black/5 dark:bg-gray-800 dark:outline-white/10"
+                  />
+                </>
+              }
+              items={[
+                { type: 'link', label: 'Your profile', href: '/profile' },
+                { type: 'link', label: 'Settings', href: '/settings' },
+                { type: 'button', label: 'Sign out', onClick: () => console.log('Sign out') },
+              ]}
+              className="ml-3"
+            />
           </div>
         </div>
       </div>

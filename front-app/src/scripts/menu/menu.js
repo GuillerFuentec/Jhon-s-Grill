@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import { getCachedMenu } from "../../config/menu.js";
+import { useCart } from "../../contexts/cart/cartContext";
 
 /* Utils */
 const usd = new Intl.NumberFormat("en-US", {
@@ -53,11 +55,12 @@ function MenuImage({ srcPrimary, srcFallback, alt }) {
 
 function MenuCard({ item, index }) {
   const [isRotating, setIsRotating] = useState(false);
+  const { addItem } = useCart();
 
   const handleAddToCart = () => {
     setIsRotating(true);
     setTimeout(() => setIsRotating(false), 1500);
-    // Add to cart logic here if needed
+    addItem(item);
   };
 
   return (
@@ -104,7 +107,7 @@ function MenuNav({ categories, data, activeCategory, setActiveCategory }) {
             key={cat}
             className={`menu-category-btn px-4 py-2 rounded-full font-medium whitespace-nowrap ${
               activeCategory === cat
-                ? "bg-red-600 text-white"
+                ? "bg-red-600 text-white animate-blink"
                 : "bg-white text-red-600"
             }`}
             onClick={() => setActiveCategory(cat)}
@@ -134,21 +137,13 @@ export function Menu({ apiUrl = "/api/manifest.json" }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchMenu() {
+    async function loadMenu() {
       try {
-        const res = await fetch(apiUrl, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const menuData = await res.json();
+        const menuData = await getCachedMenu(apiUrl);
 
         const cats = Object.keys(menuData).filter(
           (k) => k.toLowerCase() !== "currency",
         );
-
-        cats.forEach((cat) => {
-          menuData[cat] = (menuData[cat] || []).filter(
-            (it) => it && it.name && it.price,
-          );
-        });
 
         setData(menuData);
         setCategories(cats);
@@ -159,7 +154,7 @@ export function Menu({ apiUrl = "/api/manifest.json" }) {
       }
     }
 
-    fetchMenu();
+    loadMenu();
   }, [apiUrl]);
 
   if (error) {
@@ -193,21 +188,13 @@ export function useMenu(apiUrl = "/api/manifest.json") {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchMenu() {
+    async function loadMenu() {
       try {
-        const res = await fetch(apiUrl, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const menuData = await res.json();
+        const menuData = await getCachedMenu(apiUrl);
 
         const cats = Object.keys(menuData).filter(
           (k) => k.toLowerCase() !== "currency",
         );
-
-        cats.forEach((cat) => {
-          menuData[cat] = (menuData[cat] || []).filter(
-            (it) => it && it.name && it.price,
-          );
-        });
 
         setData(menuData);
         setCategories(cats);
@@ -218,7 +205,7 @@ export function useMenu(apiUrl = "/api/manifest.json") {
       }
     }
 
-    fetchMenu();
+    loadMenu();
   }, [apiUrl]);
 
   return {
