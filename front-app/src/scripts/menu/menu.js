@@ -1,9 +1,8 @@
 ﻿"use client";
 
 import { useState, useEffect } from "react";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import { AddToCartButton } from "@/components/Cart/AddToCartButton";
 import { getCachedMenu } from "../../config/menu.js";
-import { useCart } from "../../contexts/cart/cartContext";
 
 /* Utils */
 const usd = new Intl.NumberFormat("en-US", {
@@ -54,15 +53,6 @@ function MenuImage({ srcPrimary, srcFallback, alt }) {
 }
 
 function MenuCard({ item, index }) {
-  const [isRotating, setIsRotating] = useState(false);
-  const { addItem } = useCart();
-
-  const handleAddToCart = () => {
-    setIsRotating(true);
-    setTimeout(() => setIsRotating(false), 1500);
-    addItem(item);
-  };
-
   return (
     <div
       className="menu-item bg-white rounded-lg overflow-hidden shadow-lg"
@@ -86,13 +76,7 @@ function MenuCard({ item, index }) {
         )}
       </div>
       <div className="p-4">
-        <button 
-          className="btn-icon inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition"
-          onClick={handleAddToCart}
-        >
-          <PlusIcon className={`plus-icon text-white size-5 ${isRotating ? 'animate-rotate' : ''}`} />
-          Add to Cart
-        </button>
+        <AddToCartButton item={item} />
       </div>
     </div>
   );
@@ -164,7 +148,14 @@ export function Menu({ apiUrl = "/api/manifest.json" }) {
   }
 
   if (!data || !activeCategory) {
-    return <div>Loading menu...</div>;
+    return (
+      <div className="flex items-center justify-center py-12">
+        <div className="flex items-center gap-3 text-gray-600">
+          <span className="h-5 w-5 animate-spin rounded-full border-2 border-gray-300 border-t-red-600" />
+          <span className="text-sm font-medium">Loading menu...</span>
+        </div>
+      </div>
+    );
   }
 
   return (

@@ -1,6 +1,7 @@
 {
   "name": "front-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "description": "Esta aplicacion esta echa para el restaurante Jhon´s Grill Backyard ubicado en Dallas, TX. Tendra la funcionalidad de ordenar comida online, ofrecera la posibilidad a los usuarios de crear cuentas y proximamente un sistema de rewards",
   "private": true,
   "scripts": {
     "dev": "next dev",

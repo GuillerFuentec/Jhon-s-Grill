@@ -4,12 +4,19 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
 } from "@headlessui/react";
 import {
   Bars3Icon,
   ShoppingCartIcon,
   BellIcon,
   XMarkIcon,
+  MinusIcon,
+  PlusIcon,
+  TrashIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { config } from "@/config/config.js";
@@ -18,24 +25,16 @@ import { useCart } from "@/contexts/cart/cartContext";
 import { useAuth } from "@/contexts/auth/authContext";
 
 export function AppNavbar() {
-  const { items, getTotalItems, getSubtotal } = useCart();
+  const {
+    items,
+    getTotalItems,
+    getSubtotal,
+    removeItem,
+    updateQuantity,
+    decreaseQty,
+  } = useCart();
   const { isAuthenticated } = useAuth();
 
-  const cartItems = items.map(item => ({
-    type: 'div',
-    label: `${item.name} x${item.quantity} - $${(item.price?.single || 0) * item.quantity}`,
-  }));
-
-  if (cartItems.length === 0) {
-    cartItems.push({ type: 'div', label: 'No items in cart' });
-  } else {
-    cartItems.push({ type: 'div', label: `Subtotal: $${getSubtotal().toFixed(2)}` });
-    cartItems.push({
-      type: 'link',
-      label: isAuthenticated ? 'Checkout' : 'Login to Checkout',
-      href: isAuthenticated ? '/checkout' : '/login'
-    });
-  }
   return (
     <Disclosure
       as="nav"
@@ -86,21 +85,94 @@ export function AppNavbar() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <Dropdown
-              trigger={
-                <>
-                  <span className="sr-only">Shopping cart</span>
-                  <ShoppingCartIcon aria-hidden="true" className="text-white size-6" />
-                  {getTotalItems() > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                      {getTotalItems()}
-                    </span>
+            <Menu as="div" className="relative mx-6">
+              <MenuButton className="relative flex items-center rounded-full text-gray-400 hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-gray-400 dark:hover:text-gray-300 dark:focus-visible:outline-indigo-500">
+                <span className="sr-only">Shopping cart</span>
+                <ShoppingCartIcon
+                  aria-hidden="true"
+                  className="text-white size-6"
+                />
+                {getTotalItems() > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {getTotalItems()}
+                  </span>
+                )}
+              </MenuButton>
+
+              <MenuItems
+                transition
+                className="absolute right-0 z-10 mt-2 w-80 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
+              >
+                <div className="py-1 max-h-96 overflow-y-auto">
+                  {items.length === 0 ? (
+                    <div className="px-4 py-2 text-sm text-gray-700 dark:text-gray-300">
+                      No items in cart
+                    </div>
+                  ) : (
+                    <>
+                      {items.map((item) => (
+                        <div
+                          key={item.name}
+                          className="px-4 py-2 flex items-center justify-between border-b border-gray-200 dark:border-gray-700"
+                        >
+                          <div className="flex-1">
+                            <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+                              {item.name}
+                            </h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                              ${(item.price?.single || 0).toFixed(2)} each
+                            </p>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <button
+                              onClick={() =>
+                                updateQuantity(item.name, item.quantity - 1)
+                              }
+                              className="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                            >
+                              <MinusIcon className="w-4 h-4" />
+                            </button>
+                            <span className="text-sm font-medium text-gray-900 dark:text-white min-w-[20px] text-center">
+                              {item.quantity}
+                            </span>
+                            <button
+                              onClick={() =>
+                                updateQuantity(item.name, item.quantity + 1)
+                              }
+                              className="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                            >
+                              <PlusIcon className="w-4 h-4" />
+                            </button>
+                            <button
+                              onClick={() => removeItem(item.name)}
+                              className="p-1 text-red-400 hover:text-red-600 dark:hover:text-red-300"
+                            >
+                              <TrashIcon className="w-4 h-4" />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                      <div className="px-4 py-2 border-t border-gray-200 dark:border-gray-700">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">
+                            Subtotal:
+                          </span>
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">
+                            ${getSubtotal().toFixed(2)}
+                          </span>
+                        </div>
+                        <a
+                          href={isAuthenticated ? "/checkout" : "/login"}
+                          className="mt-2 block w-full text-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700"
+                        >
+                          {isAuthenticated ? "Checkout" : "Login to Checkout"}
+                        </a>
+                      </div>
+                    </>
                   )}
-                </>
-              }
-              items={cartItems}
-              className="mr-3 relative"
-            />
+                </div>
+              </MenuItems>
+            </Menu>
             <Dropdown
               trigger={
                 <>
@@ -109,8 +181,8 @@ export function AppNavbar() {
                 </>
               }
               items={[
-                { type: 'div', label: 'No new notifications' },
-                { type: 'link', label: 'View All', href: '/notifications' },
+                { type: "div", label: "No new notifications" },
+                { type: "link", label: "View All", href: "/notifications" },
               ]}
             />
             <Dropdown
@@ -125,9 +197,13 @@ export function AppNavbar() {
                 </>
               }
               items={[
-                { type: 'link', label: 'Your profile', href: '/profile' },
-                { type: 'link', label: 'Settings', href: '/settings' },
-                { type: 'button', label: 'Sign out', onClick: () => console.log('Sign out') },
+                { type: "link", label: "Your profile", href: "/profile" },
+                { type: "link", label: "Settings", href: "/settings" },
+                {
+                  type: "button",
+                  label: "Sign out",
+                  onClick: () => console.log("Sign out"),
+                },
               ]}
               className="ml-3"
             />
