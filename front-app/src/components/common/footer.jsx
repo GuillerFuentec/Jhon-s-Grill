@@ -1,4 +1,6 @@
+'use client'
 import React from "react";
+import { usePathname } from "next/navigation";
 import {
   PhoneIcon,
   GlobeAltIcon,
@@ -7,6 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 export function Footer() {
+  const pathname = usePathname();
   return (
     <>
       <footer className="bg-[#1f2937]  text-white py-12">
@@ -43,7 +46,10 @@ export function Footer() {
               <h4 className="font-bold text-lg mb-4">Contact</h4>
               <p className="mb-2 text-white">17604 Davenport Rd,</p>
               <p className="mb-2 text-white">Dallas, TX 75252</p>
-              <a href="tel:+19727331439" className="hover:text-white transition">
+              <a
+                href="tel:+19727331439"
+                className="hover:text-white transition"
+              >
                 +1 (972) 733-1439
               </a>
             </div>
@@ -81,14 +87,16 @@ export function Footer() {
         </div>
       </footer>
 
-          <div className="fixed bottom-6 right-6 z-50">
-        <a
-          href="tel:+19727331439"
-          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-bounce"
-        >
-          <PhoneIcon className="w-6 h-6" />
-        </a>
-      </div>
+      {pathname === "/" && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <a
+            href="tel:+19727331439"
+            className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-bounce"
+          >
+            <PhoneIcon className="w-6 h-6" />
+          </a>
+        </div>
+      )}
     </>
   );
 }

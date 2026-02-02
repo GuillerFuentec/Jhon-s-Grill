@@ -1,3 +1,4 @@
+
 import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
 import { Hero } from "@/components/website/hero";
@@ -16,7 +17,9 @@ export default function Home() {
         <Hero />
         <Video />
         <Infosection />
-        <Menu />
+        <div>
+          <Menu />
+        </div>
         <AboutUs />
         <VisitUs />
       </main>

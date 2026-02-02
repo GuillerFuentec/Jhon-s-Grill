@@ -4,9 +4,6 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItems,
 } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -22,18 +19,17 @@ import { config } from "@/config/config.js";
 import Dropdown from "@/components/interactive_components/dropdown";
 import { useCart } from "@/contexts/cart/cartContext";
 import { useAuth } from "@/contexts/auth/authContext";
+import { Menu, MenuButton, MenuItems } from "@headlessui/react";
 
-export function AppNavbar() {
+export function LandingNavbar() {
   const {
     items,
     getTotalItems,
     getSubtotal,
     removeItem,
     updateQuantity,
-    decreaseQty,
   } = useCart();
   const { isAuthenticated } = useAuth();
-
   return (
     <Disclosure
       as="nav"
@@ -58,16 +54,28 @@ export function AppNavbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <a href="/">
+              <a href="#home">
                 <Image alt="logo" src="/logo.png" width={48} height={48} />
               </a>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <a
-                href="/"
+                href="#home"
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
               >
                 Home
+              </a>
+              <a
+                href="#menu"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
+              >
+                Menu
+              </a>
+              <a
+                href="#about"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
+              >
+                About
               </a>
               <a
                 href={config.CONTACT_PHONE_LINK}
@@ -76,10 +84,10 @@ export function AppNavbar() {
                 Contact
               </a>
               <a
-                href="/menu"
+                href="#visit-us"
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:text-white"
               >
-                Menu
+                Visit Us
               </a>
             </div>
           </div>
@@ -110,10 +118,10 @@ export function AppNavbar() {
                   ) : (
                     <>
                       {items.map((item) => (
-                          <div
-                            key={item.cartKey || item.name}
-                            className="px-4 py-2 flex items-center justify-between border-b border-gray-200 dark:border-gray-700"
-                          >
+                        <div
+                          key={item.cartKey || item.name}
+                          className="px-4 py-2 flex items-center justify-between border-b border-gray-200 dark:border-gray-700"
+                        >
                           <div className="flex-1">
                             <h4 className="text-sm font-medium text-gray-900 dark:text-white">
                               {item.name}
@@ -199,6 +207,7 @@ export function AppNavbar() {
                 { type: "link", label: "View All", href: "/notifications" },
               ]}
             />
+
             <Dropdown
               trigger={
                 <>
@@ -243,6 +252,13 @@ export function AppNavbar() {
               Menu
             </DisclosureButton>
           </div>
+          <DisclosureButton
+            as="a"
+            href="#about"
+            className="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:border-white/20 dark:hover:bg-white/5 dark:hover:text-white"
+          >
+            About
+          </DisclosureButton>
           <DisclosureButton
             as="a"
             href={config.CONTACT_PHONE_LINK}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AppNavbar } from "@/components/common/appNavbar";
+import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
 import { useCart } from "@/contexts/cart/cartContext";
 import { CartEmptyState } from "@/components/Cart/CartEmptyState";
@@ -24,6 +24,7 @@ export default function CartPage() {
   const [recommendedCategory, setRecommendedCategory] = useState("");
 
   const getItemPrice = (item) => {
+    if (typeof item.unitPrice === "number") return item.unitPrice;
     if (typeof item.price?.single === "number") return item.price.single;
     if (typeof item.price?.platter === "number") return item.price.platter;
     return 0;
@@ -90,7 +91,7 @@ export default function CartPage() {
 
   return (
     <>
-      <AppNavbar />
+      <Navbar />
       <main className="bg-white mt-16    mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Shopping Cart

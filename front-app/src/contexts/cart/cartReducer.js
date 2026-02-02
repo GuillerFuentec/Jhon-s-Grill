@@ -3,13 +3,13 @@ export const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       const existingItem = state.items.find(
-        (item) => item.name === action.payload.name,
+        (item) => item.cartKey === action.payload.cartKey,
       );
       if (existingItem) {
         return {
           ...state,
           items: state.items.map((item) =>
-            item.name === action.payload.name
+            item.cartKey === action.payload.cartKey
               ? { ...item, quantity: item.quantity + 1 }
               : item,
           ),
@@ -23,7 +23,9 @@ export const cartReducer = (state, action) => {
     case "REMOVE_ITEM":
       return {
         ...state,
-        items: state.items.filter((item) => item.name !== action.payload.name),
+        items: state.items.filter(
+          (item) => item.cartKey !== action.payload.cartKey,
+        ),
       };
 
     case "DECREASE_QTY":
@@ -31,7 +33,7 @@ export const cartReducer = (state, action) => {
         ...state,
         items: state.items
           .map((item) =>
-            item.name === action.payload.name
+            item.cartKey === action.payload.cartKey
               ? { ...item, quantity: item.quantity - 1 }
               : item,
           )
@@ -43,14 +45,14 @@ export const cartReducer = (state, action) => {
         return {
           ...state,
           items: state.items.filter(
-            (item) => item.name !== action.payload.name,
+            (item) => item.cartKey !== action.payload.cartKey,
           ),
         };
       }
       return {
         ...state,
         items: state.items.map((item) =>
-          item.name === action.payload.name
+          item.cartKey === action.payload.cartKey
             ? { ...item, quantity: action.payload.quantity }
             : item,
         ),

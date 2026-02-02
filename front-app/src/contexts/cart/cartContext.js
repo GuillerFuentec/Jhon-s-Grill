@@ -9,6 +9,28 @@ const initialState = {
   items: [],
 };
 
+const getDefaultVariant = (item) => {
+  if (typeof item.price?.single === "number") return "single";
+  if (typeof item.price?.platter === "number") return "platter";
+  return "single";
+};
+
+const getUnitPrice = (item, variant) => {
+  if (typeof item.unitPrice === "number") return item.unitPrice;
+  const chosen = item.price?.[variant];
+  if (typeof chosen === "number") return chosen;
+  if (typeof item.price?.single === "number") return item.price.single;
+  if (typeof item.price?.platter === "number") return item.price.platter;
+  return 0;
+};
+
+const normalizeCartItem = (item) => {
+  const variant = item.variant || getDefaultVariant(item);
+  const unitPrice = getUnitPrice(item, variant);
+  const cartKey = item.cartKey || `${item.name}::${variant}`;
+  return { ...item, variant, unitPrice, cartKey };
+};
+
 export function CartProvider({ children }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
@@ -17,7 +39,12 @@ export function CartProvider({ children }) {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
       try {
-        dispatch({ type: "LOAD_CART", payload: JSON.parse(savedCart) });
+        const parsed = JSON.parse(savedCart);
+        const normalized = {
+          ...parsed,
+          items: (parsed.items || []).map(normalizeCartItem),
+        };
+        dispatch({ type: "LOAD_CART", payload: normalized });
       } catch (error) {
         console.error("Error loading cart from localStorage:", error);
       }
@@ -29,20 +56,22 @@ export function CartProvider({ children }) {
     localStorage.setItem("cart", JSON.stringify(state));
   }, [state]);
 
-  const addItem = (item) => {
-    dispatch({ type: "ADD_ITEM", payload: item });
+  const addItem = (item, variant) => {
+    const chosenVariant = variant || getDefaultVariant(item);
+    const payload = normalizeCartItem({ ...item, variant: chosenVariant });
+    dispatch({ type: "ADD_ITEM", payload });
   };
 
-  const removeItem = (name) => {
-    dispatch({ type: "REMOVE_ITEM", payload: { name } });
+  const removeItem = (cartKey) => {
+    dispatch({ type: "REMOVE_ITEM", payload: { cartKey } });
   };
 
-  const decreaseQty = (name) => {
-    dispatch({ type: "DECREASE_QTY", payload: { name } });
+  const decreaseQty = (cartKey) => {
+    dispatch({ type: "DECREASE_QTY", payload: { cartKey } });
   };
 
-  const updateQuantity = (name, quantity) => {
-    dispatch({ type: "UPDATE_QUANTITY", payload: { name, quantity } });
+  const updateQuantity = (cartKey, quantity) => {
+    dispatch({ type: "UPDATE_QUANTITY", payload: { cartKey, quantity } });
   };
 
   const clearCart = () => {
@@ -55,7 +84,7 @@ export function CartProvider({ children }) {
 
   const getSubtotal = () => {
     return state.items.reduce((total, item) => {
-      const price = item.price?.single || 0;
+      const price = typeof item.unitPrice === "number" ? item.unitPrice : 0;
       return total + price * item.quantity;
     }, 0);
   };

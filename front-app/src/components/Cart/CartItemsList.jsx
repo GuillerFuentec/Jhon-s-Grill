@@ -45,7 +45,7 @@ export function CartItemsList({
       className="divide-y divide-gray-200 border-t border-b border-gray-200"
     >
       {items.map((item, itemIdx) => (
-        <li key={item.name} className="flex py-6 sm:py-10">
+        <li key={item.cartKey || `${item.name}-${itemIdx}`} className="flex py-6 sm:py-10">
           <div className="shrink-0">
             <CartItemImage item={item} />
           </div>
@@ -68,6 +68,11 @@ export function CartItemsList({
                     {item.description}
                   </p>
                 ) : null}
+                {item.variant ? (
+                  <p className="mt-1 text-xs text-gray-400">
+                    {item.variant === "platter" ? "Platter" : "Regular"}
+                  </p>
+                ) : null}
                 <p className="mt-1 text-sm font-medium text-gray-900">
                   {usd.format(getItemPrice(item))}
                 </p>
@@ -78,14 +83,16 @@ export function CartItemsList({
                   value={item.quantity}
                   min={1}
                   max={99}
-                  onChange={(next) => onUpdateQuantity(item.name, next)}
+                  onChange={(next) =>
+                    onUpdateQuantity(item.cartKey || item.name, next)
+                  }
                 />
 
                 <div className="absolute top-0 right-0">
                   <button
                     type="button"
                     className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500"
-                    onClick={() => onRemoveItem(item.name)}
+                    onClick={() => onRemoveItem(item.cartKey || item.name)}
                   >
                     <span className="sr-only">Remove</span>
                     <XMarkIconMini aria-hidden="true" className="size-5" />

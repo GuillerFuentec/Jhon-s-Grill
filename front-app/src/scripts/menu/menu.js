@@ -53,6 +53,11 @@ function MenuImage({ srcPrimary, srcFallback, alt }) {
 }
 
 function MenuCard({ item, index }) {
+  const platterRegularInfo = {
+    platter: "Platter´s plates comes with fries and coke",
+    regular: "Regular´s plates it´s only the item you bought",
+  };
+
   return (
     <div
       className="menu-item bg-white rounded-lg overflow-hidden shadow-lg"
@@ -68,11 +73,23 @@ function MenuCard({ item, index }) {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold text-red-600 mb-2">{item.name}</h3>
-        <p className="text-gray-600 mb-4">{item.description || ""}</p>
+        <p className="text-gray-600 mb-4">
+          <span className="font-bold my-2">description:</span>
+          <br></br>
+          {item.description || ""}
+        </p>
         {priceToText(item.price) && (
-          <p className="text-gray-800 font-bold text-lg">
-            {priceToText(item.price)}
-          </p>
+          <>
+            <p className="text-gray-800 font-bold text-lg">
+              {priceToText(item.price)}
+            </p>
+            <p className="text-gray-600 font-bold text-sm mt-4">
+              Platter means: {platterRegularInfo.platter}
+            </p>
+            <p className="text-gray-600 font-bold text-sm mt-4">
+              Regular means: {platterRegularInfo.regular}
+            </p>
+          </>
         )}
       </div>
       <div className="p-4">
