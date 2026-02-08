@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "passwordlesses",
+  "info": {
+    "singularName": "passwordless",
+    "pluralName": "passwordlesses",
+    "displayName": "passwordless"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

@@ -583,6 +583,71 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPasswordlessTokenPasswordlessToken
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'passwordless_tokens';
+  info: {
+    description: 'Stores hashed OTP codes for passwordless auth';
+    displayName: 'Passwordless Token';
+    pluralName: 'passwordless-tokens';
+    singularName: 'passwordless-token';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    attempts: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    codeHash: Schema.Attribute.String & Schema.Attribute.Required;
+    consumedAt: Schema.Attribute.DateTime;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    expiresAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    ip: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::passwordless-token.passwordless-token'
+    > &
+      Schema.Attribute.Private;
+    maxAttempts: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<5>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userAgent: Schema.Attribute.String;
+  };
+}
+
+export interface ApiPasswordlessPasswordless
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'passwordlesses';
+  info: {
+    displayName: 'passwordless';
+    pluralName: 'passwordlesses';
+    singularName: 'passwordless';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::passwordless.passwordless'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
   collectionName: 'payments';
   info: {
@@ -921,6 +986,7 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ext: Schema.Attribute.String;
+    focalPoint: Schema.Attribute.JSON;
     folder: Schema.Attribute.Relation<'manyToOne', 'plugin::upload.folder'> &
       Schema.Attribute.Private;
     folderPath: Schema.Attribute.String &
@@ -1174,6 +1240,8 @@ declare module '@strapi/strapi' {
       'api::jhon.jhon': ApiJhonJhon;
       'api::menu.menu': ApiMenuMenu;
       'api::order.order': ApiOrderOrder;
+      'api::passwordless-token.passwordless-token': ApiPasswordlessTokenPasswordlessToken;
+      'api::passwordless.passwordless': ApiPasswordlessPasswordless;
       'api::payment.payment': ApiPaymentPayment;
       'api::q-a.q-a': ApiQAQA;
       'api::quote.quote': ApiQuoteQuote;

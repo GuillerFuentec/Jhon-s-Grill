@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "passwordless_tokens",
+  "info": {
+    "singularName": "passwordless-token",
+    "pluralName": "passwordless-tokens",
+    "displayName": "Passwordless Token",
+    "description": "Stores hashed OTP codes for passwordless auth"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "codeHash": {
+      "type": "string",
+      "required": true
+    },
+    "expiresAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "attempts": {
+      "type": "integer",
+      "default": 0
+    },
+    "maxAttempts": {
+      "type": "integer",
+      "default": 5
+    },
+    "consumedAt": {
+      "type": "datetime"
+    },
+    "ip": {
+      "type": "string"
+    },
+    "userAgent": {
+      "type": "string"
+    }
+  }
+}
